@@ -5,614 +5,598 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>For You ❤️</title>
+<title>4 September — For You ❤️</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-behavior:smooth;
 }
 
-body {
-    background: #0d0d0d;
-    color: #f5f5f5;
-    font-family: Georgia, "Times New Roman", serif;
-    overflow-x: hidden;
+body{
+    background:#0b0b0b;
+    color:#f4f1ee;
+    font-family:Georgia,"Times New Roman",serif;
+    overflow-x:hidden;
 }
 
-/* =========================
-   GLOBAL
-========================= */
-
-section {
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 70px 20px;
-    position: relative;
+section{
+    min-height:100vh;
+    padding:80px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
-.container {
-    width: 100%;
-    max-width: 900px;
-    margin: auto;
-    text-align: center;
+.container{
+    width:100%;
+    max-width:850px;
+    margin:auto;
+    text-align:center;
 }
 
-.small-text {
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: #aaa;
-    margin-bottom: 20px;
+.label{
+    font-family:Arial,sans-serif;
+    font-size:10px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    color:#8e8e8e;
+    margin-bottom:22px;
 }
 
-h1 {
-    font-size: clamp(48px, 12vw, 95px);
-    font-weight: 400;
-    letter-spacing: 2px;
+h1{
+    font-size:clamp(55px,14vw,105px);
+    font-weight:400;
+    line-height:.95;
 }
 
-h2 {
-    font-size: clamp(32px, 8vw, 60px);
-    font-weight: 400;
+h2{
+    font-size:clamp(34px,8vw,62px);
+    font-weight:400;
+    line-height:1.1;
 }
 
-p {
-    font-family: Arial, sans-serif;
-    line-height: 1.8;
-    color: #cfcfcf;
+h3{
+    font-weight:400;
 }
+
+p{
+    font-family:Arial,sans-serif;
+    color:#c5c5c5;
+    line-height:1.8;
+}
+
+button{
+    font-family:Arial,sans-serif;
+}
+
 
 /* =========================
    OPENING
 ========================= */
 
-#opening {
+#opening{
     background:
-        radial-gradient(circle at center, rgba(139,30,45,.22), transparent 45%),
-        #0d0d0d;
+    radial-gradient(circle at center,rgba(139,30,45,.22),transparent 50%),
+    #0b0b0b;
 }
 
-.opening-content {
-    animation: fadeIn 2s ease;
+.opening-sub{
+    margin:25px auto 45px;
+    font-style:italic;
+    color:#aaa;
 }
 
-.subtitle {
-    color: #aaa;
-    font-style: italic;
-    margin: 20px 0 45px;
+.open-button{
+    border:1px solid #8b1e2d;
+    background:transparent;
+    color:white;
+    padding:16px 34px;
+    border-radius:50px;
+    cursor:pointer;
+    transition:.4s;
 }
 
-.open-btn {
-    background: transparent;
-    border: 1px solid #8b1e2d;
-    color: #fff;
-    padding: 16px 36px;
-    border-radius: 50px;
-    font-size: 12px;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: .4s;
+.open-button:hover{
+    background:#8b1e2d;
+    transform:translateY(-3px);
 }
 
-.open-btn:hover {
-    background: #8b1e2d;
-    transform: scale(1.05);
-}
 
 /* =========================
    MUSIC
 ========================= */
 
-.music-control {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 9999;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    border: 1px solid #555;
-    background: rgba(13,13,13,.9);
-    color: white;
-    cursor: pointer;
-    display: none;
+.music{
+    position:fixed;
+    top:18px;
+    right:18px;
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    background:#111;
+    border:1px solid #444;
+    color:white;
+    z-index:999;
+    display:none;
+    cursor:pointer;
 }
+
 
 /* =========================
    BIRTHDAY
 ========================= */
 
-#birthday {
-    background: #111;
+#birthday{
+    background:#111;
 }
 
-.birthday-photo {
-    width: min(80vw, 390px);
-    height: min(105vw, 500px);
-    object-fit: cover;
-    display: block;
-    margin: 35px auto;
-    border-radius: 3px;
-    box-shadow: 0 20px 60px rgba(0,0,0,.6);
+.age{
+    font-family:Arial,sans-serif;
+    font-size:11px;
+    letter-spacing:4px;
+    color:#8b1e2d;
+    margin-top:18px;
 }
 
-.birthday-text {
-    max-width: 550px;
-    margin: auto;
+.main-photo{
+    width:min(82vw,400px);
+    height:min(105vw,500px);
+    object-fit:cover;
+    margin:40px auto;
+    display:block;
+    border-radius:3px;
+    box-shadow:0 25px 70px rgba(0,0,0,.6);
 }
+
+.intro{
+    max-width:560px;
+    margin:auto;
+}
+
+.intro p{
+    margin-top:18px;
+}
+
 
 /* =========================
    THINGS I KNOW
 ========================= */
 
-#things {
-    background: #0d0d0d;
+#things{
+    background:#0b0b0b;
 }
 
-.things-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-    margin-top: 45px;
+.intro-line{
+    max-width:550px;
+    margin:20px auto 45px;
 }
 
-.thing-card {
-    background: #171717;
-    border: 1px solid #252525;
-    padding: 30px 20px;
-    min-height: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: .4s;
+.thing-list{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
 }
 
-.thing-card:hover {
-    border-color: #8b1e2d;
-    transform: translateY(-5px);
+.thing{
+    background:#151515;
+    border:1px solid #242424;
+    padding:30px 22px;
+    text-align:left;
+    transition:.35s;
 }
 
-.thing-icon {
-    font-size: 30px;
-    margin-bottom: 15px;
+.thing:hover{
+    border-color:#8b1e2d;
+    transform:translateY(-4px);
 }
 
-.thing-card p {
-    font-family: Georgia, serif;
-    font-size: 15px;
+.thing-number{
+    font-family:Arial,sans-serif;
+    font-size:10px;
+    color:#777;
+    letter-spacing:2px;
+    margin-bottom:14px;
 }
 
-.highlight {
-    color: #fff;
+.thing p{
+    font-family:Georgia,serif;
+    color:#ddd;
 }
+
 
 /* =========================
-   HOW IT STARTED
+   STORY
 ========================= */
 
-#beginning {
-    background: #111;
+#story{
+    background:#111;
 }
 
-.story-box {
-    max-width: 650px;
-    margin: 45px auto 0;
-    padding: 35px;
-    border-left: 1px solid #8b1e2d;
-    background: rgba(255,255,255,.02);
-    text-align: left;
+.story{
+    max-width:620px;
+    margin:40px auto;
+    text-align:left;
+    border-left:1px solid #8b1e2d;
+    padding:5px 0 5px 28px;
 }
 
-.story-box p {
-    font-family: Georgia, serif;
-    font-size: 17px;
-    margin-bottom: 20px;
+.story p{
+    font-family:Georgia,serif;
+    font-size:17px;
+    margin-bottom:22px;
 }
 
-.date {
-    text-align: center;
-    font-size: 34px;
-    color: #fff;
-    margin: 30px 0 10px;
+.date{
+    font-size:38px;
+    margin-top:35px;
 }
 
-.date-caption {
-    text-align: center;
-    color: #8b1e2d;
-    font-family: Arial, sans-serif;
-    letter-spacing: 3px;
-    font-size: 11px;
+.date-small{
+    font-family:Arial,sans-serif;
+    letter-spacing:3px;
+    font-size:10px;
+    color:#8b1e2d;
+    margin-top:10px;
 }
+
 
 /* =========================
    MEMORIES
 ========================= */
 
-#memories {
-    background: #0d0d0d;
+#memories{
+    background:#0b0b0b;
 }
 
-.photo-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-    margin-top: 50px;
+.memory-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:24px;
+    margin-top:45px;
 }
 
-.photo-card {
-    background: #171717;
-    padding: 12px;
-    transition: .5s;
+.memory{
+    background:#151515;
+    padding:10px;
 }
 
-.photo-card:nth-child(even) {
-    transform: translateY(25px);
+.memory:nth-child(even){
+    transform:translateY(25px);
 }
 
-.photo-card:hover {
-    transform: scale(1.03);
+.memory img{
+    width:100%;
+    aspect-ratio:1;
+    object-fit:cover;
 }
 
-.photo-card img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
+.memory p{
+    padding:14px 5px 8px;
+    font-family:Georgia,serif;
+    font-style:italic;
+    font-size:13px;
 }
 
-.photo-card p {
-    padding: 15px 5px 8px;
-    font-family: Georgia, serif;
-    font-style: italic;
-    font-size: 14px;
-}
 
 /* =========================
-   RANDOM GENERATOR
+   GAME
 ========================= */
 
-#random {
-    background:
-        radial-gradient(circle at center, rgba(139,30,45,.12), transparent 50%),
-        #111;
+#game{
+    background:#111;
 }
 
-.random-box {
-    max-width: 600px;
-    margin: 45px auto 0;
-    background: #171717;
-    padding: 40px 25px;
-    border: 1px solid #292929;
+.game-box{
+    max-width:600px;
+    margin:40px auto 0;
+    background:#171717;
+    padding:35px 25px;
+    border:1px solid #292929;
 }
 
-.random-text {
-    min-height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    font-style: italic;
-    line-height: 1.6;
+.question{
+    font-size:22px;
+    line-height:1.5;
+    margin-bottom:25px;
 }
 
-.random-btn {
-    margin-top: 25px;
-    padding: 13px 25px;
-    border-radius: 50px;
-    border: 1px solid #8b1e2d;
-    background: transparent;
-    color: white;
-    cursor: pointer;
+.options{
+    display:grid;
+    gap:12px;
 }
 
-.random-btn:hover {
-    background: #8b1e2d;
+.option{
+    padding:15px;
+    border:1px solid #333;
+    background:#222;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
 }
+
+.option:hover{
+    border-color:#8b1e2d;
+}
+
+.game-result{
+    min-height:30px;
+    margin-top:25px;
+    color:#ddd;
+}
+
+.score{
+    margin-top:15px;
+    color:#8b1e2d;
+    font-family:Arial,sans-serif;
+    font-size:11px;
+    letter-spacing:2px;
+}
+
 
 /* =========================
-   QUIZ
+   RANDOM CARD
 ========================= */
 
-#quiz {
-    background: #0d0d0d;
+#random{
+    background:#0b0b0b;
 }
 
-.quiz-box {
-    max-width: 600px;
-    margin: 40px auto 0;
-    background: #171717;
-    padding: 35px 25px;
+.card-box{
+    max-width:600px;
+    margin:40px auto;
 }
 
-.question {
-    font-size: 22px;
-    margin-bottom: 25px;
+.random-card{
+    min-height:190px;
+    background:#171717;
+    border:1px solid #292929;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:35px;
+    font-size:21px;
+    font-style:italic;
+    line-height:1.6;
 }
 
-.answers {
-    display: grid;
-    gap: 12px;
+.random-button{
+    margin-top:20px;
+    padding:14px 25px;
+    border:1px solid #8b1e2d;
+    border-radius:50px;
+    background:transparent;
+    color:white;
+    cursor:pointer;
 }
 
-.answer {
-    padding: 14px;
-    background: #222;
-    border: 1px solid #333;
-    color: white;
-    cursor: pointer;
-    transition: .3s;
-}
-
-.answer:hover {
-    border-color: #8b1e2d;
-}
-
-.quiz-result {
-    margin-top: 25px;
-    min-height: 30px;
-    color: #ddd;
-}
 
 /* =========================
-   SECRET
+   LITTLE THING
 ========================= */
 
-#secret {
-    background: #111;
+#little{
+    background:#111;
 }
 
-.secret-btn {
-    margin-top: 40px;
-    padding: 15px 30px;
-    border: 1px solid #8b1e2d;
-    background: transparent;
-    color: white;
-    border-radius: 50px;
-    cursor: pointer;
+.little-box{
+    max-width:600px;
+    margin:40px auto 0;
+    padding:35px 25px;
+    background:#171717;
 }
 
-.secret-message {
-    display: none;
-    max-width: 600px;
-    margin: 35px auto 0;
-    padding: 30px;
-    background: #171717;
-    border-left: 1px solid #8b1e2d;
+.little-box p{
+    font-family:Georgia,serif;
+    font-size:17px;
+    margin-bottom:20px;
 }
 
-.secret-message p {
-    font-family: Georgia, serif;
-    font-size: 17px;
+.secret-button{
+    margin-top:20px;
+    border:1px solid #555;
+    background:transparent;
+    color:white;
+    padding:13px 25px;
+    border-radius:50px;
+    cursor:pointer;
 }
+
+.secret{
+    display:none;
+    margin-top:25px;
+}
+
 
 /* =========================
    LETTER
 ========================= */
 
-#letter {
+#letter{
     background:
-        radial-gradient(circle at center, rgba(139,30,45,.15), transparent 55%),
-        #0d0d0d;
+    radial-gradient(circle at center,rgba(139,30,45,.13),transparent 55%),
+    #0b0b0b;
 }
 
-.letter-box {
-    max-width: 650px;
-    text-align: left;
-    margin: 40px auto 0;
-    padding: 35px;
-    border-left: 1px solid #8b1e2d;
-    background: rgba(255,255,255,.02);
+.letter{
+    max-width:650px;
+    margin:40px auto 0;
+    text-align:left;
+    padding:35px;
+    border-left:1px solid #8b1e2d;
 }
 
-.letter-box p {
-    font-family: Georgia, serif;
-    font-size: 17px;
-    margin-bottom: 22px;
-    color: #ddd;
+.letter p{
+    font-family:Georgia,serif;
+    font-size:17px;
+    margin-bottom:23px;
+    color:#ddd;
 }
 
-.signature {
-    text-align: right;
-    font-style: italic;
-    color: #aaa;
+.sign{
+    text-align:right;
+    color:#aaa;
+    font-style:italic;
 }
+
 
 /* =========================
    GIFTS
 ========================= */
 
-#gifts {
-    background: #111;
+#gifts{
+    background:#111;
 }
 
-.gift-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    margin-top: 50px;
+.gift-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    margin-top:45px;
 }
 
-.gift {
-    min-height: 190px;
-    background: #171717;
-    border: 1px solid #292929;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: .4s;
-    padding: 20px;
+.gift{
+    background:#171717;
+    border:1px solid #292929;
+    min-height:280px;
+    padding:18px;
+    cursor:pointer;
+    transition:.35s;
 }
 
-.gift:hover {
-    border-color: #8b1e2d;
-    transform: translateY(-5px);
+.gift:hover{
+    border-color:#8b1e2d;
+    transform:translateY(-4px);
 }
 
-.gift-front {
-    text-align: center;
+.gift-photo{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+    margin-bottom:15px;
 }
 
-.gift-icon {
-    font-size: 45px;
-    margin-bottom: 15px;
+.gift-title{
+    font-size:20px;
+    margin-bottom:8px;
 }
 
-.gift-number {
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    letter-spacing: 3px;
-    color: #aaa;
+.gift-reason{
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    color:#aaa;
+    line-height:1.6;
 }
 
-.gift-content {
-    display: none;
-}
-
-.gift-content h3 {
-    font-size: 24px;
-    margin-bottom: 15px;
-    font-weight: 400;
-}
-
-.gift-content p {
-    font-size: 14px;
-}
 
 /* =========================
    QRIS
 ========================= */
 
-#qris {
-    background: #0d0d0d;
+#qris{
+    background:#0b0b0b;
 }
 
-.qris-box {
-    margin-top: 35px;
+.qris{
+    width:250px;
+    max-width:85%;
+    padding:12px;
+    background:white;
+    margin:30px auto;
+    display:block;
 }
 
-.qris-image {
-    width: 250px;
-    max-width: 80%;
-    background: white;
-    padding: 15px;
-    margin: 25px auto;
-    display: block;
-}
-
-.qris-text {
-    font-style: italic;
-}
 
 /* =========================
    FINAL
 ========================= */
 
-#final {
+#final{
     background:
-        radial-gradient(circle at center, rgba(139,30,45,.25), transparent 50%),
-        #0d0d0d;
+    radial-gradient(circle at center,rgba(139,30,45,.24),transparent 50%),
+    #0b0b0b;
 }
 
-.final-photo {
-    width: 220px;
-    height: 280px;
-    object-fit: cover;
-    margin: 35px auto;
-    display: block;
+.final-photo{
+    width:230px;
+    height:290px;
+    object-fit:cover;
+    margin:35px auto;
+    display:block;
 }
 
-.final-message {
-    max-width: 600px;
-    margin: auto;
+.final-text{
+    max-width:600px;
+    margin:auto;
 }
 
-.final-message p {
-    margin-bottom: 20px;
+.final-text p{
+    margin-bottom:20px;
 }
 
-.love {
-    color: #8b1e2d;
-    font-size: 35px;
-    margin-top: 35px;
+.final-love{
+    margin-top:35px;
+    font-size:30px;
+    color:#8b1e2d;
 }
+
 
 /* =========================
    HEARTS
 ========================= */
 
-.heart {
-    position: fixed;
-    bottom: -30px;
-    pointer-events: none;
-    animation: floatUp 5s linear forwards;
-    z-index: 9999;
+.heart{
+    position:fixed;
+    bottom:-20px;
+    z-index:9999;
+    pointer-events:none;
+    animation:float 5s linear forwards;
 }
 
-@keyframes floatUp {
-    0% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
+@keyframes float{
+    from{
+        transform:translateY(0);
+        opacity:1;
     }
-
-    100% {
-        transform: translateY(-110vh) scale(.5);
-        opacity: 0;
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    to{
+        transform:translateY(-110vh);
+        opacity:0;
     }
 }
+
 
 /* =========================
    MOBILE
 ========================= */
 
-@media (max-width: 600px) {
+@media(max-width:600px){
 
-    .things-grid,
-    .gift-grid {
-        grid-template-columns: 1fr;
+    .thing-list,
+    .gift-grid{
+        grid-template-columns:1fr;
     }
 
-    .photo-grid {
-        grid-template-columns: 1fr;
+    .memory-grid{
+        grid-template-columns:1fr;
     }
 
-    .photo-card:nth-child(even) {
-        transform: none;
+    .memory:nth-child(even){
+        transform:none;
     }
 
-    .story-box,
-    .letter-box {
-        padding: 25px 20px;
+    .letter{
+        padding:25px 20px;
     }
 
-    .timeline-item {
-        width: 100%;
+    .story{
+        padding-left:20px;
     }
 
-    h1 {
-        font-size: 55px;
-    }
 }
 </style>
 
@@ -620,17 +604,13 @@ p {
 
 <body>
 
-<!-- =========================
-     MUSIC
-========================= -->
+<!-- MUSIC -->
 
-<audio id="bgMusic" loop>
+<audio id="music" loop>
     <source src="assets/lagu.mp3" type="audio/mpeg">
 </audio>
 
-<button class="music-control" id="musicButton" onclick="toggleMusic()">
-    ♫
-</button>
+<button class="music" id="musicBtn" onclick="toggleMusic()">♫</button>
 
 <!-- =========================
      01 OPENING
@@ -638,25 +618,25 @@ p {
 
 <section id="opening">
 
-```
-<div class="container opening-content">
+<div class="container">
 
-    <div class="small-text">
-        A little something for you
-    </div>
+<div class="label">
+4 September 2026
+</div>
 
-    <h1>For You</h1>
+<h1>For You.</h1>
 
-    <p class="subtitle">
-        Karena hari ini kamu yang ulang tahun.
-    </p>
+<p class="opening-sub">
+Aku bikin sesuatu buat kamu.
+<br>
+Tapi jangan berharap terlalu normal.
+</p>
 
-    <button class="open-btn" onclick="openWebsite()">
-        OPEN THIS ❤️
-    </button>
+<button class="open-button" onclick="startWebsite()">
+OPEN THIS ❤️
+</button>
 
 </div>
-```
 
 </section>
 
@@ -666,173 +646,174 @@ p {
 
 <section id="birthday">
 
-```
 <div class="container">
 
-    <div class="small-text">
-        Today is your day
-    </div>
+<div class="label">
+Today is your day
+</div>
 
-    <h2>Happy Birthday ❤️</h2>
+<h2>Happy Birthday.</h2>
 
-    <img
-        src="assets/foto1.jpg"
-        class="birthday-photo"
-        alt="Our Photo">
+<div class="age">
+22 YEARS OLD
+</div>
 
-    <div class="birthday-text">
+<img src="assets/foto1.jpg"
+class="main-photo"
+alt="Foto kita">
 
-        <p>
-            Selamat ulang tahun, sayang.
-        </p>
+<div class="intro">
 
-        <p style="margin-top:20px;">
-            Aku bikin website ini bukan karena
-            aku tiba-tiba jago coding,
-            tapi karena kayaknya seru aja
-            kalau ulang tahun kamu punya
-            tempat kecil sendiri.
-        </p>
+<p>
+Selamat ulang tahun, sayang. ❤️
+</p>
 
-    </div>
+<p>
+Hari ini tanggal 4 September,
+jadi untuk sementara waktu
+kamu boleh merasa paling penting.
+</p>
+
+<p>
+Walaupun...
+sebenarnya memang seringnya kamu
+yang paling aku pikirin.
+</p>
 
 </div>
-```
+
+</div>
 
 </section>
 
 <!-- =========================
-     03 THINGS I KNOW ABOUT YOU
+     03 THINGS I KNOW
 ========================= -->
 
 <section id="things">
 
-```
 <div class="container">
 
-    <div class="small-text">
-        Things I Know About You
-    </div>
+<div class="label">
+Things I Know About You
+</div>
 
-    <h2>Apparently, I Know You</h2>
+<h2>Some Things About You</h2>
 
-    <div class="things-grid">
+<p class="intro-line">
+Bukan karena aku hafal semuanya.
+Cuma karena terlalu sering memperhatikan. 😂
+</p>
 
-        <div class="thing-card">
+<div class="thing-list">
 
-            <div class="thing-icon">☕</div>
+<div class="thing">
 
-            <p>
-                <span class="highlight">
-                Ngopi itu wajib.
-                </span>
-                Katanya kalau nggak ngopi
-                bisa pusing.
-            </p>
+<div class="thing-number">01</div>
 
-        </div>
-
-
-        <div class="thing-card">
-
-            <div class="thing-icon">⚽</div>
-
-            <p>
-                Ronaldo, eFootball,
-                dan segala sesuatu yang
-                berhubungan dengan bola.
-            </p>
-
-        </div>
-
-
-        <div class="thing-card">
-
-            <div class="thing-icon">💨</div>
-
-            <p>
-                Rokok sekarang udah jarang
-                katanya.
-                Tapi pod?
-                <span class="highlight">As always.</span>
-            </p>
-
-        </div>
-
-
-        <div class="thing-card">
-
-            <div class="thing-icon">❤️</div>
-
-            <p>
-                Dan satu lagi...
-                katanya yang paling kamu suka
-                <span class="highlight">aku.</span>
-                Wkwkwk.
-            </p>
-
-        </div>
-
-    </div>
+<p>
+Kalau belum ngopi,
+katanya bisa pusing.
+Jadi kopi itu bukan minuman lagi,
+kayaknya sudah masuk kebutuhan pokok.
+</p>
 
 </div>
-```
+
+<div class="thing">
+
+<div class="thing-number">02</div>
+
+<p>
+Ronaldo.
+eFootball.
+Dua hal yang cukup untuk
+membuat kamu fokus beberapa saat.
+</p>
+
+</div>
+
+<div class="thing">
+
+<div class="thing-number">03</div>
+
+<p>
+Rokok sekarang katanya sudah jarang.
+Tapi kalau urusan pod...
+<strong>as always.</strong>
+</p>
+
+</div>
+
+<div class="thing">
+
+<div class="thing-number">04</div>
+
+<p>
+Dan yang paling penting:
+kamu paling suka aku.
+Aku yang bilang.
+Nggak perlu dibantah.
+😂
+</p>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 <!-- =========================
-     04 HOW IT STARTED
+     04 HOW WE STARTED
 ========================= -->
 
-<section id="beginning">
+<section id="story">
 
-```
 <div class="container">
 
-    <div class="small-text">
-        How It Started
-    </div>
+<div class="label">
+A Little Backstory
+</div>
 
-    <h2>Well... Here We Are.</h2>
+<h2>From Pocin<br>to Here.</h2>
 
-    <div class="story-box">
+<div class="story">
 
-        <p>
-            Februari 2026.
-        </p>
+<p>
+Februari 2026.
+Aku pulang ngampus,
+terus ketemu kamu di Stasiun Pocin.
+</p>
 
-        <p>
-            Aku lagi pulang ngampus,
-            terus ketemu kamu di Stasiun Pocin.
-        </p>
+<p>
+Dan bukannya bisa lewat
+dengan tenang,
+aku malah dipaparaziin
+sama temen sendiri.
+😭
+</p>
 
-        <p>
-            Dan yang lebih lucu,
-            momen itu malah sempat
-            dipaparaziin sama temen aku.
-            😭
-        </p>
-
-        <p>
-            Dari yang awalnya cuma
-            ketemu di stasiun...
-            ternyata sekarang aku malah
-            bikin website ulang tahun
-            buat kamu.
-        </p>
-
-    </div>
-
-    <div class="date">
-        27.03.2026
-    </div>
-
-    <div class="date-caption">
-        OFFICIALLY US
-    </div>
+<p>
+Waktu itu belum tahu
+bakal sampai sejauh ini.
+Tahu-tahu sekarang...
+aku malah bikin website
+buat ulang tahun kamu.
+</p>
 
 </div>
-```
+
+<div class="date">
+27.03.2026
+</div>
+
+<div class="date-small">
+THE DAY WE BECAME US
+</div>
+
+</div>
 
 </section>
 
@@ -842,211 +823,214 @@ p {
 
 <section id="memories">
 
-```
 <div class="container">
 
-    <div class="small-text">
-        A Few Of My Favorites
-    </div>
+<div class="label">
+A Few Memories
+</div>
 
-    <h2>Us, Basically.</h2>
+<h2>Us Being Us.</h2>
 
-    <div class="photo-grid">
+<p class="intro-line">
+Kalau dipikir-pikir,
+kayaknya setiap ketemu selalu ada
+aja yang bisa diketawain.
+</p>
 
-        <div class="photo-card">
+<div class="memory-grid">
 
-            <img src="assets/foto2.jpg" alt="Memory">
+<div class="memory">
+<img src="assets/foto2.jpg">
+<p>
+“Ini awalnya mau foto biasa.”
+</p>
+</div>
 
-            <p>
-                Ketemu → ngobrol → ketawa →
-                pulang.
-            </p>
+<div class="memory">
+<img src="assets/foto3.jpg">
+<p>
+“Terus entah kenapa jadi begini.”
+</p>
+</div>
 
-        </div>
+<div class="memory">
+<img src="assets/foto4.jpg">
+<p>
+“Satu celetukan aku,
+diladenin lagi.”
+</p>
+</div>
 
-
-        <div class="photo-card">
-
-            <img src="assets/foto3.jpg" alt="Memory">
-
-            <p>
-                Nggak ada yang spesial,
-                tapi tetap jadi favorit.
-            </p>
-
-        </div>
-
-
-        <div class="photo-card">
-
-            <img src="assets/foto4.jpg" alt="Memory">
-
-            <p>
-                Satu celetukan aku,
-                pasti diladenin.
-            </p>
-
-        </div>
-
-
-        <div class="photo-card">
-
-            <img src="assets/foto5.jpg" alt="Memory">
-
-            <p>
-                Bahkan hal random di jalan
-                bisa jadi bahan becandaan.
-            </p>
-
-        </div>
-
-    </div>
+<div class="memory">
+<img src="assets/foto5.jpg">
+<p>
+“Hal random di jalan pun
+bisa jadi bahan obrolan.”
+</p>
+</div>
 
 </div>
-```
+
+</div>
 
 </section>
 
 <!-- =========================
-     06 RANDOM
+     06 GAME
+========================= -->
+
+<section id="game">
+
+<div class="container">
+
+<div class="label">
+Mini Game
+</div>
+
+<h2>Seberapa Kenal<br>Kamu Sama Aku?</h2>
+
+<p style="margin-top:20px;">
+Jangan sampai kalah sama website
+yang aku bikin sendiri.
+😂
+</p>
+
+<div class="game-box">
+
+<div class="question" id="question">
+Apa yang paling mungkin bikin aku senang?
+</div>
+
+<div class="options" id="options">
+
+<button class="option"
+onclick="answer(0)">
+Dikasih nasihat panjang </button>
+
+<button class="option"
+onclick="answer(1)">
+Dijajanin </button>
+
+<button class="option"
+onclick="answer(0)">
+Disuruh tidur cepat </button>
+
+</div>
+
+<div class="game-result" id="gameResult"></div>
+
+<div class="score" id="score">
+SCORE: 0
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+     07 RANDOM
 ========================= -->
 
 <section id="random">
 
-```
 <div class="container">
 
-    <div class="small-text">
-        Because This Is Very Us
-    </div>
+<div class="label">
+Very Important Research
+</div>
 
-    <h2>Random Thought Generator</h2>
+<h2>Random Thought.</h2>
 
-    <p style="margin-top:20px;">
-        Coba klik. Siapa tahu kali ini
-        kamu bisa jawab serius.
-    </p>
+<p style="margin-top:20px;">
+Karena aku tahu kamu akan tetap
+ngeladenin pertanyaan random.
+</p>
 
-    <div class="random-box">
+<div class="card-box">
 
-        <div class="random-text" id="randomText">
-            "Kalau kita tiba-tiba bisa terbang,
-            kita mau terbang ke mana?"
-        </div>
+<div class="random-card" id="randomCard">
+Kalau kita tiba-tiba bisa terbang,
+kita mau terbang ke mana?
+</div>
 
-        <button class="random-btn" onclick="randomThought()">
-            Kasih aku yang random
-        </button>
-
-    </div>
+<button class="random-button"
+onclick="randomQuestion()">
+Kasih pertanyaan random </button>
 
 </div>
-```
+
+</div>
 
 </section>
 
 <!-- =========================
-     07 QUIZ
+     08 LITTLE THING
 ========================= -->
 
-<section id="quiz">
+<section id="little">
 
-```
 <div class="container">
 
-    <div class="small-text">
-        One Little Test
-    </div>
+<div class="label">
+One Thing I Like
+</div>
 
-    <h2>Do You Remember?</h2>
+<h2>Yang Kadang<br>Bikin Aku Gemes.</h2>
 
-    <div class="quiz-box">
+<div class="little-box">
 
-        <div class="question">
-            Siapa yang pertama kali
-            dipaparaziin di Stasiun Pocin?
-        </div>
+<p>
+Setiap aku lagi ngomong atau
+celetuk sesuatu...
+</p>
 
-        <div class="answers">
+<p>
+jawaban kamu kadang cuma:
+</p>
 
-            <button class="answer"
-                onclick="quizAnswer(false)">
-                Kita berdua
-            </button>
+<h2 style="font-size:35px;">
+“Alah alah mba.”
+</h2>
 
-            <button class="answer"
-                onclick="quizAnswer(true)">
-                Aku 😂
-            </button>
+<p style="margin-top:25px;">
+Dan anehnya,
+aku malah ketawa.
+</p>
 
-            <button class="answer"
-                onclick="quizAnswer(false)">
-                Temenku
-            </button>
+<button class="secret-button"
+onclick="showSecret()">
+Tapi ada satu hal lagi... </button>
 
-        </div>
+<div class="secret" id="secret">
 
-        <div class="quiz-result" id="quizResult"></div>
+<p>
+Aku suka karena kamu selalu
+ngeladenin pemisalan-pemisalan
+nggak jelas yang aku buat.
+</p>
 
-    </div>
+<p>
+“Kalau kita terbang gimana?”
+<br>
+“Kalau tiba-tiba kaya gimana?”
+<br>
+“Kalau kita pergi sekarang gimana?”
+</p>
+
+<p>
+Dan kamu selalu punya jawaban.
+Walaupun kadang jawabannya juga
+nggak kalah ngawur.
+😂
+</p>
 
 </div>
-```
-
-</section>
-
-<!-- =========================
-     08 SECRET
-========================= -->
-
-<section id="secret">
-
-```
-<div class="container">
-
-    <div class="small-text">
-        You Found Something
-    </div>
-
-    <h2>One Secret</h2>
-
-    <p style="margin-top:20px;">
-        Sebenarnya bagian ini nggak penting.
-    </p>
-
-    <button class="secret-btn" onclick="showSecret()">
-        Jangan klik 👀
-    </button>
-
-    <div class="secret-message" id="secretMessage">
-
-        <p>
-            Tapi kalau kamu udah sampai sini...
-        </p>
-
-        <p style="margin-top:20px;">
-            Aku cuma mau bilang,
-            aku suka semua hal random
-            yang terjadi kalau lagi sama kamu.
-        </p>
-
-        <p style="margin-top:20px;">
-            Bahkan yang awalnya cuma
-            “kita misal terbang gimana ya?”
-            bisa kamu ladenin sampai jadi
-            pembahasan serius.
-        </p>
-
-        <p style="margin-top:20px;">
-            Aneh sih.
-            Tapi aku suka.
-            ❤️
-        </p>
-
-    </div>
 
 </div>
-```
+
+</div>
 
 </section>
 
@@ -1056,80 +1040,98 @@ p {
 
 <section id="letter">
 
-```
 <div class="container">
 
-    <div class="small-text">
-        A Little Letter
-    </div>
+<div class="label">
+Actually, This Is The Important Part
+</div>
 
-    <h2>For You.</h2>
+<h2>A Letter For You.</h2>
 
-    <div class="letter-box">
+<div class="letter">
 
-        <p>
-            Happy birthday, sayang.
-        </p>
+<p>
+Happy birthday, sayang.
+</p>
 
-        <p>
-            Aku nggak mau bikin ucapan yang
-            terlalu panjang atau terlalu
-            manis sampai kamu bingung bacanya.
-            Jadi aku cuma mau bilang makasih.
-        </p>
+<p>
+Aku sebenarnya nggak tahu harus
+nulis apa supaya kedengarannya
+nggak terlalu lebay.
+Jadi aku tulis aja apa adanya.
+</p>
 
-        <p>
-            Makasih karena selama ini
-            selalu bisa diajak ketawa,
-            bahkan dari hal-hal yang sebenarnya
-            nggak penting.
-        </p>
+<p>
+Aku senang bisa ketemu kamu
+dan punya banyak cerita kecil
+yang mungkin kalau diceritain
+ke orang lain nggak terlalu lucu,
+tapi kalau kita yang ngalamin,
+bisa ketawa sendiri.
+</p>
 
-        <p>
-            Makasih juga karena selalu
-            ribet soal aku harus pakai jaket
-            atau jas hujan.
-            Kadang aku masih mikir,
-            “deket doang kenapa harus ribet?”
-            tapi kamu tetap nggak mau jalan
-            kalau aku belum nurut.
-        </p>
+<p>
+Aku juga suka cara kamu perhatian
+sama hal-hal kecil.
+Termasuk soal jaket dan jas hujan.
+Kadang aku masih mikir,
+“deket doang kenapa harus pakai?”
+Tapi kamu tetap nggak mau jalan
+kalau aku belum nurut.
+</p>
 
-        <p>
-            Nyebelin.
-            Tapi ternyata aku suka.
-        </p>
+<p>
+Nyebelin memang.
+Tapi sebenarnya aku suka.
+</p>
 
-        <p>
-            Terus kalau soal jajan...
-            ya, aku juga nggak akan bohong.
-            Setiap kamu jajanin aku,
-            aku makin sayang.
-            Wkwkwk.
-        </p>
+<p>
+Terus kalau kamu jajanin aku...
+ya gimana ya.
+Aku jadi makin sayang.
+Kalau kamu kasih barang juga
+sama aja.
+😂
+</p>
 
-        <p>
-            Semoga di umur yang baru ini
-            semuanya berjalan lebih baik buat kamu.
-            Semoga yang lagi kamu usahakan
-            satu-satu bisa tercapai.
-        </p>
+<p>
+Semoga di umur 22 ini
+kamu sehat, dimudahkan dalam
+semua yang kamu kerjakan,
+dan satu-satu hal yang kamu
+inginkan bisa tercapai.
+</p>
 
-        <p>
-            Tetap jadi kamu yang sekarang.
-            Manly, ganteng,
-            dan soon-to-be berotot banget.
-        </p>
+<p>
+Tetap jadi kamu.
+Yang manly,
+yang ganteng,
+dan yang katanya
+soon bakal punya otot banget.
+Aku tunggu buktinya.
+</p>
 
-        <p class="signature">
-            Happy birthday ❤️<br>
-            — dari aku
-        </p>
+<p>
+Makasih sudah jadi bagian
+dari banyak hari yang sekarang
+punya cerita sendiri.
+</p>
 
-    </div>
+<p>
+Happy birthday.
+Semoga tahun ini baik sama kamu.
+Dan semoga kita masih punya
+banyak hal random buat
+ditertawakan bareng.
+</p>
+
+<p class="sign">
+— aku ❤️
+</p>
 
 </div>
-```
+
+</div>
 
 </section>
 
@@ -1139,137 +1141,96 @@ p {
 
 <section id="gifts">
 
-```
 <div class="container">
 
-    <div class="small-text">
-        I Got You Something
-    </div>
+<div class="label">
+Open Your Gifts
+</div>
 
-    <h2>Open Your Gifts 🎁</h2>
+<h2>Okay, Now The Gifts.</h2>
 
-    <div class="gift-grid">
+<p style="margin-top:20px;">
+Klik satu-satu.
+Jangan langsung buka semua. 😭
+</p>
 
+<div class="gift-grid">
 
-        <!-- KAOS -->
+<div class="gift">
 
-        <div class="gift" onclick="openGift(this)">
+<img src="assets/gift1.jpg"
+class="gift-photo">
 
-            <div class="gift-front">
+<div class="gift-title">
+Kaos 👕
+</div>
 
-                <div class="gift-icon">🎁</div>
-
-                <div class="gift-number">
-                    GIFT #01
-                </div>
-
-            </div>
-
-            <div class="gift-content">
-
-                <h3>Something To Wear</h3>
-
-                <p>
-                    Biar makin ganteng.
-                    Walaupun tanpa ini juga
-                    katanya udah ganteng.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- DOMPET -->
-
-        <div class="gift" onclick="openGift(this)">
-
-            <div class="gift-front">
-
-                <div class="gift-icon">🎁</div>
-
-                <div class="gift-number">
-                    GIFT #02
-                </div>
-
-            </div>
-
-            <div class="gift-content">
-
-                <h3>Something Useful</h3>
-
-                <p>
-                    Biar uang, kartu,
-                    dan foto penting kamu
-                    punya rumah baru.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- LIP BALM -->
-
-        <div class="gift" onclick="openGift(this)">
-
-            <div class="gift-front">
-
-                <div class="gift-icon">🎁</div>
-
-                <div class="gift-number">
-                    GIFT #03
-                </div>
-
-            </div>
-
-            <div class="gift-content">
-
-                <h3>For Your Lips</h3>
-
-                <p>
-                    Karena aku masih butuh
-                    kamu buat ngomong.
-                    Jangan sampai kering.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- SHEET MASK -->
-
-        <div class="gift" onclick="openGift(this)">
-
-            <div class="gift-front">
-
-                <div class="gift-icon">🎁</div>
-
-                <div class="gift-number">
-                    GIFT #04
-                </div>
-
-            </div>
-
-            <div class="gift-content">
-
-                <h3>Self Care</h3>
-
-                <p>
-                    Iya.
-                    Cowok juga boleh skincare.
-                    Jangan protes.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
+<div class="gift-reason">
+Aku beli ini karena kayaknya
+kamu bakal cocok pakai ini.
+Dan ya...
+biar makin ganteng aja.
+</div>
 
 </div>
-```
+
+<div class="gift">
+
+<img src="assets/gift2.jpg"
+class="gift-photo">
+
+<div class="gift-title">
+Dompet 👛
+</div>
+
+<div class="gift-reason">
+Biar kartu-kartu kamu punya tempat.
+Terus semoga dompetnya cepat penuh.
+Bukan sama struk ya.
+Sama uang.
+😂
+</div>
+
+</div>
+
+<div class="gift">
+
+<img src="assets/gift3.jpg"
+class="gift-photo">
+
+<div class="gift-title">
+Lip Balm
+</div>
+
+<div class="gift-reason">
+Ini karena aku masih butuh
+kamu ngomong banyak.
+Jadi bibir jangan sampai
+kering dulu.
+</div>
+
+</div>
+
+<div class="gift">
+
+<img src="assets/gift4.jpg"
+class="gift-photo">
+
+<div class="gift-title">
+Sheet Mask
+</div>
+
+<div class="gift-reason">
+Iya, cowok juga boleh skincare.
+Sekali-sekali rawat muka.
+Biar gantengnya tetap terjaga.
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
@@ -1279,35 +1240,31 @@ p {
 
 <section id="qris">
 
-```
 <div class="container">
 
-    <div class="small-text">
-        Wait...
-    </div>
+<div class="label">
+One Last Surprise
+</div>
 
-    <h2>There's One More.</h2>
+<h2>
+Wait...
+</h2>
 
-    <div class="qris-box">
+<p style="margin-top:20px;">
+Kayaknya ada satu hadiah
+yang belum masuk.
+</p>
 
-        <p class="qris-text">
-            Aku hampir lupa sesuatu.
-        </p>
+<img src="assets/qris.png"
+class="qris">
 
-        <img
-            src="assets/qris.png"
-            class="qris-image"
-            alt="QRIS">
-
-        <p>
-            Jangan berharap banyak.
-            😂❤️
-        </p>
-
-    </div>
+<p>
+Yaudah.
+Semoga bermanfaat.
+😂❤️
+</p>
 
 </div>
-```
 
 </section>
 
@@ -1317,83 +1274,85 @@ p {
 
 <section id="final">
 
-```
 <div class="container">
 
-    <div class="small-text">
-        One Last Thing
-    </div>
+<div class="label">
+That's All.
+</div>
 
-    <img
-        src="assets/foto6.jpg"
-        class="final-photo"
-        alt="Us">
+<img src="assets/foto6.jpg"
+class="final-photo">
 
-    <h2>
-        Happy Birthday ❤️
-    </h2>
+<h2>
+Happy Birthday,
+Sayang.
+</h2>
 
-    <div class="final-message">
+<div class="final-text">
 
-        <p>
-            Semoga tahun ini jadi tahun
-            yang baik buat kamu.
-        </p>
+<p style="margin-top:30px;">
+22 looks good on you.
+</p>
 
-        <p>
-            Semoga kerja keras kamu,
-            semua rencana kamu,
-            dan semua hal yang lagi
-            kamu kejar bisa berjalan
-            satu-satu.
-        </p>
+<p>
+Semoga tahun ini kamu
+dapat banyak hal baik,
+banyak kesempatan,
+banyak rezeki,
+dan banyak alasan buat senyum.
+</p>
 
-        <p>
-            Dan semoga...
-            kita masih punya banyak
-            cerita random buat dibahas,
-            banyak makanan buat dimakan,
-            dan banyak momen buat ditertawakan.
-        </p>
+<p>
+Dan kalau boleh,
+aku mau tetap ada
+di antara cerita-cerita itu.
+</p>
 
-        <p>
-            Oh iya.
-            Jangan lupa pakai jaket.
-            😂
-        </p>
+<p>
+Oh iya...
+</p>
 
-        <div class="love">
-            I LOVE YOU
-        </div>
+<p>
+Jangan lupa ngopi.
+<br>
+Jangan lupa pakai jaket.
+<br>
+Dan jangan lupa aku.
+😂
+</p>
 
-    </div>
+<div class="final-love">
+❤️
+</div>
 
 </div>
-```
+
+</div>
 
 </section>
 
 <script>
 
 /* =========================
-   OPEN WEBSITE
+   START
 ========================= */
 
-function openWebsite() {
+function startWebsite(){
 
-    const music = document.getElementById("bgMusic");
+    const music=document.getElementById("music");
 
-    music.volume = 0.35;
+    music.volume=.35;
 
-    music.play().catch(() => {});
+    music.play().catch(()=>{});
 
-    document.getElementById("musicButton").style.display = "block";
+    document.getElementById("musicBtn").style.display="block";
 
-    document.getElementById("birthday").scrollIntoView({
-        behavior: "smooth"
+    document.getElementById("birthday")
+    .scrollIntoView({
+        behavior:"smooth"
     });
 
-    createHearts();
+    hearts();
 }
 
 
@@ -1401,22 +1360,20 @@ function openWebsite() {
    MUSIC
 ========================= */
 
-function toggleMusic() {
+function toggleMusic(){
 
-    const music = document.getElementById("bgMusic");
-    const button = document.getElementById("musicButton");
+    const music=document.getElementById("music");
+    const btn=document.getElementById("musicBtn");
 
-    if (music.paused) {
+    if(music.paused){
 
         music.play();
+        btn.innerHTML="♫";
 
-        button.innerHTML = "♫";
-
-    } else {
+    }else{
 
         music.pause();
-
-        button.innerHTML = "🔇";
+        btn.innerHTML="🔇";
 
     }
 
@@ -1424,62 +1381,73 @@ function toggleMusic() {
 
 
 /* =========================
-   RANDOM THOUGHTS
+   GAME
 ========================= */
 
-const thoughts = [
+let score=0;
 
-    "Kalau kita tiba-tiba bisa terbang, kita mau terbang ke mana?",
+function answer(correct){
 
-    "Kalau besok kita nggak punya kerjaan, mau ngapain?",
+    const result=
+    document.getElementById("gameResult");
 
-    "Kalau tiba-tiba kaya, hal pertama yang kamu beli apa?",
+    if(correct){
 
-    "Kalau kita nyasar di kota yang nggak dikenal, siapa yang bakal panik duluan?",
+        score++;
 
-    "Kalau sehari nggak boleh pegang HP, kamu kuat nggak?",
+        result.innerHTML=
+        "Nah, masih kenal aku. Lumayan. 😂❤️";
 
-    "Kalau kita buka usaha bareng, kira-kira bakal bangkrut atau sukses?",
+        hearts();
 
-    "Kalau aku tiba-tiba bilang ayo pergi sekarang, kamu ikut nggak?",
+    }else{
 
-    "Kalau bisa pilih satu tempat buat pergi sekarang, kamu pilih mana?"
+        result.innerHTML=
+        "Salah. Kayaknya kita perlu ngobrol lagi. 😭";
+
+    }
+
+    document.getElementById("score").innerHTML=
+    "SCORE: "+score;
+
+}
+
+
+/* =========================
+   RANDOM QUESTIONS
+========================= */
+
+const randomQuestions=[
+
+"Kalau kita tiba-tiba bisa terbang, kita mau ke mana?",
+
+"Kalau besok kita kaya mendadak, hal pertama yang dibeli apa?",
+
+"Kalau kita bisa pergi sekarang juga, mau ke mana?",
+
+"Kalau kita nyasar di kota orang, siapa yang panik duluan?",
+
+"Kalau sehari nggak boleh pegang HP, kamu kuat?",
+
+"Kalau kita buka usaha bareng, kira-kira sukses atau bangkrut?",
+
+"Kalau bisa tinggal di mana saja selama sebulan, kamu pilih mana?",
+
+"Kalau kita punya rumah sendiri, siapa yang paling banyak bikin aturan?"
 
 ];
 
-function randomThought() {
+function randomQuestion(){
 
-    const random =
-        thoughts[Math.floor(Math.random() * thoughts.length)];
+    const q=
+    randomQuestions[
+        Math.floor(
+            Math.random()*randomQuestions.length
+        )
+    ];
 
-    document.getElementById("randomText").innerHTML =
-        '"' + random + '"';
-
-}
-
-
-/* =========================
-   QUIZ
-========================= */
-
-function quizAnswer(correct) {
-
-    const result =
-        document.getElementById("quizResult");
-
-    if (correct) {
-
-        result.innerHTML =
-            "Ternyata masih inget. Lumayan. 😂❤️";
-
-        createHearts();
-
-    } else {
-
-        result.innerHTML =
-            "Salah. Waduh, harusnya kamu inget dong. 😭";
-
-    }
+    document.getElementById("randomCard")
+    .innerHTML=q;
 
 }
 
@@ -1488,43 +1456,12 @@ function quizAnswer(correct) {
    SECRET
 ========================= */
 
-function showSecret() {
+function showSecret(){
 
-    const message =
-        document.getElementById("secretMessage");
+    document.getElementById("secret")
+    .style.display="block";
 
-    message.style.display = "block";
-
-    createHearts();
-
-}
-
-
-/* =========================
-   GIFTS
-========================= */
-
-function openGift(element) {
-
-    const front =
-        element.querySelector(".gift-front");
-
-    const content =
-        element.querySelector(".gift-content");
-
-    if (content.style.display === "block") {
-
-        content.style.display = "none";
-        front.style.display = "block";
-
-    } else {
-
-        front.style.display = "none";
-        content.style.display = "block";
-
-        createHearts();
-
-    }
+    hearts();
 
 }
 
@@ -1533,33 +1470,30 @@ function openGift(element) {
    HEARTS
 ========================= */
 
-function createHearts() {
+function hearts(){
 
-    for (let i = 0; i < 12; i++) {
+    for(let i=0;i<15;i++){
 
-        const heart =
-            document.createElement("div");
+        const heart=
+        document.createElement("div");
 
-        heart.className = "heart";
+        heart.className="heart";
+        heart.innerHTML="❤️";
 
-        heart.innerHTML = "❤️";
+        heart.style.left=
+        Math.random()*100+"vw";
 
-        heart.style.left =
-            Math.random() * 100 + "vw";
+        heart.style.fontSize=
+        (10+Math.random()*18)+"px";
 
-        heart.style.fontSize =
-            (10 + Math.random() * 18) + "px";
-
-        heart.style.animationDuration =
-            (3 + Math.random() * 3) + "s";
+        heart.style.animationDuration=
+        (3+Math.random()*3)+"s";
 
         document.body.appendChild(heart);
 
-        setTimeout(() => {
-
+        setTimeout(()=>{
             heart.remove();
-
-        }, 6000);
+        },6000);
 
     }
 
