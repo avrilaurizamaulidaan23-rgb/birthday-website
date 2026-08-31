@@ -1498,17 +1498,10 @@ button{
      AUDIO
 ========================= -->
 
-<audio id="music"
-    loop
-    preload="auto">
-
-```
-<source src="assets/heaven.mp3"
-        type="audio/mpeg">
-```
-
+<audio id="music" loop preload="auto">
+    <source src="./heaven.mp3" type="audio/mpeg">
 </audio>
-
+    
 <script>
 
 /* =========================
@@ -1609,15 +1602,30 @@ function deletePin(){
 
 function openGift(){
 
-    const entry=document.getElementById("giftEntry");
+    const entry = document.getElementById("giftEntry");
 
-    entry.style.transform="scale(1.15)";
+    entry.style.transform = "scale(1.15)";
+
+    const music = document.getElementById("music");
+
+    music.volume = 0.5;
+
+    music.play().then(function(){
+
+        document.getElementById("musicButton").innerHTML = "Ⅱ";
+        document.getElementById("musicDisc").classList.add("playing");
+
+    }).catch(function(error){
+
+        console.log("Audio error:", error);
+
+    });
 
     setTimeout(function(){
 
-        document.getElementById("giftScreen").style.display="none";
+        document.getElementById("giftScreen").style.display = "none";
 
-        document.getElementById("birthday").style.display="block";
+        document.getElementById("birthday").style.display = "block";
 
         window.scrollTo(0,0);
 
@@ -1843,23 +1851,51 @@ function playMusic(){
 }
 
 
-function toggleMusic(){
+function playMusic(){
 
-    if(music.paused){
+    music.volume=0.35;
 
-        music.play()
-        .then(function(){
+    const playPromise=music.play();
+
+    if(playPromise!==undefined){
+
+        playPromise.then(function(){
 
             musicButton.innerHTML="Ⅱ";
 
             musicDisc.classList.add("playing");
 
-        })
-        .catch(function(error){
+        }).catch(function(error){
 
-            console.log("Music gagal diputar:",error);
+            console.log("Music could not start:",error);
 
         });
+
+    }
+
+}
+
+function toggleMusic(){
+
+    if(music.paused){
+
+        const playPromise=music.play();
+
+        if(playPromise!==undefined){
+
+            playPromise.then(function(){
+
+                musicButton.innerHTML="Ⅱ";
+
+                musicDisc.classList.add("playing");
+
+            }).catch(function(error){
+
+                console.log("Music could not start:",error);
+
+            });
+
+        }
 
     }else{
 
@@ -1868,6 +1904,8 @@ function toggleMusic(){
         musicButton.innerHTML="▶";
 
         musicDisc.classList.remove("playing");
+
+    }
 
     }
 
