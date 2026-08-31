@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +7,7 @@
 <title>Happy Birthday, Emey ❤️</title>
 
 <style>
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap');
 
 *{
@@ -42,10 +42,6 @@ button{
     font-family:inherit;
 }
 
-/* =========================
-   GENERAL
-========================= */
-
 .page{
     width:100%;
     min-height:100vh;
@@ -64,6 +60,7 @@ button{
     display:none!important;
 }
 
+
 /* =========================
    LOADING
 ========================= */
@@ -72,8 +69,14 @@ button{
     display:flex;
     align-items:center;
     justify-content:center;
+
     background:
-        radial-gradient(circle at center,#42101a,#17080c 35%,#080808 75%);
+        radial-gradient(
+            circle at center,
+            #42101a,
+            #17080c 35%,
+            #080808 75%
+        );
 }
 
 .loading-content{
@@ -82,13 +85,26 @@ button{
 
 .loading-ball{
     font-size:58px;
-    animation:ballBounce 1s infinite ease-in-out;
-    filter:drop-shadow(0 10px 20px rgba(213,45,73,.35));
+
+    animation:
+        ballBounce 1s infinite ease-in-out;
+
+    filter:
+        drop-shadow(
+            0 10px 20px rgba(213,45,73,.35)
+        );
 }
 
 @keyframes ballBounce{
-    0%,100%{transform:translateY(0) rotate(0);}
-    50%{transform:translateY(-18px) rotate(180deg);}
+
+    0%,100%{
+        transform:translateY(0) rotate(0);
+    }
+
+    50%{
+        transform:translateY(-18px) rotate(180deg);
+    }
+
 }
 
 .loading-text{
@@ -98,6 +114,7 @@ button{
     letter-spacing:2px;
 }
 
+
 /* =========================
    PIN
 ========================= */
@@ -106,8 +123,13 @@ button{
     display:none;
     align-items:center;
     justify-content:center;
+
     background:
-        radial-gradient(circle at center,#321019,#080808 70%);
+        radial-gradient(
+            circle at center,
+            #321019,
+            #080808 70%
+        );
 }
 
 .pin-content{
@@ -146,6 +168,7 @@ button{
 .pin-dot{
     width:11px;
     height:11px;
+
     border:1px solid #777;
     border-radius:50%;
 }
@@ -153,7 +176,9 @@ button{
 .pin-dot.active{
     background:var(--red2);
     border-color:var(--red2);
-    box-shadow:0 0 12px rgba(213,45,73,.5);
+
+    box-shadow:
+        0 0 12px rgba(213,45,73,.5);
 }
 
 .keypad{
@@ -164,12 +189,17 @@ button{
 
 .key{
     height:58px;
+
     border-radius:18px;
     border:1px solid #292929;
+
     background:#141414;
     color:white;
+
     font-size:18px;
+
     cursor:pointer;
+
     transition:.2s;
 }
 
@@ -181,9 +211,11 @@ button{
 .pin-error{
     height:20px;
     margin-top:17px;
+
     color:#e76b7d;
     font-size:12px;
 }
+
 
 /* =========================
    GIFT
@@ -193,30 +225,45 @@ button{
     display:none;
     align-items:center;
     justify-content:center;
+
     background:#090909;
 }
 
 .gift-entry{
     text-align:center;
+
+    transition:
+        transform .6s ease;
 }
 
 .gift-emoji{
     font-size:95px;
     cursor:pointer;
-    animation:giftFloat 2s infinite ease-in-out;
+
+    animation:
+        giftFloat 2s infinite ease-in-out;
 }
 
 @keyframes giftFloat{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-12px);}
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
 }
 
 .gift-hint{
     margin-top:24px;
+
     color:#888;
     font-size:11px;
     letter-spacing:2px;
 }
+
 
 /* =========================
    BIRTHDAY
@@ -224,8 +271,12 @@ button{
 
 #birthday{
     display:none;
+
     background:
-        linear-gradient(#080808,#11090b);
+        linear-gradient(
+            #080808,
+            #11090b
+        );
 }
 
 .hero{
@@ -242,7 +293,14 @@ button{
 
 .hero h1{
     font-family:'Playfair Display',serif;
-    font-size:clamp(43px,12vw,62px);
+
+    font-size:
+        clamp(
+            43px,
+            12vw,
+            62px
+        );
+
     font-weight:400;
     line-height:1.05;
 }
@@ -253,6 +311,7 @@ button{
 
 .hero-date{
     margin-top:20px;
+
     font-size:11px;
     letter-spacing:4px;
     color:#999;
@@ -260,22 +319,36 @@ button{
 
 .scroll-hint{
     margin-top:75px;
+
     text-align:center;
+
     color:#777;
+
     font-size:10px;
     letter-spacing:2px;
 }
 
 .arrow{
     margin-top:12px;
+
     font-size:22px;
-    animation:arrowDown 1.4s infinite;
+
+    animation:
+        arrowDown 1.4s infinite;
 }
 
 @keyframes arrowDown{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(8px);}
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(8px);
+    }
+
 }
+
 
 /* =========================
    FALLING FOOTBALLS
@@ -283,16 +356,26 @@ button{
 
 .falling-ball{
     position:fixed;
+
     top:-60px;
+
     font-size:22px;
+
     z-index:100;
+
     pointer-events:none;
-    animation:fallBall linear forwards;
+
+    animation:
+        fallBall linear forwards;
 }
 
 @keyframes fallBall{
+
     0%{
-        transform:translateY(0) rotate(0);
+        transform:
+            translateY(0)
+            rotate(0);
+
         opacity:0;
     }
 
@@ -301,10 +384,15 @@ button{
     }
 
     100%{
-        transform:translateY(115vh) rotate(720deg);
+        transform:
+            translateY(115vh)
+            rotate(720deg);
+
         opacity:0;
     }
+
 }
+
 
 /* =========================
    SECTIONS
@@ -317,25 +405,36 @@ button{
 
 .section-label{
     color:#777;
+
     font-size:9px;
+
     letter-spacing:4px;
+
     text-transform:uppercase;
+
     margin-bottom:16px;
 }
 
 .section-title{
     font-family:'Playfair Display',serif;
+
     font-size:36px;
+
     font-weight:400;
+
     line-height:1.15;
 }
 
 .section-intro{
     color:#999;
+
     font-size:13px;
+
     line-height:1.8;
+
     margin-top:15px;
 }
+
 
 /* =========================
    FOOTBALL FIELD
@@ -347,8 +446,11 @@ button{
 
 .field{
     width:100%;
+
     height:310px;
+
     position:relative;
+
     overflow:hidden;
 
     background:
@@ -361,6 +463,7 @@ button{
         );
 
     border:4px solid #eee;
+
     border-radius:12px;
 
     box-shadow:
@@ -368,41 +471,54 @@ button{
         0 0 35px rgba(23,115,59,.18);
 }
 
-/* garis tengah */
-
 .field:before{
     content:"";
+
     position:absolute;
+
     left:50%;
     top:0;
     bottom:0;
-    width:2px;
-    background:rgba(255,255,255,.8);
-    transform:translateX(-50%);
-}
 
-/* lingkaran tengah */
+    width:2px;
+
+    background:
+        rgba(255,255,255,.8);
+
+    transform:
+        translateX(-50%);
+}
 
 .field:after{
     content:"";
+
     position:absolute;
+
     width:90px;
     height:90px;
-    border:2px solid rgba(255,255,255,.8);
+
+    border:
+        2px solid rgba(255,255,255,.8);
+
     border-radius:50%;
+
     left:50%;
     top:50%;
-    transform:translate(-50%,-50%);
-}
 
-/* area kotak */
+    transform:
+        translate(-50%,-50%);
+}
 
 .penalty{
     position:absolute;
+
     top:82px;
+
     width:70px;
     height:145px;
-    border:2px solid rgba(255,255,255,.8);
+
+    border:
+        2px solid rgba(255,255,255,.8);
 }
 
 .penalty.left{
@@ -413,14 +529,16 @@ button{
     right:-2px;
 }
 
-/* GAWANG */
-
 .goal{
     position:absolute;
+
     width:30px;
     height:90px;
+
     top:110px;
-    border:3px solid white;
+
+    border:
+        3px solid white;
 }
 
 .goal.left{
@@ -431,23 +549,32 @@ button{
     right:-3px;
 }
 
-/* BOLA DI LAPANGAN */
-
 .field-ball{
     position:absolute;
+
     font-size:30px;
+
     cursor:pointer;
+
     transition:.3s;
+
     z-index:5;
-    filter:drop-shadow(0 5px 4px rgba(0,0,0,.35));
+
+    filter:
+        drop-shadow(
+            0 5px 4px rgba(0,0,0,.35)
+        );
 }
 
 .field-ball:hover{
-    transform:scale(1.3) rotate(20deg);
+    transform:
+        scale(1.3)
+        rotate(20deg);
 }
 
 .field-ball:active{
-    transform:scale(.9);
+    transform:
+        scale(.9);
 }
 
 .ball1{left:9%;top:18%;}
@@ -463,31 +590,48 @@ button{
 
 .field-note{
     margin-top:28px;
+
     min-height:72px;
+
     padding:18px;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
     text-align:center;
 
     border-radius:18px;
+
     background:#141414;
+
     border:1px solid #292929;
 
     color:#ddd;
+
     font-family:'Playfair Display',serif;
+
     font-size:16px;
+
     line-height:1.5;
 
     opacity:0;
-    transform:translateY(10px);
+
+    transform:
+        translateY(10px);
+
     transition:.4s;
 }
 
 .field-note.show{
     opacity:1;
-    transform:translateY(0);
+
+    transform:
+        translateY(0);
 }
+
 
 /* =========================
    LETTER
@@ -495,26 +639,41 @@ button{
 
 .letter-card{
     margin-top:35px;
+
     padding:30px 23px;
+
     border-radius:24px;
+
     background:
-        linear-gradient(145deg,#171717,#101010);
+        linear-gradient(
+            145deg,
+            #171717,
+            #101010
+        );
+
     border:1px solid #292929;
 }
 
 .letter-card p{
     font-family:'Playfair Display',serif;
+
     color:#d2cece;
+
     font-size:16px;
+
     line-height:1.85;
+
     margin-bottom:22px;
 }
 
 .signature{
     text-align:right;
+
     color:#d43a53!important;
+
     margin-top:35px;
 }
+
 
 /* =========================
    PHOTO ALBUM
@@ -526,52 +685,82 @@ button{
 
 .photo-frame{
     background:#e9e3dd;
-    padding:12px 12px 25px;
+
+    padding:
+        12px
+        12px
+        25px;
+
     border-radius:5px;
-    box-shadow:0 25px 60px rgba(0,0,0,.5);
-    transform:rotate(-1deg);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.5);
+
+    transform:
+        rotate(-1deg);
+
     cursor:pointer;
 }
 
 .photo-frame img{
     width:100%;
+
     height:430px;
+
     object-fit:cover;
+
     display:block;
+
     background:#222;
 }
 
 .photo-caption{
     color:#222;
+
     text-align:center;
+
     font-family:'Playfair Display',serif;
+
     font-size:14px;
+
     margin-top:13px;
 }
 
 .album-controls{
     display:flex;
+
     justify-content:center;
+
     align-items:center;
+
     gap:18px;
+
     margin-top:25px;
 }
 
 .album-button{
     width:42px;
     height:42px;
+
     border-radius:50%;
+
     border:1px solid #333;
+
     background:#151515;
+
     color:white;
+
     cursor:pointer;
 }
 
 .photo-number{
     color:#777;
+
     font-size:10px;
+
     letter-spacing:2px;
 }
+
 
 /* =========================
    TIMELINE
@@ -579,55 +768,77 @@ button{
 
 .timeline{
     position:relative;
+
     margin-top:50px;
+
     padding-left:30px;
 }
 
 .timeline:before{
     content:"";
+
     position:absolute;
+
     left:7px;
     top:0;
     bottom:0;
+
     width:1px;
+
     background:#762032;
 }
 
 .timeline-item{
     position:relative;
+
     margin-bottom:60px;
 }
 
 .timeline-dot{
     position:absolute;
+
     left:-29px;
     top:5px;
+
     width:14px;
     height:14px;
+
     border-radius:50%;
+
     background:var(--red2);
+
     border:3px solid #0b0b0b;
-    box-shadow:0 0 0 1px #8d1b30;
+
+    box-shadow:
+        0 0 0 1px #8d1b30;
 }
 
 .timeline-date{
     color:#cf3a52;
+
     font-size:10px;
+
     letter-spacing:2px;
+
     margin-bottom:10px;
 }
 
 .timeline-title{
     font-family:'Playfair Display',serif;
+
     font-size:24px;
+
     margin-bottom:9px;
 }
 
 .timeline-text{
     color:#999;
+
     font-size:13px;
+
     line-height:1.8;
 }
+
 
 /* =========================
    MUSIC
@@ -635,19 +846,31 @@ button{
 
 .music-player{
     margin-top:40px;
+
     padding:18px;
+
     border-radius:20px;
+
     background:#141414;
+
     border:1px solid #282828;
 
     display:flex;
+
     align-items:center;
+
     gap:15px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.25);
 }
 
 .music-disc{
     width:50px;
     height:50px;
+
+    flex-shrink:0;
+
     border-radius:50%;
 
     background:
@@ -658,7 +881,9 @@ button{
             #a71930 13% 100%
         );
 
-    animation:spin 5s linear infinite;
+    animation:
+        spin 5s linear infinite;
+
     animation-play-state:paused;
 }
 
@@ -667,7 +892,11 @@ button{
 }
 
 @keyframes spin{
-    to{transform:rotate(360deg);}
+
+    to{
+        transform:rotate(360deg);
+    }
+
 }
 
 .music-info{
@@ -680,19 +909,40 @@ button{
 
 .music-artist{
     color:#777;
+
     font-size:11px;
+
     margin-top:4px;
 }
 
 .music-toggle{
-    width:42px;
-    height:42px;
+    width:45px;
+    height:45px;
+
+    flex-shrink:0;
+
     border-radius:50%;
+
     border:0;
+
     background:var(--red);
+
     color:white;
+
     cursor:pointer;
+
+    font-size:15px;
+
+    box-shadow:
+        0 5px 20px rgba(167,25,48,.35);
+
+    transition:.2s;
 }
+
+.music-toggle:active{
+    transform:scale(.9);
+}
+
 
 /* =========================
    MINI GOAL
@@ -704,18 +954,25 @@ button{
 
 .goal-area{
     margin-top:45px;
+
     position:relative;
+
     display:flex;
+
     justify-content:center;
 }
 
 .mini-goal{
     width:280px;
     height:190px;
+
     position:relative;
 
-    border:5px solid white;
-    border-bottom:8px solid white;
+    border:
+        5px solid white;
+
+    border-bottom:
+        8px solid white;
 
     background:
         repeating-linear-gradient(
@@ -734,9 +991,15 @@ button{
 
 .goal-ball{
     position:absolute;
+
     font-size:31px;
+
     transition:.3s;
-    filter:drop-shadow(0 4px 5px rgba(0,0,0,.4));
+
+    filter:
+        drop-shadow(
+            0 4px 5px rgba(0,0,0,.4)
+        );
 }
 
 .goal-ball:nth-child(1){left:20px;bottom:18px;}
@@ -751,23 +1014,36 @@ button{
 
 .goal-area:after{
     content:"";
+
     position:absolute;
+
     width:320px;
     height:15px;
+
     background:#111;
+
     bottom:-12px;
+
     border-radius:50%;
+
     z-index:-1;
 }
 
 .shake-button{
     margin-top:32px;
+
     padding:14px 25px;
+
     border-radius:50px;
+
     border:1px solid #8f1a30;
+
     background:#151515;
+
     color:white;
+
     cursor:pointer;
+
     transition:.2s;
 }
 
@@ -776,33 +1052,59 @@ button{
 }
 
 .mini-goal.shake{
-    animation:goalShake .7s;
+    animation:
+        goalShake .7s;
 }
 
 @keyframes goalShake{
-    0%,100%{transform:rotate(0);}
-    20%{transform:rotate(-4deg);}
-    40%{transform:rotate(4deg);}
-    60%{transform:rotate(-3deg);}
-    80%{transform:rotate(3deg);}
+
+    0%,100%{
+        transform:rotate(0);
+    }
+
+    20%{
+        transform:rotate(-4deg);
+    }
+
+    40%{
+        transform:rotate(4deg);
+    }
+
+    60%{
+        transform:rotate(-3deg);
+    }
+
+    80%{
+        transform:rotate(3deg);
+    }
+
 }
 
 .goal-message{
     margin:30px auto 0;
+
     max-width:350px;
+
     min-height:75px;
 
     padding:20px;
+
     border-radius:18px;
+
     background:#151515;
+
     border:1px solid #292929;
 
     color:#ddd;
+
     font-family:'Playfair Display',serif;
+
     font-size:16px;
+
     line-height:1.6;
 
     opacity:0;
+
     transition:.4s;
 }
 
@@ -810,18 +1112,26 @@ button{
     opacity:1;
 }
 
+
 /* =========================
    FINAL
 ========================= */
 
 .final{
     min-height:100vh;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
     background:
-        radial-gradient(circle at center,#3a1018,#080808 70%);
+        radial-gradient(
+            circle at center,
+            #3a1018,
+            #080808 70%
+        );
 }
 
 .final-content{
@@ -830,13 +1140,17 @@ button{
 
 .final-ball{
     font-size:58px;
+
     margin-bottom:25px;
 }
 
 .final-content h2{
     font-family:'Playfair Display',serif;
+
     font-size:48px;
+
     font-weight:400;
+
     line-height:1.1;
 }
 
@@ -846,17 +1160,24 @@ button{
 
 .final-content p{
     color:#aaa;
+
     font-size:13px;
+
     line-height:1.9;
+
     margin-top:25px;
 }
 
 .final-date{
     color:var(--red2);
+
     font-size:10px;
+
     letter-spacing:4px;
+
     margin-top:40px;
 }
+
 
 /* =========================
    MOBILE
@@ -884,11 +1205,15 @@ button{
     .photo-frame img{
         height:390px;
     }
+
 }
+
 </style>
 </head>
 
+
 <body>
+
 
 <!-- =========================
      LOADING
@@ -898,7 +1223,9 @@ button{
 
     <div class="loading-content">
 
-        <div class="loading-ball">⚽</div>
+        <div class="loading-ball">
+            ⚽
+        </div>
 
         <div class="loading-text">
             preparing something special for you...
@@ -930,11 +1257,14 @@ button{
         </div>
 
         <div class="pin-display">
+
             <div class="pin-dot"></div>
             <div class="pin-dot"></div>
             <div class="pin-dot"></div>
             <div class="pin-dot"></div>
+
         </div>
+
 
         <div class="keypad">
 
@@ -971,7 +1301,10 @@ button{
 
     <div class="gift-entry" id="giftEntry">
 
-        <div class="gift-emoji" onclick="openGift()">
+        <div
+            class="gift-emoji"
+            onclick="openGift()"
+        >
             🎁
         </div>
 
@@ -991,6 +1324,7 @@ button{
 <section class="page" id="birthday">
 
 <div class="card">
+
 
     <!-- HERO -->
 
@@ -1023,9 +1357,7 @@ button{
     </div>
 
 
-    <!-- =========================
-         THINGS I KNOW ABOUT YOU
-    ========================= -->
+    <!-- THINGS I KNOW ABOUT YOU -->
 
     <div class="section">
 
@@ -1055,60 +1387,83 @@ button{
                 <div class="goal right"></div>
 
 
-                <div class="field-ball ball1"
-                     onclick="showFieldNote(0)">
+                <div
+                    class="field-ball ball1"
+                    onclick="showFieldNote(0)"
+                >
                     ⚽
                 </div>
 
-                <div class="field-ball ball2"
-                     onclick="showFieldNote(1)">
+                <div
+                    class="field-ball ball2"
+                    onclick="showFieldNote(1)"
+                >
                     ⚽
                 </div>
 
-                <div class="field-ball ball3"
-                     onclick="showFieldNote(2)">
+                <div
+                    class="field-ball ball3"
+                    onclick="showFieldNote(2)"
+                >
                     ⚽
                 </div>
 
-                <div class="field-ball ball4"
-                     onclick="showFieldNote(3)">
+                <div
+                    class="field-ball ball4"
+                    onclick="showFieldNote(3)"
+                >
                     ⚽
                 </div>
 
-                <div class="field-ball ball5"
-                     onclick="showFieldNote(4)">
+                <div
+                    class="field-ball ball5"
+                    onclick="showFieldNote(4)"
+                >
                     ⚽
                 </div>
 
-                <div class="field-ball ball6"
-                     onclick="showFieldNote(5)">
+                <div
+                    class="field-ball ball6"
+                    onclick="showFieldNote(5)"
+                >
                     ⚽
                 </div>
 
-                <div class="field-ball ball7"
-                     onclick="showFieldNote(6)">
+                <div
+                    class="field-ball ball7"
+                    onclick="showFieldNote(6)"
+                >
                     ⚽
                 </div>
 
-                <div class="field-ball ball8"
-                     onclick="showFieldNote(7)">
+                <div
+                    class="field-ball ball8"
+                    onclick="showFieldNote(7)"
+                >
                     ⚽
                 </div>
 
-                <div class="field-ball ball9"
-                     onclick="showFieldNote(8)">
+                <div
+                    class="field-ball ball9"
+                    onclick="showFieldNote(8)"
+                >
                     ⚽
                 </div>
 
-                <div class="field-ball ball10"
-                     onclick="showFieldNote(9)">
+                <div
+                    class="field-ball ball10"
+                    onclick="showFieldNote(9)"
+                >
                     ⚽
                 </div>
 
             </div>
 
 
-            <div class="field-note" id="fieldNote">
+            <div
+                class="field-note"
+                id="fieldNote"
+            >
                 Pick a ball.
             </div>
 
@@ -1117,9 +1472,7 @@ button{
     </div>
 
 
-    <!-- =========================
-         LETTER
-    ========================= -->
+    <!-- LETTER -->
 
     <div class="section">
 
@@ -1192,9 +1545,7 @@ button{
     </div>
 
 
-    <!-- =========================
-         PHOTO MEMORIES
-    ========================= -->
+    <!-- PHOTO MEMORIES -->
 
     <div class="section">
 
@@ -1215,15 +1566,21 @@ button{
 
         <div class="album">
 
-            <div class="photo-frame"
-                 onclick="nextPhoto()">
+            <div
+                class="photo-frame"
+                onclick="nextPhoto()"
+            >
 
-                <img id="albumPhoto"
-                     src="assets/foto1.jpg"
-                     alt="Our memory">
+                <img
+                    id="albumPhoto"
+                    src="assets/foto1.jpg"
+                    alt="Our memory"
+                >
 
-                <div class="photo-caption"
-                     id="photoCaption">
+                <div
+                    class="photo-caption"
+                    id="photoCaption"
+                >
                     our beginning
                 </div>
 
@@ -1232,18 +1589,24 @@ button{
 
             <div class="album-controls">
 
-                <button class="album-button"
-                        onclick="prevPhoto()">
+                <button
+                    class="album-button"
+                    onclick="prevPhoto()"
+                >
                     ←
                 </button>
 
-                <div class="photo-number"
-                     id="photoNumber">
+                <div
+                    class="photo-number"
+                    id="photoNumber"
+                >
                     01 / 06
                 </div>
 
-                <button class="album-button"
-                        onclick="nextPhoto()">
+                <button
+                    class="album-button"
+                    onclick="nextPhoto()"
+                >
                     →
                 </button>
 
@@ -1254,9 +1617,7 @@ button{
     </div>
 
 
-    <!-- =========================
-         TIMELINE
-    ========================= -->
+    <!-- TIMELINE -->
 
     <div class="section">
 
@@ -1333,9 +1694,9 @@ button{
                 </div>
 
                 <div class="timeline-text">
-                    Salah satu hal yang paling aku suka dari kamu adalah 
+                    Salah satu hal yang paling aku suka dari kamu adalah
                     kamu selalu ngeladenin semua celotehan aku.
-                    Mau pertanyaannya random, aneh, atau nggak masuk akal, kamu tetap dijawab
+                    Mau pertanyaannya random, aneh, atau nggak masuk akal, kamu tetap dijawab.
                     Tiap lagi di jalan juga pasti ada aja yang kita bahas.
                     Kadang cuma gara-gara lihat sesuatu lewat, ujung-ujungnya malah jadi obrolan panjang.
                     Hal-hal receh kayak gitu justru yang bikin setiap ketemu sama kamu nggak pernah ngebosenin.
@@ -1358,9 +1719,9 @@ button{
 
                 <div class="timeline-text">
                     Aku selalu bilang, "Kan deket doang."
-                    Tapi kamu tetap nggak mau jalan 
+                    Tapi kamu tetap nggak mau jalan
                     Kalau aku belum pakai jaket atau jas hujan.
-                    Dulu aku ngerasa itu ribet dan ngeselin, 
+                    Dulu aku ngerasa itu ribet dan ngeselin,
                     Tapi sekarang aku tahu itu cara kamu nunjukin rasa peduli. ❤️
                 </div>
 
@@ -1372,9 +1733,7 @@ button{
     </div>
 
 
-    <!-- =========================
-         MUSIC
-    ========================= -->
+    <!-- MUSIC -->
 
     <div class="section">
 
@@ -1390,25 +1749,29 @@ button{
 
         <div class="music-player">
 
-            <div class="music-disc"
-                 id="musicDisc">
+            <div
+                class="music-disc"
+                id="musicDisc"
+            >
             </div>
 
             <div class="music-info">
 
                 <div class="music-title">
-                    Shape of My Heart
+                    Heaven
                 </div>
 
                 <div class="music-artist">
-                    Backstreet Boys
+                    Bryan Adams
                 </div>
 
             </div>
 
-            <button class="music-toggle"
-                    id="musicButton"
-                    onclick="toggleMusic()">
+            <button
+                class="music-toggle"
+                id="musicButton"
+                onclick="toggleMusic()"
+            >
                 ▶
             </button>
 
@@ -1417,9 +1780,7 @@ button{
     </div>
 
 
-    <!-- =========================
-         MINI GOAL
-    ========================= -->
+    <!-- MINI GOAL -->
 
     <div class="section goal-section">
 
@@ -1439,8 +1800,10 @@ button{
 
         <div class="goal-area">
 
-            <div class="mini-goal"
-                 id="miniGoal">
+            <div
+                class="mini-goal"
+                id="miniGoal"
+            >
 
                 <div class="goal-ball">⚽</div>
                 <div class="goal-ball">⚽</div>
@@ -1457,14 +1820,18 @@ button{
         </div>
 
 
-        <button class="shake-button"
-                onclick="shakeGoal()">
+        <button
+            class="shake-button"
+            onclick="shakeGoal()"
+        >
             ⚽ Shake the goal
         </button>
 
 
-        <div class="goal-message"
-             id="goalMessage">
+        <div
+            class="goal-message"
+            id="goalMessage"
+        >
         </div>
 
     </div>
@@ -1529,17 +1896,20 @@ button{
      AUDIO
 ========================= -->
 
-<audio id="music"
-       loop
-       preload="auto">
-
-    <source src="heaven.mp3"
-            type="audio/mpeg">
-
+<audio
+    id="music"
+    loop
+    preload="auto"
+>
+    <source
+        src="./heaven.mp3"
+        type="audio/mpeg"
+    >
 </audio>
 
 
 <script>
+
 
 /* =========================
    LOADING
@@ -1580,39 +1950,56 @@ function pressPin(number){
 
                 document.getElementById("giftScreen").style.display="flex";
 
-                playMusic();
+                /*
+                    JANGAN PLAY MUSIC DI SINI.
+
+                    Musik akan dimainkan ketika
+                    hadiah benar-benar diklik.
+                */
 
             }else{
 
                 document.getElementById("pinError").innerHTML=
-                "Hmm... coba lagi. 😂";
+                    "Hmm... coba lagi. 😂";
 
                 enteredPin="";
 
                 setTimeout(function(){
+
                     updatePinDots();
+
                 },300);
 
             }
 
         },250);
+
     }
+
 }
+
 
 function updatePinDots(){
 
-    const dots=document.querySelectorAll(".pin-dot");
+    const dots=
+        document.querySelectorAll(".pin-dot");
 
     dots.forEach(function(dot,index){
 
         if(index<enteredPin.length){
+
             dot.classList.add("active");
+
         }else{
+
             dot.classList.remove("active");
+
         }
 
     });
+
 }
+
 
 function clearPin(){
 
@@ -1621,13 +2008,17 @@ function clearPin(){
     document.getElementById("pinError").innerHTML="";
 
     updatePinDots();
+
 }
+
 
 function deletePin(){
 
-    enteredPin=enteredPin.slice(0,-1);
+    enteredPin=
+        enteredPin.slice(0,-1);
 
     updatePinDots();
+
 }
 
 
@@ -1637,9 +2028,21 @@ function deletePin(){
 
 function openGift(){
 
-    const entry=document.getElementById("giftEntry");
+    const entry=
+        document.getElementById("giftEntry");
 
-    entry.style.transform="scale(1.15)";
+    /*
+       Ini adalah INTERAKSI USER.
+
+       Karena musik dimulai dari klik
+       hadiah, browser jauh lebih
+       mungkin mengizinkan audio.
+    */
+
+    playMusic();
+
+    entry.style.transform=
+        "scale(1.15)";
 
     setTimeout(function(){
 
@@ -1652,6 +2055,7 @@ function openGift(){
         fallingBalls(25);
 
     },600);
+
 }
 
 
@@ -1663,13 +2067,16 @@ function fallingBalls(amount){
 
     for(let i=0;i<amount;i++){
 
-        const ball=document.createElement("div");
+        const ball=
+            document.createElement("div");
 
-        ball.className="falling-ball";
+        ball.className=
+            "falling-ball";
 
         ball.innerHTML="⚽";
 
-        ball.style.left=Math.random()*100+"vw";
+        ball.style.left=
+            Math.random()*100+"vw";
 
         ball.style.fontSize=
             (14+Math.random()*16)+"px";
@@ -1683,9 +2090,13 @@ function fallingBalls(amount){
         document.body.appendChild(ball);
 
         setTimeout(function(){
+
             ball.remove();
+
         },8000);
+
     }
+
 }
 
 
@@ -1695,18 +2106,25 @@ function fallingBalls(amount){
 
 let lastScroll=0;
 
-window.addEventListener("scroll",function(){
+window.addEventListener(
+    "scroll",
+    function(){
 
-    const current=window.scrollY;
+        const current=
+            window.scrollY;
 
-    if(Math.abs(current-lastScroll)>120){
+        if(
+            Math.abs(current-lastScroll)>120
+        ){
 
-        fallingBalls(6);
+            fallingBalls(6);
 
-        lastScroll=current;
+            lastScroll=current;
+
+        }
+
     }
-
-});
+);
 
 
 /* =========================
@@ -1734,23 +2152,28 @@ const fieldNotes=[
 "Tiap hari pasti ada waktunya buat olahraga.",
 
 "Dan tiap ada kesempatan, pasti sempat-sempatnya ngisep pod."
+
 ];
+
 
 function showFieldNote(index){
 
-    const note=document.getElementById("fieldNote");
+    const note=
+        document.getElementById("fieldNote");
 
     note.classList.remove("show");
 
     setTimeout(function(){
 
-        note.innerHTML=fieldNotes[index];
+        note.innerHTML=
+            fieldNotes[index];
 
         note.classList.add("show");
 
     },100);
 
     fallingBalls(5);
+
 }
 
 
@@ -1792,7 +2215,9 @@ const photos=[
 
 ];
 
+
 let currentPhoto=0;
+
 
 function updatePhoto(){
 
@@ -1803,33 +2228,50 @@ function updatePhoto(){
         photos[currentPhoto].caption;
 
     document.getElementById("photoNumber").innerHTML=
-        String(currentPhoto+1).padStart(2,"0")
+
+        String(currentPhoto+1)
+            .padStart(2,"0")
+
         +" / "
-        +String(photos.length).padStart(2,"0");
+
+        +
+
+        String(photos.length)
+            .padStart(2,"0");
+
 }
+
 
 function nextPhoto(){
 
     currentPhoto++;
 
     if(currentPhoto>=photos.length){
+
         currentPhoto=0;
+
     }
 
     updatePhoto();
 
     fallingBalls(4);
+
 }
+
 
 function prevPhoto(){
 
     currentPhoto--;
 
     if(currentPhoto<0){
-        currentPhoto=photos.length-1;
+
+        currentPhoto=
+            photos.length-1;
+
     }
 
     updatePhoto();
+
 }
 
 
@@ -1837,40 +2279,115 @@ function prevPhoto(){
    MUSIC
 ========================= */
 
-const music=document.getElementById("music");
+const music=
+    document.getElementById("music");
 
-const musicButton=document.getElementById("musicButton");
+const musicButton=
+    document.getElementById("musicButton");
 
-const musicDisc=document.getElementById("musicDisc");
+const musicDisc=
+    document.getElementById("musicDisc");
+
+
+/*
+   VOLUME UTAMA
+
+   0.8 = 80%
+
+   Jangan gunakan 1.0 kalau tidak perlu,
+   karena beberapa lagu bisa terdengar
+   terlalu pecah/clipping.
+*/
+
+music.volume=0.8;
+
+
+/* =========================
+   PLAY MUSIC
+========================= */
 
 function playMusic(){
 
-    music.volume=.35;
+    /*
+       Setiap kali mencoba play,
+       volume dikembalikan ke 80%.
+    */
 
-    music.play()
-    .then(function(){
+    music.volume=0.8;
 
-        musicButton.innerHTML="Ⅱ";
+    const playPromise=
+        music.play();
 
-        musicDisc.classList.add("playing");
 
-    })
-    .catch(function(){
+    if(playPromise!==undefined){
 
-        console.log("Music waiting for interaction.");
+        playPromise
 
-    });
+        .then(function(){
+
+            musicButton.innerHTML="Ⅱ";
+
+            musicDisc.classList.add("playing");
+
+        })
+
+        .catch(function(error){
+
+            console.log(
+                "Music belum bisa dimainkan:",
+                error
+            );
+
+            musicButton.innerHTML="▶";
+
+            musicDisc.classList.remove(
+                "playing"
+            );
+
+        });
+
+    }
+
 }
+
+
+/* =========================
+   TOGGLE MUSIC
+========================= */
 
 function toggleMusic(){
 
     if(music.paused){
 
-        music.play();
+        music.volume=0.8;
 
-        musicButton.innerHTML="Ⅱ";
+        const playPromise=
+            music.play();
 
-        musicDisc.classList.add("playing");
+        if(playPromise!==undefined){
+
+            playPromise
+
+            .then(function(){
+
+                musicButton.innerHTML="Ⅱ";
+
+                musicDisc.classList.add(
+                    "playing"
+                );
+
+            })
+
+            .catch(function(error){
+
+                console.log(
+                    "Music gagal diputar:",
+                    error
+                );
+
+            });
+
+        }
 
     }else{
 
@@ -1878,10 +2395,59 @@ function toggleMusic(){
 
         musicButton.innerHTML="▶";
 
-        musicDisc.classList.remove("playing");
+        musicDisc.classList.remove(
+            "playing"
+        );
 
     }
+
 }
+
+
+/* =========================
+   AUDIO EVENTS
+========================= */
+
+music.addEventListener(
+    "play",
+    function(){
+
+        musicButton.innerHTML="Ⅱ";
+
+        musicDisc.classList.add(
+            "playing"
+        );
+
+    }
+);
+
+
+music.addEventListener(
+    "pause",
+    function(){
+
+        musicButton.innerHTML="▶";
+
+        musicDisc.classList.remove(
+            "playing"
+        );
+
+    }
+);
+
+
+music.addEventListener(
+    "error",
+    function(){
+
+        console.log(
+            "ERROR: File heaven.mp3 tidak ditemukan."
+        );
+
+        musicButton.innerHTML="⚠";
+
+    }
+);
 
 
 /* =========================
@@ -1909,15 +2475,20 @@ const goalMessages=[
 "Karena dari sekian banyak orang, aku bersyukur bisa kenal dan punya cerita sama kamu.",
 
 "Dan alasan paling sederhananya: aku sayang sama kamu."
+
 ];
+
 
 let goalIndex=0;
 
+
 function shakeGoal(){
 
-    const goal=document.getElementById("miniGoal");
+    const goal=
+        document.getElementById("miniGoal");
 
-    const message=document.getElementById("goalMessage");
+    const message=
+        document.getElementById("goalMessage");
 
     goal.classList.remove("shake");
 
@@ -1928,7 +2499,9 @@ function shakeGoal(){
     goalIndex++;
 
     if(goalIndex>=goalMessages.length){
+
         goalIndex=0;
+
     }
 
     setTimeout(function(){
@@ -1941,6 +2514,7 @@ function shakeGoal(){
         fallingBalls(10);
 
     },450);
+
 }
 
 
@@ -1948,23 +2522,32 @@ function shakeGoal(){
    EXTRA SCROLL OBSERVER
 ========================= */
 
-const sections=document.querySelectorAll(".section");
+const sections=
+    document.querySelectorAll(".section");
 
-const observer=new IntersectionObserver(function(entries){
+const observer=
+    new IntersectionObserver(
 
-    entries.forEach(function(entry){
+        function(entries){
 
-        if(entry.isIntersecting){
+            entries.forEach(function(entry){
 
-            fallingBalls(3);
+                if(entry.isIntersecting){
 
+                    fallingBalls(3);
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold:.35
         }
 
-    });
+    );
 
-},{
-    threshold:.35
-});
 
 sections.forEach(function(section){
 
@@ -1972,8 +2555,8 @@ sections.forEach(function(section){
 
 });
 
+
 </script>
 
 </body>
 </html>
-```
