@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -368,6 +368,8 @@ button{
         0 0 35px rgba(23,115,59,.18);
 }
 
+/* garis tengah */
+
 .field:before{
     content:"";
     position:absolute;
@@ -378,6 +380,8 @@ button{
     background:rgba(255,255,255,.8);
     transform:translateX(-50%);
 }
+
+/* lingkaran tengah */
 
 .field:after{
     content:"";
@@ -390,6 +394,8 @@ button{
     top:50%;
     transform:translate(-50%,-50%);
 }
+
+/* area kotak */
 
 .penalty{
     position:absolute;
@@ -407,6 +413,8 @@ button{
     right:-2px;
 }
 
+/* GAWANG */
+
 .goal{
     position:absolute;
     width:30px;
@@ -422,6 +430,8 @@ button{
 .goal.right{
     right:-3px;
 }
+
+/* BOLA DI LAPANGAN */
 
 .field-ball{
     position:absolute;
@@ -876,7 +886,6 @@ button{
     }
 }
 </style>
-
 </head>
 
 <body>
@@ -887,19 +896,18 @@ button{
 
 <section class="page" id="loading">
 
-```
-<div class="loading-content">
+    <div class="loading-content">
 
-    <div class="loading-ball">⚽</div>
+        <div class="loading-ball">⚽</div>
 
-    <div class="loading-text">
-        preparing something special for you...
+        <div class="loading-text">
+            preparing something special for you...
+        </div>
+
     </div>
 
-</div>
-```
-
 </section>
+
 
 <!-- =========================
      PIN
@@ -907,54 +915,53 @@ button{
 
 <section class="page" id="pinScreen">
 
-```
-<div class="pin-content">
+    <div class="pin-content">
 
-    <div class="pin-label">
-        OFFICIALLY US
+        <div class="pin-label">
+            OFFICIALLY US
+        </div>
+
+        <div class="pin-title">
+            Enter the PIN
+        </div>
+
+        <div class="pin-subtitle">
+            You should know this one.
+        </div>
+
+        <div class="pin-display">
+            <div class="pin-dot"></div>
+            <div class="pin-dot"></div>
+            <div class="pin-dot"></div>
+            <div class="pin-dot"></div>
+        </div>
+
+        <div class="keypad">
+
+            <button class="key" onclick="pressPin('1')">1</button>
+            <button class="key" onclick="pressPin('2')">2</button>
+            <button class="key" onclick="pressPin('3')">3</button>
+
+            <button class="key" onclick="pressPin('4')">4</button>
+            <button class="key" onclick="pressPin('5')">5</button>
+            <button class="key" onclick="pressPin('6')">6</button>
+
+            <button class="key" onclick="pressPin('7')">7</button>
+            <button class="key" onclick="pressPin('8')">8</button>
+            <button class="key" onclick="pressPin('9')">9</button>
+
+            <button class="key" onclick="clearPin()">C</button>
+            <button class="key" onclick="pressPin('0')">0</button>
+            <button class="key" onclick="deletePin()">⌫</button>
+
+        </div>
+
+        <div class="pin-error" id="pinError"></div>
+
     </div>
-
-    <div class="pin-title">
-        Enter the PIN
-    </div>
-
-    <div class="pin-subtitle">
-        You should know this one.
-    </div>
-
-    <div class="pin-display">
-        <div class="pin-dot"></div>
-        <div class="pin-dot"></div>
-        <div class="pin-dot"></div>
-        <div class="pin-dot"></div>
-    </div>
-
-    <div class="keypad">
-
-        <button class="key" onclick="pressPin('1')">1</button>
-        <button class="key" onclick="pressPin('2')">2</button>
-        <button class="key" onclick="pressPin('3')">3</button>
-
-        <button class="key" onclick="pressPin('4')">4</button>
-        <button class="key" onclick="pressPin('5')">5</button>
-        <button class="key" onclick="pressPin('6')">6</button>
-
-        <button class="key" onclick="pressPin('7')">7</button>
-        <button class="key" onclick="pressPin('8')">8</button>
-        <button class="key" onclick="pressPin('9')">9</button>
-
-        <button class="key" onclick="clearPin()">C</button>
-        <button class="key" onclick="pressPin('0')">0</button>
-        <button class="key" onclick="deletePin()">⌫</button>
-
-    </div>
-
-    <div class="pin-error" id="pinError"></div>
-
-</div>
-```
 
 </section>
+
 
 <!-- =========================
      GIFT
@@ -962,21 +969,20 @@ button{
 
 <section class="page" id="giftScreen">
 
-```
-<div class="gift-entry" id="giftEntry">
+    <div class="gift-entry" id="giftEntry">
 
-    <div class="gift-emoji" onclick="openGift()">
-        🎁
+        <div class="gift-emoji" onclick="openGift()">
+            🎁
+        </div>
+
+        <div class="gift-hint">
+            tap the gift
+        </div>
+
     </div>
-
-    <div class="gift-hint">
-        tap the gift
-    </div>
-
-</div>
-```
 
 </section>
+
 
 <!-- =========================
      MAIN BIRTHDAY
@@ -986,462 +992,488 @@ button{
 
 <div class="card">
 
-```
-<div class="hero">
+    <!-- HERO -->
 
-    <div class="hero-small">
-        SEPTEMBER 4
-    </div>
+    <div class="hero">
 
-    <h1>
-        Happy Birthday<br>
-        <span>Emey.</span>
-    </h1>
-
-    <div class="hero-date">
-        THE MOST SPECIAL DAY
-    </div>
-
-</div>
-
-
-<div class="scroll-hint">
-
-    SCROLL FOR A LITTLE SOMETHING
-
-    <div class="arrow">
-        ↓
-    </div>
-
-</div>
-
-
-<div class="section">
-
-    <div class="section-label">
-        things i know about you
-    </div>
-
-    <div class="section-title">
-        A few things<br>
-        I know about you.
-    </div>
-
-    <div class="section-intro">
-        Ada 10 bola di lapangan.
-        Coba pencet satu-satu.
-    </div>
-
-
-    <div class="field-wrapper">
-
-        <div class="field">
-
-            <div class="penalty left"></div>
-            <div class="penalty right"></div>
-
-            <div class="goal left"></div>
-            <div class="goal right"></div>
-
-
-            <div class="field-ball ball1"
-                 onclick="showFieldNote(0)">
-                ⚽
-            </div>
-
-            <div class="field-ball ball2"
-                 onclick="showFieldNote(1)">
-                ⚽
-            </div>
-
-            <div class="field-ball ball3"
-                 onclick="showFieldNote(2)">
-                ⚽
-            </div>
-
-            <div class="field-ball ball4"
-                 onclick="showFieldNote(3)">
-                ⚽
-            </div>
-
-            <div class="field-ball ball5"
-                 onclick="showFieldNote(4)">
-                ⚽
-            </div>
-
-            <div class="field-ball ball6"
-                 onclick="showFieldNote(5)">
-                ⚽
-            </div>
-
-            <div class="field-ball ball7"
-                 onclick="showFieldNote(6)">
-                ⚽
-            </div>
-
-            <div class="field-ball ball8"
-                 onclick="showFieldNote(7)">
-                ⚽
-            </div>
-
-            <div class="field-ball ball9"
-                 onclick="showFieldNote(8)">
-                ⚽
-            </div>
-
-            <div class="field-ball ball10"
-                 onclick="showFieldNote(9)">
-                ⚽
-            </div>
-
+        <div class="hero-small">
+            SEPTEMBER 4
         </div>
 
+        <h1>
+            Happy Birthday<br>
+            <span>Emey.</span>
+        </h1>
 
-        <div class="field-note" id="fieldNote">
-            Pick a ball.
+        <div class="hero-date">
+            THE MOST SPECIAL DAY
         </div>
 
     </div>
 
-</div>
 
+    <div class="scroll-hint">
 
-<div class="section">
+        SCROLL FOR A LITTLE SOMETHING
 
-    <div class="section-label">
-        from me
-    </div>
-
-    <div class="section-title">
-        A letter for you.
-    </div>
-
-
-    <div class="letter-card">
-
-        <p>
-            Happy birthday, Muhammad Emery Prasetyo ❤️ .
-        </p>
-
-        <p>
-            Semoga di umur 22 ini kamu selalu sehat,
-            Dimudahkan dalam segala urusan,
-            Dan semua yang lagi kamu usahakan bisa pelan-pelan tercapai.
-        </p>
-
-        <p>
-            Semoga tahun ini lebih banyak hal baik yang datang ke kamu,
-            Lebih banyak hal yang bisa bikin kamu bangga sama diri sendiri,
-            Dan pastinya lebih banyak alasan buat ketawa.
-        </p>
-
-        <p>
-            Aku juga berharap kamu tetap jadi Emey yang aku kenal sekarang.
-            Yang suka tiba-tiba ceramah,
-            Yang kalau ngobrol sama aku selalu ada istigfar sama takbirnya,
-            Yang selalu sempatin waktu buat call,
-            Dan yang tetap mau ngeladenin semua omongan random aku.
-        </p>
-
-        <p>
-            Diumur 22 tahun ini,
-            Aku cuma berharap
-            Semoga sayangnya aku ini dipermudah untuk dapat kerjaan
-            Makin sukses,
-            Diberikan lingkungan yang sehat dimanapun kamu berada,
-            Makin kuat dan selalu sehat biar bisa nemenin aku terus
-            Dan otot ototmu tambah kekar. aw
-        </p>
-
-        <p>
-            Pokonya,
-            Selamat ulang tahun ya sayang.
-            Semoga semua doa baik yang kamu punya satu-satu bisa terwujud.
-            Aamiin.
-        </p>
-
-        <p>
-            Semoga tahun ini jadi tahun yang baik buat kamu.
-            Dan kalau boleh, semoga aku masih
-            jadi salah satu bagian kecil yang
-            bikin tahun kamu lebih menyenangkan.
-        </p>
-
-        <p class="signature">
-            — from me,<br>
-            Avril Auriza cakep mantep cute gada tanding. ❤️
-        </p>
+        <div class="arrow">
+            ↓
+        </div>
 
     </div>
 
-</div>
+
+    <!-- =========================
+         THINGS I KNOW ABOUT YOU
+    ========================= -->
+
+    <div class="section">
+
+        <div class="section-label">
+            things i know about you
+        </div>
+
+        <div class="section-title">
+            A few things<br>
+            I know about you.
+        </div>
+
+        <div class="section-intro">
+            Ada 10 bola di lapangan.
+            Coba pencet satu-satu.
+        </div>
 
 
-<div class="section">
+        <div class="field-wrapper">
 
-    <div class="section-label">
-        our little archive
-    </div>
+            <div class="field">
 
-    <div class="section-title">
-        Our photo<br>
-        memories.
-    </div>
+                <div class="penalty left"></div>
+                <div class="penalty right"></div>
 
-    <div class="section-intro">
-        Foto-foto yang nanti bakal jadi
-        bagian dari album kecil kita.
-    </div>
+                <div class="goal left"></div>
+                <div class="goal right"></div>
 
 
-    <div class="album">
+                <div class="field-ball ball1"
+                     onclick="showFieldNote(0)">
+                    ⚽
+                </div>
 
-        <div class="photo-frame"
-             onclick="nextPhoto()">
+                <div class="field-ball ball2"
+                     onclick="showFieldNote(1)">
+                    ⚽
+                </div>
 
-            <img id="albumPhoto"
-                 src="assets/foto1.jpg"
-                 alt="Our memory">
+                <div class="field-ball ball3"
+                     onclick="showFieldNote(2)">
+                    ⚽
+                </div>
 
-            <div class="photo-caption"
-                 id="photoCaption">
-                our beginning
+                <div class="field-ball ball4"
+                     onclick="showFieldNote(3)">
+                    ⚽
+                </div>
+
+                <div class="field-ball ball5"
+                     onclick="showFieldNote(4)">
+                    ⚽
+                </div>
+
+                <div class="field-ball ball6"
+                     onclick="showFieldNote(5)">
+                    ⚽
+                </div>
+
+                <div class="field-ball ball7"
+                     onclick="showFieldNote(6)">
+                    ⚽
+                </div>
+
+                <div class="field-ball ball8"
+                     onclick="showFieldNote(7)">
+                    ⚽
+                </div>
+
+                <div class="field-ball ball9"
+                     onclick="showFieldNote(8)">
+                    ⚽
+                </div>
+
+                <div class="field-ball ball10"
+                     onclick="showFieldNote(9)">
+                    ⚽
+                </div>
+
+            </div>
+
+
+            <div class="field-note" id="fieldNote">
+                Pick a ball.
             </div>
 
         </div>
 
+    </div>
 
-        <div class="album-controls">
 
-            <button class="album-button"
-                    onclick="prevPhoto()">
-                ←
+    <!-- =========================
+         LETTER
+    ========================= -->
+
+    <div class="section">
+
+        <div class="section-label">
+            from me
+        </div>
+
+        <div class="section-title">
+            A letter for you.
+        </div>
+
+
+        <div class="letter-card">
+
+            <p>
+                Happy birthday, Muhammad Emery Prasetyo ❤️ .
+            </p>
+
+            <p>
+                Semoga di umur 22 ini kamu selalu sehat,
+                Dimudahkan dalam segala urusan,
+                Dan semua yang lagi kamu usahakan bisa pelan-pelan tercapai.
+            </p>
+
+            <p>
+                Semoga tahun ini lebih banyak hal baik yang datang ke kamu,
+                Lebih banyak hal yang bisa bikin kamu bangga sama diri sendiri,
+                Dan pastinya lebih banyak alasan buat ketawa.
+            </p>
+
+            <p>
+                Aku juga berharap kamu tetap jadi Emey yang aku kenal sekarang.
+                Yang suka tiba-tiba ceramah,
+                Yang kalau ngobrol sama aku selalu ada istigfar sama takbirnya,
+                Yang selalu sempatin waktu buat call,
+                Dan yang tetap mau ngeladenin semua omongan random aku.
+            </p>
+
+            <p>
+                Diumur 22 tahun ini,
+                Aku cuma berharap
+                Semoga sayangnya aku ini dipermudah untuk dapat kerjaan
+                Makin sukses,
+                Diberikan lingkungan yang sehat dimanapun kamu berada,
+                Makin kuat dan selalu sehat biar bisa nemenin aku terus
+                Dan otot ototmu tambah kekar. aw
+            </p>
+
+            <p>
+                Pokonya,
+                Selamat ulang tahun ya sayang.
+                Semoga semua doa baik yang kamu punya satu-satu bisa terwujud.
+                Aamiin.
+            </p>
+
+            <p>
+                Semoga tahun ini jadi tahun yang baik buat kamu.
+                Dan kalau boleh, semoga aku masih
+                jadi salah satu bagian kecil yang
+                bikin tahun kamu lebih menyenangkan.
+            </p>
+
+            <p class="signature">
+                — from me,<br>
+                Avril Auriza cakep mantep cute gada tanding. ❤️
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         PHOTO MEMORIES
+    ========================= -->
+
+    <div class="section">
+
+        <div class="section-label">
+            our little archive
+        </div>
+
+        <div class="section-title">
+            Our photo<br>
+            memories.
+        </div>
+
+        <div class="section-intro">
+            Foto-foto yang nanti bakal jadi
+            bagian dari album kecil kita.
+        </div>
+
+
+        <div class="album">
+
+            <div class="photo-frame"
+                 onclick="nextPhoto()">
+
+                <img id="albumPhoto"
+                     src="assets/foto1.jpg"
+                     alt="Our memory">
+
+                <div class="photo-caption"
+                     id="photoCaption">
+                    our beginning
+                </div>
+
+            </div>
+
+
+            <div class="album-controls">
+
+                <button class="album-button"
+                        onclick="prevPhoto()">
+                    ←
+                </button>
+
+                <div class="photo-number"
+                     id="photoNumber">
+                    01 / 06
+                </div>
+
+                <button class="album-button"
+                        onclick="nextPhoto()">
+                    →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         TIMELINE
+    ========================= -->
+
+    <div class="section">
+
+        <div class="section-label">
+            our story
+        </div>
+
+        <div class="section-title">
+            Our Story So Far.
+        </div>
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-date">
+                    FEBRUARY 2026
+                </div>
+
+                <div class="timeline-title">
+                    Stasiun Pocin.
+                </div>
+
+                <div class="timeline-text">
+                    Waktu itu kita pertama kali ketemu di Stasiun Pocin pas aku pulang kuliah.
+                    Awalnya aku masih canggung banget ngobrol sama kamu,
+                    tapi kamu terus nyari topik sampai akhirnya aku jadi banyak ngomong.
+                    Saking asiknya ngobrol,
+                    kita nggak sadar ternyata lagi dipaparaziin sama temen aku.
+                    Gara-gara foto itu, besoknya aku malah dicengin satu kelas pas selesai presentasi.
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-date">
+                    27 MARCH 2026
+                </div>
+
+                <div class="timeline-title">
+                    Officially us.
+                </div>
+
+                <div class="timeline-text">
+                    Hari di mana kamu tiba-tiba nembak aku...
+                    di atas motor?!
+                    Jujur aku sama sekali nggak nyangka bakal ditembak langsung.
+                    Masih suka ketawa kalau inget momen itu.
+                    Aku jadi punya orang yang selalu bisa aku ceritain apa aja,
+                    dari hal penting sampai hal yang nggak penting sama sekali.
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-date">
+                    AFTER THAT
+                </div>
+
+                <div class="timeline-title">
+                    The random conversations.
+                </div>
+
+                <div class="timeline-text">
+                    Salah satu hal yang paling aku suka dari kamu adalah 
+                    kamu selalu ngeladenin semua celotehan aku.
+                    Mau pertanyaannya random, aneh, atau nggak masuk akal, kamu tetap dijawab
+                    Tiap lagi di jalan juga pasti ada aja yang kita bahas.
+                    Kadang cuma gara-gara lihat sesuatu lewat, ujung-ujungnya malah jadi obrolan panjang.
+                    Hal-hal receh kayak gitu justru yang bikin setiap ketemu sama kamu nggak pernah ngebosenin.
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-date">
+                    SOMEWHERE ALONG THE WAY
+                </div>
+
+                <div class="timeline-title">
+                    Little things.
+                </div>
+
+                <div class="timeline-text">
+                    Aku selalu bilang, "Kan deket doang."
+                    Tapi kamu tetap nggak mau jalan 
+                    Kalau aku belum pakai jaket atau jas hujan.
+                    Dulu aku ngerasa itu ribet dan ngeselin, 
+                    Tapi sekarang aku tahu itu cara kamu nunjukin rasa peduli. ❤️
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         MUSIC
+    ========================= -->
+
+    <div class="section">
+
+        <div class="section-label">
+            soundtrack
+        </div>
+
+        <div class="section-title">
+            One song for<br>
+            this little story.
+        </div>
+
+
+        <div class="music-player">
+
+            <div class="music-disc"
+                 id="musicDisc">
+            </div>
+
+            <div class="music-info">
+
+                <div class="music-title">
+                    Shape of My Heart
+                </div>
+
+                <div class="music-artist">
+                    Backstreet Boys
+                </div>
+
+            </div>
+
+            <button class="music-toggle"
+                    id="musicButton"
+                    onclick="toggleMusic()">
+                ▶
             </button>
 
-            <div class="photo-number"
-                 id="photoNumber">
-                01 / 06
-            </div>
-
-            <button class="album-button"
-                    onclick="nextPhoto()">
-                →
-            </button>
-
         </div>
 
     </div>
 
-</div>
+
+    <!-- =========================
+         MINI GOAL
+    ========================= -->
+
+    <div class="section goal-section">
+
+        <div class="section-label">
+            one more thing
+        </div>
+
+        <div class="section-title">
+            Reasons I'm<br>
+            grateful to know you.
+        </div>
+
+        <div class="section-intro">
+            Shake the goal and pick a ball.
+        </div>
 
 
-<div class="section">
+        <div class="goal-area">
 
-    <div class="section-label">
-        our story
-    </div>
+            <div class="mini-goal"
+                 id="miniGoal">
 
-    <div class="section-title">
-        Our Story So Far.
-    </div>
+                <div class="goal-ball">⚽</div>
+                <div class="goal-ball">⚽</div>
+                <div class="goal-ball">⚽</div>
+                <div class="goal-ball">⚽</div>
+                <div class="goal-ball">⚽</div>
+                <div class="goal-ball">⚽</div>
+                <div class="goal-ball">⚽</div>
+                <div class="goal-ball">⚽</div>
+                <div class="goal-ball">⚽</div>
 
-
-    <div class="timeline">
-
-
-        <div class="timeline-item">
-
-            <div class="timeline-dot"></div>
-
-            <div class="timeline-date">
-                FEBRUARY 2026
-            </div>
-
-            <div class="timeline-title">
-                Stasiun Pocin.
-            </div>
-
-            <div class="timeline-text">
-                Waktu itu kita pertama kali ketemu di Stasiun Pocin pas aku pulang kuliah.
-                Awalnya aku masih canggung banget ngobrol sama kamu,
-                tapi kamu terus nyari topik sampai akhirnya aku jadi banyak ngomong.
-                Saking asiknya ngobrol,
-                kita nggak sadar ternyata lagi dipaparaziin sama temen aku.
-                Gara-gara foto itu, besoknya aku malah dicengin satu kelas pas selesai presentasi.
             </div>
 
         </div>
 
 
-        <div class="timeline-item">
-
-            <div class="timeline-dot"></div>
-
-            <div class="timeline-date">
-                27 MARCH 2026
-            </div>
-
-            <div class="timeline-title">
-                Officially us.
-            </div>
-
-            <div class="timeline-text">
-                Hari di mana kamu tiba-tiba nembak aku...
-                di atas motor?!
-                Jujur aku sama sekali nggak nyangka bakal ditembak langsung.
-                Masih suka ketawa kalau inget momen itu.
-                Aku jadi punya orang yang selalu bisa aku ceritain apa aja,
-                dari hal penting sampai hal yang nggak penting sama sekali.
-            </div>
-
-        </div>
-
-
-        <div class="timeline-item">
-
-            <div class="timeline-dot"></div>
-
-            <div class="timeline-date">
-                AFTER THAT
-            </div>
-
-            <div class="timeline-title">
-                The random conversations.
-            </div>
-
-            <div class="timeline-text">
-                Salah satu hal yang paling aku suka dari kamu adalah 
-                kamu selalu ngeladenin semua celotehan aku.
-                Mau pertanyaannya random, aneh, atau nggak masuk akal, kamu tetap dijawab
-                Tiap lagi di jalan juga pasti ada aja yang kita bahas.
-                Kadang cuma gara-gara lihat sesuatu lewat, ujung-ujungnya malah jadi obrolan panjang.
-                Hal-hal receh kayak gitu justru yang bikin setiap ketemu sama kamu nggak pernah ngebosenin.
-            </div>
-
-        </div>
-
-
-        <div class="timeline-item">
-
-            <div class="timeline-dot"></div>
-
-            <div class="timeline-date">
-                SOMEWHERE ALONG THE WAY
-            </div>
-
-            <div class="timeline-title">
-                Little things.
-            </div>
-
-            <div class="timeline-text">
-                Aku selalu bilang, "Kan deket doang."
-                Tapi kamu tetap nggak mau jalan 
-                Kalau aku belum pakai jaket atau jas hujan.
-                Dulu aku ngerasa itu ribet dan ngeselin, 
-                Tapi sekarang aku tahu itu cara kamu nunjukin rasa peduli. ❤️
-            </div>
-
-        </div>
-
-
-    </div>
-
-</div>
-
-
-<div class="section">
-
-    <div class="section-label">
-        soundtrack
-    </div>
-
-    <div class="section-title">
-        One song for<br>
-        this little story.
-    </div>
-
-
-    <div class="music-player">
-
-        <div class="music-disc"
-             id="musicDisc">
-        </div>
-
-        <div class="music-info">
-
-            <div class="music-title">
-                Shape of My Heart
-            </div>
-
-            <div class="music-artist">
-                Backstreet Boys
-            </div>
-
-        </div>
-
-        <button class="music-toggle"
-                id="musicButton"
-                onclick="toggleMusic()">
-            ▶
+        <button class="shake-button"
+                onclick="shakeGoal()">
+            ⚽ Shake the goal
         </button>
 
-    </div>
 
-</div>
-
-
-<div class="section goal-section">
-
-    <div class="section-label">
-        one more thing
-    </div>
-
-    <div class="section-title">
-        Reasons I'm<br>
-        grateful to know you.
-    </div>
-
-    <div class="section-intro">
-        Shake the goal and pick a ball.
-    </div>
-
-
-    <div class="goal-area">
-
-        <div class="mini-goal"
-             id="miniGoal">
-
-            <div class="goal-ball">⚽</div>
-            <div class="goal-ball">⚽</div>
-            <div class="goal-ball">⚽</div>
-            <div class="goal-ball">⚽</div>
-            <div class="goal-ball">⚽</div>
-            <div class="goal-ball">⚽</div>
-            <div class="goal-ball">⚽</div>
-            <div class="goal-ball">⚽</div>
-            <div class="goal-ball">⚽</div>
-
+        <div class="goal-message"
+             id="goalMessage">
         </div>
 
     </div>
 
-
-    <button class="shake-button"
-            onclick="shakeGoal()">
-        ⚽ Shake the goal
-    </button>
-
-
-    <div class="goal-message"
-         id="goalMessage">
-    </div>
-
-</div>
-```
 
 </div>
 
 </section>
+
 
 <!-- =========================
      FINAL
@@ -1449,59 +1481,64 @@ button{
 
 <section class="final">
 
-```
-<div class="card final-content">
+    <div class="card final-content">
 
-    <div class="final-ball">
-        ⚽
+        <div class="final-ball">
+            ⚽
+        </div>
+
+        <div class="section-label">
+            one last thing
+        </div>
+
+        <h2>
+            Happy Birthday,<br>
+            <span>Emey.</span>
+        </h2>
+
+        <p>
+            Semoga umur 22 ini membawa
+            banyak hal baik, rezeki,
+            kesehatan, dan cerita baru.
+        </p>
+
+        <p>
+            Tetap jadi kamu.
+            Yang manly,
+            ganteng,
+            dan soon bakal punya
+            otot banget. 😂
+        </p>
+
+        <p>
+            Jangan lupa ngopi.<br>
+            Jangan lupa pakai jaket.<br>
+            Jangan lupa aku.
+        </p>
+
+        <div class="final-date">
+            04 · 09 · 2026
+        </div>
+
     </div>
-
-    <div class="section-label">
-        one last thing
-    </div>
-
-    <h2>
-        Happy Birthday,<br>
-        <span>Emey.</span>
-    </h2>
-
-    <p>
-        Semoga umur 22 ini membawa
-        banyak hal baik, rezeki,
-        kesehatan, dan cerita baru.
-    </p>
-
-    <p>
-        Tetap jadi kamu.
-        Yang manly,
-        ganteng,
-        dan soon bakal punya
-        otot banget. 😂
-    </p>
-
-    <p>
-        Jangan lupa ngopi.<br>
-        Jangan lupa pakai jaket.<br>
-        Jangan lupa aku.
-    </p>
-
-    <div class="final-date">
-        04 · 09 · 2026
-    </div>
-
-</div>
-```
 
 </section>
+
 
 <!-- =========================
      AUDIO
 ========================= -->
 
-<audio id="music" loop preload="auto">
-    <source src="./heaven.mp3" type="audio/mpeg">
+<audio id="music"
+       loop
+       preload="auto">
+
+    <source src="heaven.mp3"
+            type="audio/mpeg">
+
 </audio>
-    
+
+
 <script>
 
 /* =========================
@@ -1539,13 +1576,11 @@ function pressPin(number){
 
             if(enteredPin==="2703"){
 
-                /* PLAY MUSIC FIRST */
-                playMusic();
-
-                /* THEN MOVE TO GIFT */
                 document.getElementById("pinScreen").style.display="none";
 
                 document.getElementById("giftScreen").style.display="flex";
+
+                playMusic();
 
             }else{
 
@@ -1602,30 +1637,15 @@ function deletePin(){
 
 function openGift(){
 
-    const entry = document.getElementById("giftEntry");
+    const entry=document.getElementById("giftEntry");
 
-    entry.style.transform = "scale(1.15)";
-
-    const music = document.getElementById("music");
-
-    music.volume = 0.5;
-
-    music.play().then(function(){
-
-        document.getElementById("musicButton").innerHTML = "Ⅱ";
-        document.getElementById("musicDisc").classList.add("playing");
-
-    }).catch(function(error){
-
-        console.log("Audio error:", error);
-
-    });
+    entry.style.transform="scale(1.15)";
 
     setTimeout(function(){
 
-        document.getElementById("giftScreen").style.display = "none";
+        document.getElementById("giftScreen").style.display="none";
 
-        document.getElementById("birthday").style.display = "block";
+        document.getElementById("birthday").style.display="block";
 
         window.scrollTo(0,0);
 
@@ -1714,7 +1734,6 @@ const fieldNotes=[
 "Tiap hari pasti ada waktunya buat olahraga.",
 
 "Dan tiap ada kesempatan, pasti sempat-sempatnya ngisep pod."
-
 ];
 
 function showFieldNote(index){
@@ -1824,10 +1843,9 @@ const musicButton=document.getElementById("musicButton");
 
 const musicDisc=document.getElementById("musicDisc");
 
-
 function playMusic(){
 
-    music.volume=0.35;
+    music.volume=.35;
 
     music.play()
     .then(function(){
@@ -1836,66 +1854,23 @@ function playMusic(){
 
         musicDisc.classList.add("playing");
 
-        console.log("Music berhasil diputar.");
-
     })
-    .catch(function(error){
+    .catch(function(){
 
-        console.log("Music gagal autoplay:",error);
-
-        musicButton.innerHTML="▶";
-
-        musicDisc.classList.remove("playing");
+        console.log("Music waiting for interaction.");
 
     });
-}
-
-
-function playMusic(){
-
-    music.volume=0.35;
-
-    const playPromise=music.play();
-
-    if(playPromise!==undefined){
-
-        playPromise.then(function(){
-
-            musicButton.innerHTML="Ⅱ";
-
-            musicDisc.classList.add("playing");
-
-        }).catch(function(error){
-
-            console.log("Music could not start:",error);
-
-        });
-
-    }
-
 }
 
 function toggleMusic(){
 
     if(music.paused){
 
-        const playPromise=music.play();
+        music.play();
 
-        if(playPromise!==undefined){
+        musicButton.innerHTML="Ⅱ";
 
-            playPromise.then(function(){
-
-                musicButton.innerHTML="Ⅱ";
-
-                musicDisc.classList.add("playing");
-
-            }).catch(function(error){
-
-                console.log("Music could not start:",error);
-
-            });
-
-        }
+        musicDisc.classList.add("playing");
 
     }else{
 
@@ -1906,9 +1881,6 @@ function toggleMusic(){
         musicDisc.classList.remove("playing");
 
     }
-
-    }
-
 }
 
 
@@ -1937,7 +1909,6 @@ const goalMessages=[
 "Karena dari sekian banyak orang, aku bersyukur bisa kenal dan punya cerita sama kamu.",
 
 "Dan alasan paling sederhananya: aku sayang sama kamu."
-
 ];
 
 let goalIndex=0;
@@ -2005,3 +1976,4 @@ sections.forEach(function(section){
 
 </body>
 </html>
+```
