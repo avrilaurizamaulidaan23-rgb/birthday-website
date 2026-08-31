@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>4 September — For You ❤️</title>
+<title>For Emey ❤️</title>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap');
+
 *{
     margin:0;
     padding:0;
@@ -19,1485 +20,1945 @@ html{
 }
 
 body{
-    background:#0b0b0b;
-    color:#f4f1ee;
-    font-family:Georgia,"Times New Roman",serif;
+    background:#090909;
+    color:#fff;
+    font-family:'DM Sans',sans-serif;
     overflow-x:hidden;
 }
 
-section{
+button{
+    font-family:inherit;
+}
+
+.page{
+    width:100%;
     min-height:100vh;
-    padding:80px 20px;
+    position:relative;
+    overflow:hidden;
+}
+
+.card{
+    width:100%;
+    max-width:480px;
+    min-height:100vh;
+    margin:auto;
+    position:relative;
+    padding:35px 24px 70px;
+}
+
+
+/* =========================================
+   COLORS
+========================================= */
+
+:root{
+    --black:#090909;
+    --black2:#111111;
+    --red:#a71930;
+    --red2:#c72843;
+    --soft-red:#ef7184;
+    --white:#f8f5f2;
+    --gray:#a9a5a5;
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+#loading{
     display:flex;
     align-items:center;
     justify-content:center;
+    background:
+        radial-gradient(circle at center,#46101c 0%,#17090c 32%,#090909 70%);
 }
 
-.container{
-    width:100%;
-    max-width:850px;
-    margin:auto;
+.loading-content{
     text-align:center;
 }
 
-.label{
-    font-family:Arial,sans-serif;
-    font-size:10px;
-    letter-spacing:4px;
-    text-transform:uppercase;
-    color:#8e8e8e;
-    margin-bottom:22px;
-}
-
-h1{
-    font-size:clamp(55px,14vw,105px);
-    font-weight:400;
-    line-height:.95;
-}
-
-h2{
-    font-size:clamp(34px,8vw,62px);
-    font-weight:400;
-    line-height:1.1;
-}
-
-h3{
-    font-weight:400;
-}
-
-p{
-    font-family:Arial,sans-serif;
-    color:#c5c5c5;
-    line-height:1.8;
-}
-
-button{
-    font-family:Arial,sans-serif;
-}
-
-
-/* =========================
-   OPENING
-========================= */
-
-#opening{
-    background:
-    radial-gradient(circle at center,rgba(139,30,45,.22),transparent 50%),
-    #0b0b0b;
-}
-
-.opening-sub{
-    margin:25px auto 45px;
-    font-style:italic;
-    color:#aaa;
-}
-
-.open-button{
-    border:1px solid #8b1e2d;
-    background:transparent;
-    color:white;
-    padding:16px 34px;
-    border-radius:50px;
-    cursor:pointer;
-    transition:.4s;
-}
-
-.open-button:hover{
-    background:#8b1e2d;
-    transform:translateY(-3px);
-}
-
-
-/* =========================
-   MUSIC
-========================= */
-
-.music{
-    position:fixed;
-    top:18px;
-    right:18px;
-    width:44px;
-    height:44px;
+.loading-ball{
+    width:58px;
+    height:58px;
     border-radius:50%;
-    background:#111;
-    border:1px solid #444;
-    color:white;
-    z-index:999;
-    display:none;
-    cursor:pointer;
+    margin:0 auto 28px;
+
+    background:
+        radial-gradient(circle at 35% 30%,#fff 0 5%,transparent 6%),
+        radial-gradient(circle at 65% 65%,#680d1e 0 25%,transparent 26%),
+        #b51e38;
+
+    box-shadow:
+        0 0 35px rgba(199,40,67,.45);
+
+    animation:bounce 1s infinite ease-in-out;
 }
 
-
-/* =========================
-   BIRTHDAY
-========================= */
-
-#birthday{
-    background:#111;
+@keyframes bounce{
+    0%,100%{
+        transform:translateY(0) scale(1);
+    }
+    50%{
+        transform:translateY(-18px) scale(.95);
+    }
 }
 
-.age{
-    font-family:Arial,sans-serif;
-    font-size:11px;
-    letter-spacing:4px;
-    color:#8b1e2d;
-    margin-top:18px;
-}
-
-.main-photo{
-    width:min(82vw,400px);
-    height:min(105vw,500px);
-    object-fit:cover;
-    margin:40px auto;
-    display:block;
-    border-radius:3px;
-    box-shadow:0 25px 70px rgba(0,0,0,.6);
-}
-
-.intro{
-    max-width:560px;
-    margin:auto;
-}
-
-.intro p{
-    margin-top:18px;
-}
-
-
-/* =========================
-   THINGS I KNOW
-========================= */
-
-#things{
-    background:#0b0b0b;
-}
-
-.intro-line{
-    max-width:550px;
-    margin:20px auto 45px;
-}
-
-.thing-list{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:16px;
-}
-
-.thing{
-    background:#151515;
-    border:1px solid #242424;
-    padding:30px 22px;
-    text-align:left;
-    transition:.35s;
-}
-
-.thing:hover{
-    border-color:#8b1e2d;
-    transform:translateY(-4px);
-}
-
-.thing-number{
-    font-family:Arial,sans-serif;
-    font-size:10px;
-    color:#777;
+.loading-text{
+    font-size:12px;
     letter-spacing:2px;
-    margin-bottom:14px;
+    color:#d5d0d0;
 }
 
-.thing p{
-    font-family:Georgia,serif;
-    color:#ddd;
-}
-
-
-/* =========================
-   STORY
-========================= */
-
-#story{
-    background:#111;
-}
-
-.story{
-    max-width:620px;
-    margin:40px auto;
+.loading-dots{
+    display:inline-block;
+    width:22px;
     text-align:left;
-    border-left:1px solid #8b1e2d;
-    padding:5px 0 5px 28px;
-}
-
-.story p{
-    font-family:Georgia,serif;
-    font-size:17px;
-    margin-bottom:22px;
-}
-
-.date{
-    font-size:38px;
-    margin-top:35px;
-}
-
-.date-small{
-    font-family:Arial,sans-serif;
-    letter-spacing:3px;
-    font-size:10px;
-    color:#8b1e2d;
-    margin-top:10px;
 }
 
 
-/* =========================
-   MEMORIES
-========================= */
+/* =========================================
+   PIN SCREEN
+========================================= */
 
-#memories{
-    background:#0b0b0b;
+#pinScreen{
+    display:none;
+    align-items:center;
+    justify-content:center;
+    background:
+        radial-gradient(circle at center,#351019,#090909 68%);
 }
 
-.memory-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:24px;
-    margin-top:45px;
-}
-
-.memory{
-    background:#151515;
-    padding:10px;
-}
-
-.memory:nth-child(even){
-    transform:translateY(25px);
-}
-
-.memory img{
+.pin-content{
     width:100%;
-    aspect-ratio:1;
-    object-fit:cover;
+    max-width:330px;
+    text-align:center;
 }
 
-.memory p{
-    padding:14px 5px 8px;
-    font-family:Georgia,serif;
-    font-style:italic;
+.pin-label{
+    font-size:10px;
+    letter-spacing:4px;
+    color:#9d9696;
+    margin-bottom:15px;
+}
+
+.pin-title{
+    font-family:'Playfair Display',serif;
+    font-size:35px;
+    font-weight:400;
+    margin-bottom:10px;
+}
+
+.pin-subtitle{
+    color:#999;
     font-size:13px;
+    margin-bottom:35px;
 }
 
-
-/* =========================
-   GAME
-========================= */
-
-#game{
-    background:#111;
+.pin-display{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-bottom:30px;
 }
 
-.game-box{
-    max-width:600px;
-    margin:40px auto 0;
-    background:#171717;
-    padding:35px 25px;
-    border:1px solid #292929;
+.pin-dot{
+    width:11px;
+    height:11px;
+    border:1px solid #777;
+    border-radius:50%;
+    transition:.2s;
 }
 
-.question{
-    font-size:22px;
-    line-height:1.5;
-    margin-bottom:25px;
+.pin-dot.active{
+    background:var(--red2);
+    border-color:var(--red2);
+    box-shadow:0 0 12px rgba(199,40,67,.5);
 }
 
-.options{
+.keypad{
     display:grid;
+    grid-template-columns:repeat(3,1fr);
     gap:12px;
 }
 
-.option{
-    padding:15px;
-    border:1px solid #333;
-    background:#222;
+.key{
+    height:58px;
+    border-radius:18px;
+    border:1px solid #292929;
+    background:#141414;
     color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.key:hover{
+    background:#211014;
+    border-color:#8f1a30;
+}
+
+.key:active{
+    transform:scale(.94);
+}
+
+.pin-error{
+    height:20px;
+    margin-top:18px;
+    color:#e56578;
+    font-size:12px;
+}
+
+
+/* =========================================
+   GIFT ENTRY
+========================================= */
+
+#giftScreen{
+    display:none;
+    align-items:center;
+    justify-content:center;
+    background:#0c0c0c;
+}
+
+.gift-entry{
+    text-align:center;
+}
+
+.gift-emoji{
+    font-size:90px;
+    display:block;
+    cursor:pointer;
+    animation:giftFloat 2s infinite ease-in-out;
+    filter:drop-shadow(0 15px 30px rgba(167,25,48,.3));
+}
+
+@keyframes giftFloat{
+    0%,100%{
+        transform:translateY(0) rotate(-2deg);
+    }
+    50%{
+        transform:translateY(-10px) rotate(2deg);
+    }
+}
+
+.gift-hint{
+    margin-top:25px;
+    color:#8e8989;
+    font-size:12px;
+    letter-spacing:1px;
+}
+
+.gift-entry.shake .gift-emoji{
+    animation:giftShake .5s;
+}
+
+@keyframes giftShake{
+    0%,100%{transform:rotate(0);}
+    20%{transform:rotate(-12deg);}
+    40%{transform:rotate(12deg);}
+    60%{transform:rotate(-8deg);}
+    80%{transform:rotate(8deg);}
+}
+
+
+/* =========================================
+   BIRTHDAY HERO
+========================================= */
+
+#birthday{
+    display:none;
+    background:
+        linear-gradient(#090909,#10090b);
+}
+
+.hero{
+    text-align:center;
+    padding-top:90px;
+}
+
+.hero-small{
+    color:#aaa;
+    font-size:11px;
+    letter-spacing:3px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-family:'Playfair Display',serif;
+    font-weight:400;
+    font-size:clamp(42px,12vw,62px);
+    line-height:1.05;
+}
+
+.hero h1 span{
+    color:#d3314c;
+}
+
+.hero-date{
+    margin-top:20px;
+    font-size:12px;
+    letter-spacing:4px;
+    color:#aaa;
+}
+
+.scroll-hint{
+    margin-top:80px;
+    text-align:center;
+    color:#888;
+    font-size:11px;
+    letter-spacing:2px;
+}
+
+.arrow{
+    margin-top:12px;
+    font-size:22px;
+    animation:arrowDown 1.4s infinite;
+}
+
+@keyframes arrowDown{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(8px);}
+}
+
+
+/* =========================================
+   FALLING BALLS
+========================================= */
+
+.ball{
+    position:fixed;
+    width:13px;
+    height:13px;
+    border-radius:50%;
+    top:-30px;
+    pointer-events:none;
+    z-index:20;
+    background:#b51e38;
+    box-shadow:0 3px 10px rgba(0,0,0,.4);
+    animation:fall linear forwards;
+}
+
+.ball:nth-child(even){
+    background:#e04860;
+}
+
+@keyframes fall{
+    0%{
+        transform:translateY(0) rotate(0);
+        opacity:0;
+    }
+    10%{
+        opacity:1;
+    }
+    100%{
+        transform:translateY(110vh) rotate(540deg);
+        opacity:.15;
+    }
+}
+
+
+/* =========================================
+   SECTION
+========================================= */
+
+.section{
+    padding-top:100px;
+    padding-bottom:100px;
+}
+
+.section-label{
+    font-size:9px;
+    letter-spacing:4px;
+    color:#8d8787;
+    text-transform:uppercase;
+    margin-bottom:15px;
+}
+
+.section-title{
+    font-family:'Playfair Display',serif;
+    font-size:38px;
+    font-weight:400;
+    line-height:1.15;
+}
+
+.section-intro{
+    color:#aaa;
+    font-size:13px;
+    line-height:1.8;
+    margin-top:15px;
+}
+
+
+/* =========================================
+   BALL BUCKET
+========================================= */
+
+.bucket-area{
+    margin-top:45px;
+    text-align:center;
+}
+
+.bucket{
+    width:185px;
+    height:120px;
+    margin:auto;
+    position:relative;
+    border:4px solid #a51a32;
+    border-top:0;
+    border-radius:0 0 70px 70px;
+    background:
+        linear-gradient(135deg,#39101a,#151515);
+    box-shadow:
+        inset 0 -20px 30px rgba(0,0,0,.4),
+        0 20px 40px rgba(0,0,0,.4);
+}
+
+.bucket:before{
+    content:"";
+    position:absolute;
+    left:-8px;
+    top:-8px;
+    width:185px;
+    height:18px;
+    border-radius:50%;
+    border:4px solid #a51a32;
+    background:#13090b;
+}
+
+.bucket-balls{
+    position:absolute;
+    left:20px;
+    right:20px;
+    top:-38px;
+    height:80px;
+}
+
+.small-ball{
+    position:absolute;
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    background:#b51e38;
     cursor:pointer;
     transition:.3s;
 }
 
-.option:hover{
-    border-color:#8b1e2d;
+.small-ball:hover{
+    transform:scale(1.18);
 }
 
-.game-result{
-    min-height:30px;
-    margin-top:25px;
+.small-ball:nth-child(1){left:5px;top:30px;}
+.small-ball:nth-child(2){left:35px;top:5px;background:#dc3b56;}
+.small-ball:nth-child(3){left:72px;top:23px;background:#8d142a;}
+.small-ball:nth-child(4){left:108px;top:3px;background:#d32b47;}
+.small-ball:nth-child(5){left:137px;top:28px;background:#9d1a32;}
+
+.note{
+    margin:45px auto 0;
+    min-height:90px;
+    max-width:340px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    border-radius:18px;
+    background:#151515;
+    border:1px solid #272727;
     color:#ddd;
+    font-family:'Playfair Display',serif;
+    font-size:17px;
+    line-height:1.5;
+    opacity:0;
+    transform:translateY(10px);
+    transition:.4s;
 }
 
-.score{
-    margin-top:15px;
-    color:#8b1e2d;
-    font-family:Arial,sans-serif;
+.note.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+/* =========================================
+   LETTER
+========================================= */
+
+.letter-card{
+    margin-top:35px;
+    padding:30px 24px;
+    border-radius:25px;
+    background:
+        linear-gradient(145deg,#171717,#101010);
+    border:1px solid #282828;
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+}
+
+.letter-card p{
+    color:#d1cece;
+    font-family:'Playfair Display',serif;
+    font-size:16px;
+    line-height:1.85;
+    margin-bottom:22px;
+}
+
+.signature{
+    color:#d13a53!important;
+    text-align:right;
+    margin-top:35px;
+}
+
+
+/* =========================================
+   PHOTO ALBUM
+========================================= */
+
+.album{
+    margin-top:40px;
+}
+
+.photo-frame{
+    background:#e9e3dd;
+    padding:12px 12px 25px;
+    border-radius:4px;
+    box-shadow:0 25px 60px rgba(0,0,0,.5);
+    transform:rotate(-1deg);
+    transition:.4s;
+    cursor:pointer;
+}
+
+.photo-frame:hover{
+    transform:rotate(0) scale(1.02);
+}
+
+.photo-frame img{
+    width:100%;
+    height:430px;
+    object-fit:cover;
+    display:block;
+}
+
+.photo-caption{
+    color:#222;
+    text-align:center;
+    font-family:'Playfair Display',serif;
+    font-size:14px;
+    margin-top:13px;
+}
+
+.album-controls{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:18px;
+    margin-top:25px;
+}
+
+.album-button{
+    border:1px solid #333;
+    background:#151515;
+    color:white;
+    border-radius:50%;
+    width:42px;
+    height:42px;
+    cursor:pointer;
+}
+
+.photo-number{
+    color:#888;
     font-size:11px;
     letter-spacing:2px;
 }
 
 
-/* =========================
-   RANDOM CARD
-========================= */
+/* =========================================
+   TIMELINE
+========================================= */
 
-#random{
-    background:#0b0b0b;
+.timeline{
+    position:relative;
+    margin-top:50px;
+    padding-left:30px;
 }
 
-.card-box{
-    max-width:600px;
-    margin:40px auto;
+.timeline:before{
+    content:"";
+    position:absolute;
+    left:7px;
+    top:0;
+    bottom:0;
+    width:1px;
+    background:#762032;
 }
 
-.random-card{
-    min-height:190px;
-    background:#171717;
-    border:1px solid #292929;
+.timeline-item{
+    position:relative;
+    margin-bottom:55px;
+}
+
+.timeline-dot{
+    position:absolute;
+    left:-29px;
+    top:5px;
+    width:14px;
+    height:14px;
+    border-radius:50%;
+    background:#b51e38;
+    border:3px solid #0d0d0d;
+    box-shadow:0 0 0 1px #8d1b30;
+}
+
+.timeline-date{
+    font-size:10px;
+    letter-spacing:2px;
+    color:#c53a52;
+    margin-bottom:10px;
+}
+
+.timeline-title{
+    font-family:'Playfair Display',serif;
+    font-size:24px;
+    margin-bottom:9px;
+}
+
+.timeline-text{
+    color:#999;
+    font-size:13px;
+    line-height:1.8;
+}
+
+
+/* =========================================
+   MUSIC
+========================================= */
+
+.music-player{
+    margin-top:45px;
+    padding:18px;
+    border-radius:20px;
+    background:#141414;
+    border:1px solid #282828;
     display:flex;
     align-items:center;
-    justify-content:center;
-    padding:35px;
-    font-size:21px;
-    font-style:italic;
-    line-height:1.6;
+    gap:15px;
 }
 
-.random-button{
-    margin-top:20px;
-    padding:14px 25px;
-    border:1px solid #8b1e2d;
-    border-radius:50px;
-    background:transparent;
-    color:white;
-    cursor:pointer;
-}
-
-
-/* =========================
-   LITTLE THING
-========================= */
-
-#little{
-    background:#111;
-}
-
-.little-box{
-    max-width:600px;
-    margin:40px auto 0;
-    padding:35px 25px;
-    background:#171717;
-}
-
-.little-box p{
-    font-family:Georgia,serif;
-    font-size:17px;
-    margin-bottom:20px;
-}
-
-.secret-button{
-    margin-top:20px;
-    border:1px solid #555;
-    background:transparent;
-    color:white;
-    padding:13px 25px;
-    border-radius:50px;
-    cursor:pointer;
-}
-
-.secret{
-    display:none;
-    margin-top:25px;
-}
-
-
-/* =========================
-   LETTER
-========================= */
-
-#letter{
+.music-disc{
+    width:50px;
+    height:50px;
+    border-radius:50%;
     background:
-    radial-gradient(circle at center,rgba(139,30,45,.13),transparent 55%),
-    #0b0b0b;
+        radial-gradient(circle,#e8e8e8 0 8%,#333 9% 12%,#9f1931 13% 100%);
+    animation:spin 5s linear infinite;
+    animation-play-state:paused;
 }
 
-.letter{
-    max-width:650px;
-    margin:40px auto 0;
-    text-align:left;
-    padding:35px;
-    border-left:1px solid #8b1e2d;
+.music-disc.playing{
+    animation-play-state:running;
 }
 
-.letter p{
-    font-family:Georgia,serif;
-    font-size:17px;
-    margin-bottom:23px;
-    color:#ddd;
+@keyframes spin{
+    to{transform:rotate(360deg);}
 }
 
-.sign{
-    text-align:right;
-    color:#aaa;
-    font-style:italic;
+.music-info{
+    flex:1;
 }
 
-
-/* =========================
-   GIFTS
-========================= */
-
-#gifts{
-    background:#111;
-}
-
-.gift-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:18px;
-    margin-top:45px;
-}
-
-.gift{
-    background:#171717;
-    border:1px solid #292929;
-    min-height:280px;
-    padding:18px;
-    cursor:pointer;
-    transition:.35s;
-}
-
-.gift:hover{
-    border-color:#8b1e2d;
-    transform:translateY(-4px);
-}
-
-.gift-photo{
-    width:100%;
-    height:150px;
-    object-fit:cover;
-    margin-bottom:15px;
-}
-
-.gift-title{
-    font-size:20px;
-    margin-bottom:8px;
-}
-
-.gift-reason{
-    font-family:Arial,sans-serif;
+.music-title{
     font-size:13px;
-    color:#aaa;
+}
+
+.music-artist{
+    color:#777;
+    font-size:11px;
+    margin-top:4px;
+}
+
+.music-toggle{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    border:0;
+    background:#a71930;
+    color:white;
+    cursor:pointer;
+}
+
+
+/* =========================================
+   JAR
+========================================= */
+
+.jar-section{
+    text-align:center;
+}
+
+.jar{
+    width:190px;
+    height:240px;
+    margin:45px auto 25px;
+    position:relative;
+    border:3px solid rgba(220,220,220,.55);
+    border-radius:30px 30px 45px 45px;
+    background:
+        linear-gradient(90deg,
+            rgba(255,255,255,.08),
+            rgba(255,255,255,.02),
+            rgba(255,255,255,.09));
+    box-shadow:
+        inset 15px 0 20px rgba(255,255,255,.03),
+        inset -15px 0 20px rgba(0,0,0,.3),
+        0 25px 60px rgba(0,0,0,.4);
+    transition:.2s;
+}
+
+.jar:before{
+    content:"";
+    position:absolute;
+    left:25px;
+    right:25px;
+    top:-14px;
+    height:20px;
+    border:3px solid #aaa;
+    border-radius:10px;
+    background:#202020;
+}
+
+.jar.shake{
+    animation:jarShake .7s;
+}
+
+@keyframes jarShake{
+    0%,100%{transform:rotate(0);}
+    15%{transform:rotate(-7deg);}
+    30%{transform:rotate(7deg);}
+    45%{transform:rotate(-6deg);}
+    60%{transform:rotate(6deg);}
+    75%{transform:rotate(-3deg);}
+}
+
+.jar-note{
+    position:absolute;
+    width:52px;
+    height:35px;
+    background:#eee5d5;
+    border-radius:5px;
+    transform:rotate(12deg);
+}
+
+.jar-note:nth-child(1){
+    left:30px;
+    bottom:40px;
+}
+
+.jar-note:nth-child(2){
+    left:70px;
+    bottom:55px;
+    transform:rotate(-10deg);
+}
+
+.jar-note:nth-child(3){
+    right:28px;
+    bottom:35px;
+    transform:rotate(18deg);
+}
+
+.jar-note:nth-child(4){
+    left:48px;
+    bottom:85px;
+    transform:rotate(5deg);
+}
+
+.jar-note:nth-child(5){
+    right:48px;
+    bottom:80px;
+    transform:rotate(-15deg);
+}
+
+.shake-text{
+    color:#999;
+    font-size:11px;
+    letter-spacing:2px;
+}
+
+.shake-button{
+    margin-top:22px;
+    border:1px solid #9e1a31;
+    background:#151515;
+    color:white;
+    border-radius:50px;
+    padding:14px 25px;
+    cursor:pointer;
+}
+
+.jar-message{
+    min-height:80px;
+    margin:30px auto 0;
+    max-width:350px;
+    padding:20px;
+    border-radius:18px;
+    background:#161616;
+    border:1px solid #292929;
+    color:#ddd;
+    font-family:'Playfair Display',serif;
+    font-size:16px;
     line-height:1.6;
+    opacity:0;
+    transition:.4s;
+}
+
+.jar-message.show{
+    opacity:1;
 }
 
 
-/* =========================
-   QRIS
-========================= */
-
-#qris{
-    background:#0b0b0b;
-}
-
-.qris{
-    width:250px;
-    max-width:85%;
-    padding:12px;
-    background:white;
-    margin:30px auto;
-    display:block;
-}
-
-
-/* =========================
+/* =========================================
    FINAL
-========================= */
+========================================= */
 
 #final{
+    display:none;
     background:
-    radial-gradient(circle at center,rgba(139,30,45,.24),transparent 50%),
-    #0b0b0b;
+        radial-gradient(circle at center,#3b1019,#090909 70%);
+    align-items:center;
+    justify-content:center;
 }
 
-.final-photo{
-    width:230px;
-    height:290px;
-    object-fit:cover;
-    margin:35px auto;
-    display:block;
+.final-content{
+    text-align:center;
+    padding-top:90px;
 }
 
-.final-text{
-    max-width:600px;
-    margin:auto;
+.final-ball{
+    font-size:55px;
+    margin-bottom:25px;
 }
 
-.final-text p{
-    margin-bottom:20px;
+.final-content h2{
+    font-family:'Playfair Display',serif;
+    font-weight:400;
+    font-size:48px;
+    line-height:1.1;
 }
 
-.final-love{
-    margin-top:35px;
-    font-size:30px;
-    color:#8b1e2d;
+.final-content h2 span{
+    color:#d2324d;
 }
 
-
-/* =========================
-   HEARTS
-========================= */
-
-.heart{
-    position:fixed;
-    bottom:-20px;
-    z-index:9999;
-    pointer-events:none;
-    animation:float 5s linear forwards;
+.final-content p{
+    margin-top:25px;
+    color:#aaa;
+    font-size:13px;
+    line-height:1.9;
 }
 
-@keyframes float{
-    from{
-        transform:translateY(0);
-        opacity:1;
-    }
-    to{
-        transform:translateY(-110vh);
-        opacity:0;
-    }
+.final-date{
+    margin-top:40px;
+    color:#d2324d;
+    font-size:10px;
+    letter-spacing:4px;
 }
 
 
-/* =========================
+/* =========================================
+   HIDDEN
+========================================= */
+
+.hidden{
+    display:none!important;
+}
+
+
+/* =========================================
    MOBILE
-========================= */
+========================================= */
 
-@media(max-width:600px){
+@media(max-width:420px){
 
-    .thing-list,
-    .gift-grid{
-        grid-template-columns:1fr;
-    }
-
-    .memory-grid{
-        grid-template-columns:1fr;
-    }
-
-    .memory:nth-child(even){
-        transform:none;
-    }
-
-    .letter{
-        padding:25px 20px;
-    }
-
-    .story{
+    .card{
         padding-left:20px;
+        padding-right:20px;
+    }
+
+    .hero h1{
+        font-size:45px;
+    }
+
+    .section-title{
+        font-size:34px;
+    }
+
+    .photo-frame img{
+        height:390px;
     }
 
 }
 </style>
-
 </head>
+
 
 <body>
 
-<!-- MUSIC -->
 
-<audio id="music" loop>
-    <source src="assets/lagu.mp3" type="audio/mpeg">
+<!-- =====================================
+     LOADING
+===================================== -->
+
+<section class="page" id="loading">
+
+    <div class="loading-content">
+
+        <div class="loading-ball"></div>
+
+        <div class="loading-text">
+            preparing something special for you<span class="loading-dots">...</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     PIN
+===================================== -->
+
+<section class="page" id="pinScreen">
+
+    <div class="pin-content">
+
+        <div class="pin-label">
+            OFFICIALLY US
+        </div>
+
+        <div class="pin-title">
+            Enter the PIN
+        </div>
+
+        <div class="pin-subtitle">
+            I think you know this one.
+        </div>
+
+        <div class="pin-display">
+
+            <div class="pin-dot"></div>
+            <div class="pin-dot"></div>
+            <div class="pin-dot"></div>
+            <div class="pin-dot"></div>
+
+        </div>
+
+        <div class="keypad">
+
+            <button class="key" onclick="pressPin('1')">1</button>
+            <button class="key" onclick="pressPin('2')">2</button>
+            <button class="key" onclick="pressPin('3')">3</button>
+
+            <button class="key" onclick="pressPin('4')">4</button>
+            <button class="key" onclick="pressPin('5')">5</button>
+            <button class="key" onclick="pressPin('6')">6</button>
+
+            <button class="key" onclick="pressPin('7')">7</button>
+            <button class="key" onclick="pressPin('8')">8</button>
+            <button class="key" onclick="pressPin('9')">9</button>
+
+            <button class="key" onclick="clearPin()">C</button>
+            <button class="key" onclick="pressPin('0')">0</button>
+            <button class="key" onclick="deletePin()">⌫</button>
+
+        </div>
+
+        <div class="pin-error" id="pinError"></div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     GIFT
+===================================== -->
+
+<section class="page" id="giftScreen">
+
+    <div class="gift-entry" id="giftEntry">
+
+        <div class="gift-emoji" onclick="openGift()">
+            🎁
+        </div>
+
+        <div class="gift-hint">
+            tap the gift
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     BIRTHDAY
+===================================== -->
+
+<section class="page" id="birthday">
+
+<div class="card">
+
+    <div class="hero">
+
+        <div class="hero-small">
+            SEPTEMBER 4
+        </div>
+
+        <h1>
+            Happy Birthday<br>
+            <span>Emey.</span>
+        </h1>
+
+        <div class="hero-date">
+            THE MOST SPECIAL DAY
+        </div>
+
+    </div>
+
+
+    <div class="scroll-hint">
+
+        SCROLL FOR A LITTLE SOMETHING
+
+        <div class="arrow">
+            ↓
+        </div>
+
+    </div>
+
+
+    <!-- BALL BUCKET -->
+
+    <div class="section">
+
+        <div class="section-label">
+            pick one
+        </div>
+
+        <div class="section-title">
+            A few things<br>
+            I want you to know.
+        </div>
+
+        <div class="section-intro">
+            Ada beberapa bola di sini.
+            Coba pencet satu-satu.
+        </div>
+
+
+        <div class="bucket-area">
+
+            <div class="bucket">
+
+                <div class="bucket-balls">
+
+                    <div class="small-ball"
+                         onclick="showBallNote(0)"></div>
+
+                    <div class="small-ball"
+                         onclick="showBallNote(1)"></div>
+
+                    <div class="small-ball"
+                         onclick="showBallNote(2)"></div>
+
+                    <div class="small-ball"
+                         onclick="showBallNote(3)"></div>
+
+                    <div class="small-ball"
+                         onclick="showBallNote(4)"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="note" id="ballNote">
+                Pick a ball.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- LETTER -->
+
+    <div class="section">
+
+        <div class="section-label">
+            from me
+        </div>
+
+        <div class="section-title">
+            A letter for you.
+        </div>
+
+
+        <div class="letter-card">
+
+            <p>
+                Happy birthday, Emey.
+            </p>
+
+            <p>
+                Aku sebenarnya nggak jago bikin
+                ucapan yang terlalu panjang.
+                Jadi kali ini aku cuma mau bilang
+                hal-hal yang memang aku rasain.
+            </p>
+
+            <p>
+                Aku senang pernah ketemu kamu
+                di Stasiun Pocin waktu itu.
+                Apalagi kalau ingat ternyata
+                kita malah dipaparaziin sama
+                temen aku. 😂
+            </p>
+
+            <p>
+                Dari yang awalnya cuma ketemu,
+                ngobrol, dan akhirnya jadi
+                punya banyak cerita random
+                bareng.
+            </p>
+
+            <p>
+                Aku suka hal-hal kecil tentang kamu.
+                Cara kamu selalu ngeladenin
+                celetukan aku, bahkan kalau
+                pertanyaannya nggak jelas.
+            </p>
+
+            <p>
+                Termasuk saat aku bilang,
+                “kalau kita tiba-tiba bisa terbang
+                gimana?”
+                dan kamu tetap mau membahasnya.
+            </p>
+
+            <p>
+                Terus ada satu hal yang sebenarnya
+                agak ngeselin tapi diam-diam
+                aku suka:
+                kamu yang selalu nyuruh aku
+                pakai jaket atau jas hujan.
+            </p>
+
+            <p>
+                Menurutku kan deket.
+                Ribet.
+                Tapi kamu tetap nggak mau jalan
+                kalau aku belum pakai.
+            </p>
+
+            <p>
+                Yaudah.
+                Mungkin memang begitulah cara
+                kamu menunjukkan perhatian.
+            </p>
+
+            <p>
+                Di umur 22 ini, semoga banyak
+                hal baik datang ke kamu.
+                Semoga semua yang sedang kamu
+                usahakan pelan-pelan ketemu
+                hasilnya.
+            </p>
+
+            <p>
+                Semoga kamu tetap sehat,
+                tetap jadi orang yang aku kenal,
+                dan tetap punya banyak alasan
+                buat ketawa.
+            </p>
+
+            <p>
+                Dan semoga...
+                aku masih boleh ada di banyak
+                cerita kamu berikutnya.
+            </p>
+
+            <p class="signature">
+                — from the girl<br>
+                who somehow likes you a lot ❤️
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- PHOTO MEMORIES -->
+
+    <div class="section">
+
+        <div class="section-label">
+            our little archive
+        </div>
+
+        <div class="section-title">
+            Our photo<br>
+            memories.
+        </div>
+
+        <div class="section-intro">
+            Beberapa foto yang punya cerita
+            sendiri-sendiri.
+        </div>
+
+
+        <div class="album">
+
+            <div class="photo-frame"
+                 onclick="nextPhoto()">
+
+                <img id="albumPhoto"
+                     src="assets/foto1.jpg"
+                     alt="Our memory">
+
+                <div class="photo-caption"
+                     id="photoCaption">
+                    our first memory
+                </div>
+
+            </div>
+
+
+            <div class="album-controls">
+
+                <button class="album-button"
+                        onclick="prevPhoto()">
+                    ←
+                </button>
+
+                <div class="photo-number"
+                     id="photoNumber">
+                    01 / 06
+                </div>
+
+                <button class="album-button"
+                        onclick="nextPhoto()">
+                    →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- TIMELINE -->
+
+    <div class="section">
+
+        <div class="section-label">
+            our story
+        </div>
+
+        <div class="section-title">
+            Memories we've<br>
+            written together.
+        </div>
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-date">
+                    FEBRUARY 2026
+                </div>
+
+                <div class="timeline-title">
+                    Stasiun Pocin.
+                </div>
+
+                <div class="timeline-text">
+                    Aku pulang ngampus,
+                    ketemu kamu di stasiun.
+                    Terus temen aku malah
+                    bertindak seperti paparazzi.
+                    Awal yang cukup random.
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-date">
+                    27 MARCH 2026
+                </div>
+
+                <div class="timeline-title">
+                    Officially us.
+                </div>
+
+                <div class="timeline-text">
+                    Tanggal yang akhirnya
+                    bikin semuanya punya nama.
+                    ❤️
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-date">
+                    AFTER THAT
+                </div>
+
+                <div class="timeline-title">
+                    Too many random moments.
+                </div>
+
+                <div class="timeline-text">
+                    Hampir setiap ketemu
+                    selalu ada aja yang bisa
+                    dibahas, diketawain,
+                    atau tiba-tiba jadi bahan
+                    pemisalan yang nggak masuk akal.
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-date">
+                    SOMEWHERE ALONG THE WAY
+                </div>
+
+                <div class="timeline-title">
+                    The little things.
+                </div>
+
+                <div class="timeline-text">
+                    Dari kamu yang selalu
+                    nyuruh aku pakai jaket,
+                    sampai kamu yang suka
+                    jajanin aku.
+                    Ternyata hal-hal kecil
+                    justru yang paling diingat.
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- MUSIC -->
+
+    <div class="section">
+
+        <div class="section-label">
+            soundtrack
+        </div>
+
+        <div class="section-title">
+            This one sounds<br>
+            like us.
+        </div>
+
+
+        <div class="music-player">
+
+            <div class="music-disc"
+                 id="musicDisc">
+            </div>
+
+            <div class="music-info">
+
+                <div class="music-title">
+                    Shape of My Heart
+                </div>
+
+                <div class="music-artist">
+                    Backstreet Boys
+                </div>
+
+            </div>
+
+            <button class="music-toggle"
+                    onclick="toggleMusic()"
+                    id="musicButton">
+                ▶
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAR -->
+
+    <div class="section jar-section">
+
+        <div class="section-label">
+            one more thing
+        </div>
+
+        <div class="section-title">
+            Reasons I'm<br>
+            grateful to know you.
+        </div>
+
+        <div class="section-intro">
+            Shake the jar and pick a note.
+        </div>
+
+
+        <div class="jar"
+             id="jar">
+
+            <div class="jar-note"></div>
+            <div class="jar-note"></div>
+            <div class="jar-note"></div>
+            <div class="jar-note"></div>
+            <div class="jar-note"></div>
+
+        </div>
+
+
+        <div class="shake-text">
+            SHAKE THE JAR
+        </div>
+
+        <button class="shake-button"
+                onclick="shakeJar()">
+            Shake the jar
+        </button>
+
+
+        <div class="jar-message"
+             id="jarMessage">
+        </div>
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================
+     FINAL
+===================================== -->
+
+<section class="page" id="final">
+
+    <div class="card final-content">
+
+        <div class="final-ball">
+            ⚽
+        </div>
+
+        <div class="section-label">
+            one last thing
+        </div>
+
+        <h2>
+            Happy Birthday,<br>
+            <span>Emey.</span>
+        </h2>
+
+        <p>
+            Semoga umur 22 ini
+            membawa banyak hal baik,
+            banyak rezeki,
+            banyak kesempatan,
+            dan banyak cerita baru.
+        </p>
+
+        <p>
+            Tetap jadi kamu.
+            Yang manly,
+            ganteng,
+            dan soon bakal punya
+            otot banget. 😂
+        </p>
+
+        <p>
+            Jangan lupa ngopi.<br>
+            Jangan lupa pakai jaket.<br>
+            Dan jangan lupa aku.
+        </p>
+
+        <div class="final-date">
+            04 · 09 · 2026
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     AUDIO
+===================================== -->
+
+<audio id="music"
+       loop
+       preload="auto">
+
+    <source src="assets/shape-of-my-heart.mp3"
+            type="audio/mpeg">
+
 </audio>
 
-<button class="music" id="musicBtn" onclick="toggleMusic()">♫</button>
-
-<!-- =========================
-     01 OPENING
-========================= -->
-
-<section id="opening">
-
-<div class="container">
-
-<div class="label">
-4 September 2026
-</div>
-
-<h1>For You.</h1>
-
-<p class="opening-sub">
-Aku bikin sesuatu buat kamu.
-<br>
-Tapi jangan berharap terlalu normal.
-</p>
-
-<button class="open-button" onclick="startWebsite()">
-OPEN THIS ❤️
-</button>
-
-</div>
-
-</section>
-
-<!-- =========================
-     02 BIRTHDAY
-========================= -->
-
-<section id="birthday">
-
-<div class="container">
-
-<div class="label">
-Today is your day
-</div>
-
-<h2>Happy Birthday.</h2>
-
-<div class="age">
-22 YEARS OLD
-</div>
-
-<img src="assets/foto1.jpg"
-class="main-photo"
-alt="Foto kita">
-
-<div class="intro">
-
-<p>
-Selamat ulang tahun, sayang. ❤️
-</p>
-
-<p>
-Hari ini tanggal 4 September,
-jadi untuk sementara waktu
-kamu boleh merasa paling penting.
-</p>
-
-<p>
-Walaupun...
-sebenarnya memang seringnya kamu
-yang paling aku pikirin.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================
-     03 THINGS I KNOW
-========================= -->
-
-<section id="things">
-
-<div class="container">
-
-<div class="label">
-Things I Know About You
-</div>
-
-<h2>Some Things About You</h2>
-
-<p class="intro-line">
-Bukan karena aku hafal semuanya.
-Cuma karena terlalu sering memperhatikan. 😂
-</p>
-
-<div class="thing-list">
-
-<div class="thing">
-
-<div class="thing-number">01</div>
-
-<p>
-Kalau belum ngopi,
-katanya bisa pusing.
-Jadi kopi itu bukan minuman lagi,
-kayaknya sudah masuk kebutuhan pokok.
-</p>
-
-</div>
-
-<div class="thing">
-
-<div class="thing-number">02</div>
-
-<p>
-Ronaldo.
-eFootball.
-Dua hal yang cukup untuk
-membuat kamu fokus beberapa saat.
-</p>
-
-</div>
-
-<div class="thing">
-
-<div class="thing-number">03</div>
-
-<p>
-Rokok sekarang katanya sudah jarang.
-Tapi kalau urusan pod...
-<strong>as always.</strong>
-</p>
-
-</div>
-
-<div class="thing">
-
-<div class="thing-number">04</div>
-
-<p>
-Dan yang paling penting:
-kamu paling suka aku.
-Aku yang bilang.
-Nggak perlu dibantah.
-😂
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================
-     04 HOW WE STARTED
-========================= -->
-
-<section id="story">
-
-<div class="container">
-
-<div class="label">
-A Little Backstory
-</div>
-
-<h2>From Pocin<br>to Here.</h2>
-
-<div class="story">
-
-<p>
-Februari 2026.
-Aku pulang ngampus,
-terus ketemu kamu di Stasiun Pocin.
-</p>
-
-<p>
-Dan bukannya bisa lewat
-dengan tenang,
-aku malah dipaparaziin
-sama temen sendiri.
-😭
-</p>
-
-<p>
-Waktu itu belum tahu
-bakal sampai sejauh ini.
-Tahu-tahu sekarang...
-aku malah bikin website
-buat ulang tahun kamu.
-</p>
-
-</div>
-
-<div class="date">
-27.03.2026
-</div>
-
-<div class="date-small">
-THE DAY WE BECAME US
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================
-     05 MEMORIES
-========================= -->
-
-<section id="memories">
-
-<div class="container">
-
-<div class="label">
-A Few Memories
-</div>
-
-<h2>Us Being Us.</h2>
-
-<p class="intro-line">
-Kalau dipikir-pikir,
-kayaknya setiap ketemu selalu ada
-aja yang bisa diketawain.
-</p>
-
-<div class="memory-grid">
-
-<div class="memory">
-<img src="assets/foto2.jpg">
-<p>
-“Ini awalnya mau foto biasa.”
-</p>
-</div>
-
-<div class="memory">
-<img src="assets/foto3.jpg">
-<p>
-“Terus entah kenapa jadi begini.”
-</p>
-</div>
-
-<div class="memory">
-<img src="assets/foto4.jpg">
-<p>
-“Satu celetukan aku,
-diladenin lagi.”
-</p>
-</div>
-
-<div class="memory">
-<img src="assets/foto5.jpg">
-<p>
-“Hal random di jalan pun
-bisa jadi bahan obrolan.”
-</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================
-     06 GAME
-========================= -->
-
-<section id="game">
-
-<div class="container">
-
-<div class="label">
-Mini Game
-</div>
-
-<h2>Seberapa Kenal<br>Kamu Sama Aku?</h2>
-
-<p style="margin-top:20px;">
-Jangan sampai kalah sama website
-yang aku bikin sendiri.
-😂
-</p>
-
-<div class="game-box">
-
-<div class="question" id="question">
-Apa yang paling mungkin bikin aku senang?
-</div>
-
-<div class="options" id="options">
-
-<button class="option"
-onclick="answer(0)">
-Dikasih nasihat panjang </button>
-
-<button class="option"
-onclick="answer(1)">
-Dijajanin </button>
-
-<button class="option"
-onclick="answer(0)">
-Disuruh tidur cepat </button>
-
-</div>
-
-<div class="game-result" id="gameResult"></div>
-
-<div class="score" id="score">
-SCORE: 0
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================
-     07 RANDOM
-========================= -->
-
-<section id="random">
-
-<div class="container">
-
-<div class="label">
-Very Important Research
-</div>
-
-<h2>Random Thought.</h2>
-
-<p style="margin-top:20px;">
-Karena aku tahu kamu akan tetap
-ngeladenin pertanyaan random.
-</p>
-
-<div class="card-box">
-
-<div class="random-card" id="randomCard">
-Kalau kita tiba-tiba bisa terbang,
-kita mau terbang ke mana?
-</div>
-
-<button class="random-button"
-onclick="randomQuestion()">
-Kasih pertanyaan random </button>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================
-     08 LITTLE THING
-========================= -->
-
-<section id="little">
-
-<div class="container">
-
-<div class="label">
-One Thing I Like
-</div>
-
-<h2>Yang Kadang<br>Bikin Aku Gemes.</h2>
-
-<div class="little-box">
-
-<p>
-Setiap aku lagi ngomong atau
-celetuk sesuatu...
-</p>
-
-<p>
-jawaban kamu kadang cuma:
-</p>
-
-<h2 style="font-size:35px;">
-“Alah alah mba.”
-</h2>
-
-<p style="margin-top:25px;">
-Dan anehnya,
-aku malah ketawa.
-</p>
-
-<button class="secret-button"
-onclick="showSecret()">
-Tapi ada satu hal lagi... </button>
-
-<div class="secret" id="secret">
-
-<p>
-Aku suka karena kamu selalu
-ngeladenin pemisalan-pemisalan
-nggak jelas yang aku buat.
-</p>
-
-<p>
-“Kalau kita terbang gimana?”
-<br>
-“Kalau tiba-tiba kaya gimana?”
-<br>
-“Kalau kita pergi sekarang gimana?”
-</p>
-
-<p>
-Dan kamu selalu punya jawaban.
-Walaupun kadang jawabannya juga
-nggak kalah ngawur.
-😂
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================
-     09 LETTER
-========================= -->
-
-<section id="letter">
-
-<div class="container">
-
-<div class="label">
-Actually, This Is The Important Part
-</div>
-
-<h2>A Letter For You.</h2>
-
-<div class="letter">
-
-<p>
-Happy birthday, sayang.
-</p>
-
-<p>
-Aku sebenarnya nggak tahu harus
-nulis apa supaya kedengarannya
-nggak terlalu lebay.
-Jadi aku tulis aja apa adanya.
-</p>
-
-<p>
-Aku senang bisa ketemu kamu
-dan punya banyak cerita kecil
-yang mungkin kalau diceritain
-ke orang lain nggak terlalu lucu,
-tapi kalau kita yang ngalamin,
-bisa ketawa sendiri.
-</p>
-
-<p>
-Aku juga suka cara kamu perhatian
-sama hal-hal kecil.
-Termasuk soal jaket dan jas hujan.
-Kadang aku masih mikir,
-“deket doang kenapa harus pakai?”
-Tapi kamu tetap nggak mau jalan
-kalau aku belum nurut.
-</p>
-
-<p>
-Nyebelin memang.
-Tapi sebenarnya aku suka.
-</p>
-
-<p>
-Terus kalau kamu jajanin aku...
-ya gimana ya.
-Aku jadi makin sayang.
-Kalau kamu kasih barang juga
-sama aja.
-😂
-</p>
-
-<p>
-Semoga di umur 22 ini
-kamu sehat, dimudahkan dalam
-semua yang kamu kerjakan,
-dan satu-satu hal yang kamu
-inginkan bisa tercapai.
-</p>
-
-<p>
-Tetap jadi kamu.
-Yang manly,
-yang ganteng,
-dan yang katanya
-soon bakal punya otot banget.
-Aku tunggu buktinya.
-</p>
-
-<p>
-Makasih sudah jadi bagian
-dari banyak hari yang sekarang
-punya cerita sendiri.
-</p>
-
-<p>
-Happy birthday.
-Semoga tahun ini baik sama kamu.
-Dan semoga kita masih punya
-banyak hal random buat
-ditertawakan bareng.
-</p>
-
-<p class="sign">
-— aku ❤️
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================
-     10 GIFTS
-========================= -->
-
-<section id="gifts">
-
-<div class="container">
-
-<div class="label">
-Open Your Gifts
-</div>
-
-<h2>Okay, Now The Gifts.</h2>
-
-<p style="margin-top:20px;">
-Klik satu-satu.
-Jangan langsung buka semua. 😭
-</p>
-
-<div class="gift-grid">
-
-<div class="gift">
-
-<img src="assets/gift1.jpg"
-class="gift-photo">
-
-<div class="gift-title">
-Kaos 👕
-</div>
-
-<div class="gift-reason">
-Aku beli ini karena kayaknya
-kamu bakal cocok pakai ini.
-Dan ya...
-biar makin ganteng aja.
-</div>
-
-</div>
-
-<div class="gift">
-
-<img src="assets/gift2.jpg"
-class="gift-photo">
-
-<div class="gift-title">
-Dompet 👛
-</div>
-
-<div class="gift-reason">
-Biar kartu-kartu kamu punya tempat.
-Terus semoga dompetnya cepat penuh.
-Bukan sama struk ya.
-Sama uang.
-😂
-</div>
-
-</div>
-
-<div class="gift">
-
-<img src="assets/gift3.jpg"
-class="gift-photo">
-
-<div class="gift-title">
-Lip Balm
-</div>
-
-<div class="gift-reason">
-Ini karena aku masih butuh
-kamu ngomong banyak.
-Jadi bibir jangan sampai
-kering dulu.
-</div>
-
-</div>
-
-<div class="gift">
-
-<img src="assets/gift4.jpg"
-class="gift-photo">
-
-<div class="gift-title">
-Sheet Mask
-</div>
-
-<div class="gift-reason">
-Iya, cowok juga boleh skincare.
-Sekali-sekali rawat muka.
-Biar gantengnya tetap terjaga.
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================
-     11 QRIS
-========================= -->
-
-<section id="qris">
-
-<div class="container">
-
-<div class="label">
-One Last Surprise
-</div>
-
-<h2>
-Wait...
-</h2>
-
-<p style="margin-top:20px;">
-Kayaknya ada satu hadiah
-yang belum masuk.
-</p>
-
-<img src="assets/qris.png"
-class="qris">
-
-<p>
-Yaudah.
-Semoga bermanfaat.
-😂❤️
-</p>
-
-</div>
-
-</section>
-
-<!-- =========================
-     12 FINAL
-========================= -->
-
-<section id="final">
-
-<div class="container">
-
-<div class="label">
-That's All.
-</div>
-
-<img src="assets/foto6.jpg"
-class="final-photo">
-
-<h2>
-Happy Birthday,
-Sayang.
-</h2>
-
-<div class="final-text">
-
-<p style="margin-top:30px;">
-22 looks good on you.
-</p>
-
-<p>
-Semoga tahun ini kamu
-dapat banyak hal baik,
-banyak kesempatan,
-banyak rezeki,
-dan banyak alasan buat senyum.
-</p>
-
-<p>
-Dan kalau boleh,
-aku mau tetap ada
-di antara cerita-cerita itu.
-</p>
-
-<p>
-Oh iya...
-</p>
-
-<p>
-Jangan lupa ngopi.
-<br>
-Jangan lupa pakai jaket.
-<br>
-Dan jangan lupa aku.
-😂
-</p>
-
-<div class="final-love">
-❤️
-</div>
-
-</div>
-
-</div>
-
-</section>
 
 <script>
 
-/* =========================
-   START
-========================= */
+/* =====================================
+   LOADING
+===================================== */
 
-function startWebsite(){
+setTimeout(function(){
 
-    const music=document.getElementById("music");
+    document.getElementById("loading").style.display="none";
 
-    music.volume=.35;
+    document.getElementById("pinScreen").style.display="flex";
 
-    music.play().catch(()=>{});
+},3000);
 
-    document.getElementById("musicBtn").style.display="block";
 
-    document.getElementById("birthday")
-    .scrollIntoView({
-        behavior:"smooth"
+/* =====================================
+   PIN
+===================================== */
+
+let enteredPin="";
+
+function pressPin(number){
+
+    if(enteredPin.length>=4){
+        return;
+    }
+
+    enteredPin+=number;
+
+    updatePinDots();
+
+    if(enteredPin.length===4){
+
+        setTimeout(function(){
+
+            if(enteredPin==="2703"){
+
+                document.getElementById("pinScreen").style.display="none";
+
+                document.getElementById("giftScreen").style.display="flex";
+
+                playMusic();
+
+            }else{
+
+                document.getElementById("pinError").innerHTML=
+                "Hmm... coba ingat lagi. 😂";
+
+                enteredPin="";
+
+                setTimeout(function(){
+                    updatePinDots();
+                },300);
+
+            }
+
+        },250);
+
+    }
+
+}
+
+function updatePinDots(){
+
+    const dots=
+    document.querySelectorAll(".pin-dot");
+
+    dots.forEach(function(dot,index){
+
+        if(index<enteredPin.length){
+            dot.classList.add("active");
+        }else{
+            dot.classList.remove("active");
+        }
+
     });
 
-    hearts();
+}
+
+function clearPin(){
+
+    enteredPin="";
+
+    document.getElementById("pinError").innerHTML="";
+
+    updatePinDots();
+
+}
+
+function deletePin(){
+
+    enteredPin=
+    enteredPin.slice(0,-1);
+
+    updatePinDots();
+
 }
 
 
-/* =========================
+/* =====================================
+   GIFT
+===================================== */
+
+function openGift(){
+
+    const entry=
+    document.getElementById("giftEntry");
+
+    entry.classList.add("shake");
+
+    setTimeout(function(){
+
+        document.getElementById("giftScreen").style.display="none";
+
+        document.getElementById("birthday").style.display="block";
+
+        createBalls(25);
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+    },700);
+
+}
+
+
+/* =====================================
+   FALLING BALLS
+===================================== */
+
+function createBalls(amount){
+
+    for(let i=0;i<amount;i++){
+
+        const ball=
+        document.createElement("div");
+
+        ball.className="ball";
+
+        ball.style.left=
+        Math.random()*100+"vw";
+
+        ball.style.animationDuration=
+        (3+Math.random()*4)+"s";
+
+        ball.style.animationDelay=
+        Math.random()*1.5+"s";
+
+        const size=
+        8+Math.random()*12;
+
+        ball.style.width=size+"px";
+        ball.style.height=size+"px";
+
+        document.body.appendChild(ball);
+
+        setTimeout(function(){
+            ball.remove();
+        },8000);
+
+    }
+
+}
+
+
+/* =====================================
+   BALL NOTES
+===================================== */
+
+const ballNotes=[
+
+"Semoga di umur 22 ini kamu selalu punya alasan buat senyum. ❤️",
+
+"Aku suka cara kamu selalu ngeladenin celetukan random aku.",
+
+"Semoga semua yang sedang kamu usahakan pelan-pelan berhasil.",
+
+"Terima kasih sudah selalu perhatian, walaupun kadang caranya bikin aku kesel. 😂",
+
+"Dan iya... dari semua hal yang kamu suka, aku tetap berharap aku salah satunya. WKWK."
+
+];
+
+function showBallNote(index){
+
+    const note=
+    document.getElementById("ballNote");
+
+    note.innerHTML=
+    ballNotes[index];
+
+    note.classList.remove("show");
+
+    setTimeout(function(){
+
+        note.classList.add("show");
+
+    },50);
+
+    createBalls(8);
+
+}
+
+
+/* =====================================
+   PHOTO ALBUM
+===================================== */
+
+const photos=[
+
+{
+    src:"assets/foto1.jpg",
+    caption:"the beginning"
+},
+
+{
+    src:"assets/foto2.jpg",
+    caption:"one of my favorite days"
+},
+
+{
+    src:"assets/foto3.jpg",
+    caption:"us being us"
+},
+
+{
+    src:"assets/foto4.jpg",
+    caption:"another random memory"
+},
+
+{
+    src:"assets/foto5.jpg",
+    caption:"still one of my favorites"
+},
+
+{
+    src:"assets/foto6.jpg",
+    caption:"and here we are"
+}
+
+];
+
+let currentPhoto=0;
+
+function updatePhoto(){
+
+    document.getElementById("albumPhoto").src=
+    photos[currentPhoto].src;
+
+    document.getElementById("photoCaption").innerHTML=
+    photos[currentPhoto].caption;
+
+    document.getElementById("photoNumber").innerHTML=
+    String(currentPhoto+1).padStart(2,"0")
+    +" / "
+    +String(photos.length).padStart(2,"0");
+
+}
+
+function nextPhoto(){
+
+    currentPhoto++;
+
+    if(currentPhoto>=photos.length){
+        currentPhoto=0;
+    }
+
+    updatePhoto();
+
+}
+
+function prevPhoto(){
+
+    currentPhoto--;
+
+    if(currentPhoto<0){
+        currentPhoto=photos.length-1;
+    }
+
+    updatePhoto();
+
+}
+
+
+/* =====================================
    MUSIC
-========================= */
+===================================== */
+
+const music=
+document.getElementById("music");
+
+const musicButton=
+document.getElementById("musicButton");
+
+const musicDisc=
+document.getElementById("musicDisc");
+
+function playMusic(){
+
+    music.volume=.35;
+
+    music.play()
+    .then(function(){
+
+        musicButton.innerHTML="Ⅱ";
+
+        musicDisc.classList.add("playing");
+
+    })
+    .catch(function(){
+
+        console.log("Music waiting for user interaction.");
+
+    });
+
+}
 
 function toggleMusic(){
-
-    const music=document.getElementById("music");
-    const btn=document.getElementById("musicBtn");
 
     if(music.paused){
 
         music.play();
-        btn.innerHTML="♫";
+
+        musicButton.innerHTML="Ⅱ";
+
+        musicDisc.classList.add("playing");
 
     }else{
 
         music.pause();
-        btn.innerHTML="🔇";
+
+        musicButton.innerHTML="▶";
+
+        musicDisc.classList.remove("playing");
 
     }
 
 }
 
 
-/* =========================
-   GAME
-========================= */
+/* =====================================
+   JAR
+===================================== */
 
-let score=0;
+const jarMessages=[
 
-function answer(correct){
+"Karena kamu selalu mau ngeladenin hal-hal random yang aku omongin.",
 
-    const result=
-    document.getElementById("gameResult");
+"Karena di balik sikap kamu yang kadang ngeselin, ternyata kamu perhatian.",
 
-    if(correct){
+"Karena kamu selalu memastikan aku pakai jaket atau jas hujan. Iya, aku tahu. 😂",
 
-        score++;
+"Karena setiap ketemu kamu selalu ada aja yang bisa bikin aku ketawa.",
 
-        result.innerHTML=
-        "Nah, masih kenal aku. Lumayan. 😂❤️";
+"Karena kamu suka jajanin aku. Ini alasan yang sangat valid.",
 
-        hearts();
+"Karena kamu selalu punya cara sendiri buat bikin hari biasa jadi punya cerita.",
 
-    }else{
+"Karena ternyata punya seseorang buat diajak ngomong hal-hal nggak penting itu menyenangkan.",
 
-        result.innerHTML=
-        "Salah. Kayaknya kita perlu ngobrol lagi. 😭";
+"Karena dari sekian banyak orang, aku bersyukur yang aku kenal adalah kamu.",
 
-    }
-
-    document.getElementById("score").innerHTML=
-    "SCORE: "+score;
-
-}
-
-
-/* =========================
-   RANDOM QUESTIONS
-========================= */
-
-const randomQuestions=[
-
-"Kalau kita tiba-tiba bisa terbang, kita mau ke mana?",
-
-"Kalau besok kita kaya mendadak, hal pertama yang dibeli apa?",
-
-"Kalau kita bisa pergi sekarang juga, mau ke mana?",
-
-"Kalau kita nyasar di kota orang, siapa yang panik duluan?",
-
-"Kalau sehari nggak boleh pegang HP, kamu kuat?",
-
-"Kalau kita buka usaha bareng, kira-kira sukses atau bangkrut?",
-
-"Kalau bisa tinggal di mana saja selama sebulan, kamu pilih mana?",
-
-"Kalau kita punya rumah sendiri, siapa yang paling banyak bikin aturan?"
+"Dan mungkin alasan paling sederhana: aku memang sayang sama kamu."
 
 ];
 
-function randomQuestion(){
+let jarIndex=0;
 
-    const q=
-    randomQuestions[
-        Math.floor(
-            Math.random()*randomQuestions.length
-        )
-    ];
+function shakeJar(){
 
-    document.getElementById("randomCard")
-    .innerHTML=q;
+    const jar=
+    document.getElementById("jar");
 
-}
+    const message=
+    document.getElementById("jarMessage");
 
+    jar.classList.remove("shake");
 
-/* =========================
-   SECRET
-========================= */
+    void jar.offsetWidth;
 
-function showSecret(){
+    jar.classList.add("shake");
 
-    document.getElementById("secret")
-    .style.display="block";
+    jarIndex++;
 
-    hearts();
-
-}
-
-
-/* =========================
-   HEARTS
-========================= */
-
-function hearts(){
-
-    for(let i=0;i<15;i++){
-
-        const heart=
-        document.createElement("div");
-
-        heart.className="heart";
-        heart.innerHTML="❤️";
-
-        heart.style.left=
-        Math.random()*100+"vw";
-
-        heart.style.fontSize=
-        (10+Math.random()*18)+"px";
-
-        heart.style.animationDuration=
-        (3+Math.random()*3)+"s";
-
-        document.body.appendChild(heart);
-
-        setTimeout(()=>{
-            heart.remove();
-        },6000);
-
+    if(jarIndex>=jarMessages.length){
+        jarIndex=0;
     }
 
+    setTimeout(function(){
+
+        message.innerHTML=
+        jarMessages[jarIndex];
+
+        message.classList.add("show");
+
+        createBalls(12);
+
+    },500);
+
 }
+
+
+/* =====================================
+   FINAL REVEAL
+===================================== */
+
+const finalObserver=
+new IntersectionObserver(function(entries){
+
+    entries.forEach(function(entry){
+
+        if(entry.isIntersecting){
+
+            document.getElementById("final").style.display="flex";
+
+            createBalls(35);
+
+        }
+
+    });
+
+},{
+    threshold:.3
+});
+
+finalObserver.observe(
+    document.getElementById("final")
+);
 
 </script>
 
