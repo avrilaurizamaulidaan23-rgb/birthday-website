@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +8,10 @@
 <title>For Emey ❤️</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap');
+
+/* =====================================================
+   BASIC
+===================================================== */
 
 *{
     margin:0;
@@ -20,15 +24,29 @@ html{
 }
 
 body{
-    background:#090909;
+    background:#080808;
     color:#fff;
-    font-family:'DM Sans',sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     overflow-x:hidden;
+}
+
+:root{
+    --black:#080808;
+    --black2:#111111;
+    --red:#a91532;
+    --red2:#d12848;
+    --red3:#ef6079;
+    --white:#f7f3ef;
+    --gray:#aaa;
 }
 
 button{
     font-family:inherit;
 }
+
+/* =====================================================
+   MOBILE PAGE
+===================================================== */
 
 .page{
     width:100%;
@@ -42,36 +60,54 @@ button{
     max-width:480px;
     min-height:100vh;
     margin:auto;
+    padding:30px 22px 80px;
     position:relative;
-    padding:35px 24px 70px;
 }
 
+/* =====================================================
+   FOOTBALL DECORATION
+===================================================== */
 
-/* =========================================
-   COLORS
-========================================= */
+.scroll-ball{
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    margin:0 auto 25px;
 
-:root{
-    --black:#090909;
-    --black2:#111111;
-    --red:#a71930;
-    --red2:#c72843;
-    --soft-red:#ef7184;
-    --white:#f8f5f2;
-    --gray:#a9a5a5;
+    background:
+        radial-gradient(circle at 35% 30%,#fff 0 5%,transparent 6%),
+        radial-gradient(circle at 50% 50%,#222 0 14%,transparent 15%),
+        radial-gradient(circle at 20% 70%,#222 0 12%,transparent 13%),
+        radial-gradient(circle at 80% 25%,#222 0 12%,transparent 13%),
+        #eee;
+
+    box-shadow:
+        0 0 25px rgba(255,255,255,.12);
+
+    animation:ballFloat 2.5s ease-in-out infinite;
 }
 
+@keyframes ballFloat{
+    0%,100%{
+        transform:translateY(0) rotate(0);
+    }
 
-/* =========================================
+    50%{
+        transform:translateY(-8px) rotate(15deg);
+    }
+}
+
+/* =====================================================
    LOADING
-========================================= */
+===================================================== */
 
 #loading{
     display:flex;
     align-items:center;
     justify-content:center;
+
     background:
-        radial-gradient(circle at center,#46101c 0%,#17090c 32%,#090909 70%);
+        radial-gradient(circle at center,#42101b,#13080b 40%,#080808 75%);
 }
 
 .loading-content{
@@ -79,54 +115,64 @@ button{
 }
 
 .loading-ball{
-    width:58px;
-    height:58px;
+    width:68px;
+    height:68px;
+    margin:auto;
+
     border-radius:50%;
-    margin:0 auto 28px;
 
     background:
-        radial-gradient(circle at 35% 30%,#fff 0 5%,transparent 6%),
-        radial-gradient(circle at 65% 65%,#680d1e 0 25%,transparent 26%),
-        #b51e38;
+        radial-gradient(circle at 35% 30%,#fff 0 6%,transparent 7%),
+        radial-gradient(circle at 50% 50%,#151515 0 15%,transparent 16%),
+        radial-gradient(circle at 20% 70%,#222 0 12%,transparent 13%),
+        #eee;
+
+    animation:
+        footballBounce 1.1s infinite ease-in-out,
+        footballRotate 2s linear infinite;
 
     box-shadow:
-        0 0 35px rgba(199,40,67,.45);
-
-    animation:bounce 1s infinite ease-in-out;
+        0 15px 40px rgba(0,0,0,.5);
 }
 
-@keyframes bounce{
+@keyframes footballBounce{
+
     0%,100%{
-        transform:translateY(0) scale(1);
+        transform:translateY(0);
     }
+
     50%{
-        transform:translateY(-18px) scale(.95);
+        transform:translateY(-22px);
     }
+
+}
+
+@keyframes footballRotate{
+
+    to{
+        rotate:360deg;
+    }
+
 }
 
 .loading-text{
+    margin-top:30px;
+    color:#d8d2d2;
     font-size:12px;
-    letter-spacing:2px;
-    color:#d5d0d0;
+    letter-spacing:1.8px;
 }
 
-.loading-dots{
-    display:inline-block;
-    width:22px;
-    text-align:left;
-}
-
-
-/* =========================================
-   PIN SCREEN
-========================================= */
+/* =====================================================
+   PIN
+===================================================== */
 
 #pinScreen{
     display:none;
     align-items:center;
     justify-content:center;
+
     background:
-        radial-gradient(circle at center,#351019,#090909 68%);
+        radial-gradient(circle at center,#351019,#080808 70%);
 }
 
 .pin-content{
@@ -136,22 +182,22 @@ button{
 }
 
 .pin-label{
+    color:#a59c9c;
     font-size:10px;
     letter-spacing:4px;
-    color:#9d9696;
-    margin-bottom:15px;
+    margin-bottom:18px;
 }
 
 .pin-title{
-    font-family:'Playfair Display',serif;
-    font-size:35px;
+    font-family:Georgia,serif;
+    font-size:38px;
     font-weight:400;
-    margin-bottom:10px;
 }
 
 .pin-subtitle{
-    color:#999;
+    color:#888;
     font-size:13px;
+    margin-top:12px;
     margin-bottom:35px;
 }
 
@@ -159,21 +205,20 @@ button{
     display:flex;
     justify-content:center;
     gap:15px;
-    margin-bottom:30px;
+    margin-bottom:28px;
 }
 
 .pin-dot{
     width:11px;
     height:11px;
-    border:1px solid #777;
+    border:1px solid #666;
     border-radius:50%;
-    transition:.2s;
 }
 
 .pin-dot.active{
     background:var(--red2);
     border-color:var(--red2);
-    box-shadow:0 0 12px rgba(199,40,67,.5);
+    box-shadow:0 0 15px rgba(209,40,72,.5);
 }
 
 .keypad{
@@ -187,398 +232,468 @@ button{
     border-radius:18px;
     border:1px solid #292929;
     background:#141414;
-    color:white;
+    color:#fff;
     font-size:18px;
     cursor:pointer;
-    transition:.2s;
-}
-
-.key:hover{
-    background:#211014;
-    border-color:#8f1a30;
 }
 
 .key:active{
-    transform:scale(.94);
+    transform:scale(.93);
+    background:#2b1017;
 }
 
 .pin-error{
-    height:20px;
+    min-height:22px;
     margin-top:18px;
-    color:#e56578;
+    color:#e85a73;
     font-size:12px;
 }
 
-
-/* =========================================
-   GIFT ENTRY
-========================================= */
+/* =====================================================
+   GIFT
+===================================================== */
 
 #giftScreen{
     display:none;
     align-items:center;
     justify-content:center;
-    background:#0c0c0c;
+    background:#090909;
 }
 
 .gift-entry{
     text-align:center;
 }
 
-.gift-emoji{
+.gift{
     font-size:90px;
-    display:block;
     cursor:pointer;
     animation:giftFloat 2s infinite ease-in-out;
-    filter:drop-shadow(0 15px 30px rgba(167,25,48,.3));
 }
 
 @keyframes giftFloat{
+
     0%,100%{
         transform:translateY(0) rotate(-2deg);
     }
+
     50%{
-        transform:translateY(-10px) rotate(2deg);
+        transform:translateY(-12px) rotate(2deg);
     }
+
 }
 
 .gift-hint{
     margin-top:25px;
-    color:#8e8989;
-    font-size:12px;
-    letter-spacing:1px;
-}
-
-.gift-entry.shake .gift-emoji{
-    animation:giftShake .5s;
-}
-
-@keyframes giftShake{
-    0%,100%{transform:rotate(0);}
-    20%{transform:rotate(-12deg);}
-    40%{transform:rotate(12deg);}
-    60%{transform:rotate(-8deg);}
-    80%{transform:rotate(8deg);}
-}
-
-
-/* =========================================
-   BIRTHDAY HERO
-========================================= */
-
-#birthday{
-    display:none;
-    background:
-        linear-gradient(#090909,#10090b);
-}
-
-.hero{
-    text-align:center;
-    padding-top:90px;
-}
-
-.hero-small{
-    color:#aaa;
-    font-size:11px;
-    letter-spacing:3px;
-    margin-bottom:20px;
-}
-
-.hero h1{
-    font-family:'Playfair Display',serif;
-    font-weight:400;
-    font-size:clamp(42px,12vw,62px);
-    line-height:1.05;
-}
-
-.hero h1 span{
-    color:#d3314c;
-}
-
-.hero-date{
-    margin-top:20px;
-    font-size:12px;
-    letter-spacing:4px;
-    color:#aaa;
-}
-
-.scroll-hint{
-    margin-top:80px;
-    text-align:center;
     color:#888;
     font-size:11px;
     letter-spacing:2px;
 }
 
-.arrow{
+.gift.shake{
+    animation:giftShake .6s;
+}
+
+@keyframes giftShake{
+
+    0%,100%{transform:rotate(0);}
+    20%{transform:rotate(-12deg);}
+    40%{transform:rotate(12deg);}
+    60%{transform:rotate(-9deg);}
+    80%{transform:rotate(8deg);}
+
+}
+
+/* =====================================================
+   BIRTHDAY
+===================================================== */
+
+#birthday{
+    display:none;
+    background:
+        linear-gradient(#090909,#10090c);
+}
+
+.hero{
+    text-align:center;
+    padding-top:70px;
+}
+
+.hero-small{
+    font-size:10px;
+    color:#aaa;
+    letter-spacing:4px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-family:Georgia,serif;
+    font-weight:400;
+    font-size:50px;
+    line-height:1.08;
+}
+
+.hero h1 span{
+    color:var(--red2);
+}
+
+.hero-date{
+    margin-top:20px;
+    color:#999;
+    font-size:11px;
+    letter-spacing:4px;
+}
+
+.scroll-hint{
+    text-align:center;
+    color:#777;
+    font-size:10px;
+    letter-spacing:2px;
+    margin-top:90px;
+}
+
+.scroll-arrow{
     margin-top:12px;
     font-size:22px;
-    animation:arrowDown 1.4s infinite;
+    animation:arrowMove 1.4s infinite;
 }
 
-@keyframes arrowDown{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(8px);}
+@keyframes arrowMove{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(8px);
+    }
+
 }
 
-
-/* =========================================
+/* =====================================================
    FALLING BALLS
-========================================= */
+===================================================== */
 
-.ball{
+.falling-ball{
     position:fixed;
-    width:13px;
-    height:13px;
+    top:-40px;
+    width:14px;
+    height:14px;
     border-radius:50%;
-    top:-30px;
     pointer-events:none;
-    z-index:20;
-    background:#b51e38;
-    box-shadow:0 3px 10px rgba(0,0,0,.4);
-    animation:fall linear forwards;
+    z-index:50;
+
+    background:
+        radial-gradient(circle at 35% 30%,#fff 0 7%,transparent 8%),
+        #ddd;
+
+    animation:fallBall linear forwards;
 }
 
-.ball:nth-child(even){
-    background:#e04860;
-}
+@keyframes fallBall{
 
-@keyframes fall{
     0%{
         transform:translateY(0) rotate(0);
         opacity:0;
     }
+
     10%{
         opacity:1;
     }
+
     100%{
-        transform:translateY(110vh) rotate(540deg);
-        opacity:.15;
+        transform:translateY(110vh) rotate(720deg);
+        opacity:.1;
     }
+
 }
 
-
-/* =========================================
+/* =====================================================
    SECTION
-========================================= */
+===================================================== */
 
 .section{
-    padding-top:100px;
-    padding-bottom:100px;
+    padding-top:110px;
+    padding-bottom:50px;
 }
 
 .section-label{
+    color:#8f8585;
     font-size:9px;
     letter-spacing:4px;
-    color:#8d8787;
     text-transform:uppercase;
-    margin-bottom:15px;
+    margin-bottom:14px;
 }
 
 .section-title{
-    font-family:'Playfair Display',serif;
-    font-size:38px;
+    font-family:Georgia,serif;
+    font-size:36px;
     font-weight:400;
     line-height:1.15;
 }
 
 .section-intro{
-    color:#aaa;
+    color:#999;
     font-size:13px;
     line-height:1.8;
-    margin-top:15px;
+    margin-top:16px;
 }
 
+/* =====================================================
+   MINI FOOTBALL GOAL
+===================================================== */
 
-/* =========================================
-   BALL BUCKET
-========================================= */
-
-.bucket-area{
-    margin-top:45px;
+.goal-area{
+    margin-top:60px;
     text-align:center;
 }
 
-.bucket{
-    width:185px;
-    height:120px;
-    margin:auto;
+.goal{
     position:relative;
-    border:4px solid #a51a32;
-    border-top:0;
-    border-radius:0 0 70px 70px;
+    width:250px;
+    height:170px;
+    margin:0 auto;
+
+    border-left:6px solid #ddd;
+    border-right:6px solid #ddd;
+    border-top:6px solid #ddd;
+
     background:
-        linear-gradient(135deg,#39101a,#151515);
+        repeating-linear-gradient(
+            45deg,
+            rgba(255,255,255,.06) 0px,
+            rgba(255,255,255,.06) 2px,
+            transparent 2px,
+            transparent 13px
+        );
+
     box-shadow:
-        inset 0 -20px 30px rgba(0,0,0,.4),
-        0 20px 40px rgba(0,0,0,.4);
+        0 25px 50px rgba(0,0,0,.5);
 }
 
-.bucket:before{
-    content:"";
+.goal-net{
     position:absolute;
-    left:-8px;
-    top:-8px;
-    width:185px;
-    height:18px;
+    inset:0;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent 0,
+            transparent 22px,
+            rgba(255,255,255,.07) 23px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            transparent 0,
+            transparent 22px,
+            rgba(255,255,255,.07) 23px
+        );
+}
+
+.goal-ball{
+    position:absolute;
+    width:34px;
+    height:34px;
     border-radius:50%;
-    border:4px solid #a51a32;
-    background:#13090b;
-}
 
-.bucket-balls{
-    position:absolute;
-    left:20px;
-    right:20px;
-    top:-38px;
-    height:80px;
-}
+    background:
+        radial-gradient(circle at 35% 30%,#fff 0 6%,transparent 7%),
+        radial-gradient(circle at 50% 50%,#222 0 15%,transparent 16%),
+        #eee;
 
-.small-ball{
-    position:absolute;
-    width:28px;
-    height:28px;
-    border-radius:50%;
-    background:#b51e38;
     cursor:pointer;
-    transition:.3s;
+    transition:.25s;
+
+    box-shadow:
+        0 5px 12px rgba(0,0,0,.5);
 }
 
-.small-ball:hover{
+.goal-ball:hover{
     transform:scale(1.18);
 }
 
-.small-ball:nth-child(1){left:5px;top:30px;}
-.small-ball:nth-child(2){left:35px;top:5px;background:#dc3b56;}
-.small-ball:nth-child(3){left:72px;top:23px;background:#8d142a;}
-.small-ball:nth-child(4){left:108px;top:3px;background:#d32b47;}
-.small-ball:nth-child(5){left:137px;top:28px;background:#9d1a32;}
+.goal-ball:nth-child(1){
+    left:15px;
+    bottom:15px;
+}
 
-.note{
-    margin:45px auto 0;
-    min-height:90px;
-    max-width:340px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+.goal-ball:nth-child(2){
+    left:58px;
+    bottom:5px;
+}
+
+.goal-ball:nth-child(3){
+    left:102px;
+    bottom:25px;
+}
+
+.goal-ball:nth-child(4){
+    left:145px;
+    bottom:8px;
+}
+
+.goal-ball:nth-child(5){
+    left:190px;
+    bottom:18px;
+}
+
+.goal-ball:nth-child(6){
+    left:40px;
+    bottom:55px;
+}
+
+.goal-ball:nth-child(7){
+    left:88px;
+    bottom:68px;
+}
+
+.goal-ball:nth-child(8){
+    left:137px;
+    bottom:50px;
+}
+
+.goal-ball:nth-child(9){
+    left:175px;
+    bottom:65px;
+}
+
+.goal-ball:nth-child(10){
+    left:110px;
+    bottom:100px;
+}
+
+.goal-instruction{
+    margin-top:25px;
+    color:#777;
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+.ball-message{
+    min-height:75px;
+    max-width:350px;
+    margin:28px auto 0;
+
     padding:20px;
-    border-radius:18px;
+
     background:#151515;
-    border:1px solid #272727;
+    border:1px solid #292929;
+    border-radius:18px;
+
     color:#ddd;
-    font-family:'Playfair Display',serif;
-    font-size:17px;
-    line-height:1.5;
+
+    font-family:Georgia,serif;
+    font-size:16px;
+    line-height:1.6;
+
     opacity:0;
     transform:translateY(10px);
     transition:.4s;
 }
 
-.note.show{
+.ball-message.show{
     opacity:1;
     transform:translateY(0);
 }
 
-
-/* =========================================
+/* =====================================================
    LETTER
-========================================= */
+===================================================== */
 
 .letter-card{
     margin-top:35px;
-    padding:30px 24px;
-    border-radius:25px;
+    padding:30px 23px;
+
     background:
-        linear-gradient(145deg,#171717,#101010);
-    border:1px solid #282828;
+        linear-gradient(145deg,#171717,#0f0f0f);
+
+    border:1px solid #292929;
+    border-radius:24px;
+
     box-shadow:0 20px 50px rgba(0,0,0,.35);
 }
 
 .letter-card p{
-    color:#d1cece;
-    font-family:'Playfair Display',serif;
+    font-family:Georgia,serif;
+    color:#d5d0d0;
     font-size:16px;
-    line-height:1.85;
+    line-height:1.9;
     margin-bottom:22px;
 }
 
 .signature{
-    color:#d13a53!important;
     text-align:right;
-    margin-top:35px;
+    color:#d13b55!important;
 }
 
-
-/* =========================================
+/* =====================================================
    PHOTO ALBUM
-========================================= */
+===================================================== */
 
 .album{
     margin-top:40px;
 }
 
 .photo-frame{
-    background:#e9e3dd;
-    padding:12px 12px 25px;
-    border-radius:4px;
-    box-shadow:0 25px 60px rgba(0,0,0,.5);
-    transform:rotate(-1deg);
-    transition:.4s;
-    cursor:pointer;
-}
+    background:#eee7df;
+    padding:11px 11px 24px;
 
-.photo-frame:hover{
-    transform:rotate(0) scale(1.02);
+    border-radius:5px;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.55);
+
+    cursor:pointer;
+
+    transform:rotate(-1deg);
 }
 
 .photo-frame img{
     width:100%;
-    height:430px;
+    height:420px;
     object-fit:cover;
     display:block;
+    background:#222;
 }
 
 .photo-caption{
     color:#222;
     text-align:center;
-    font-family:'Playfair Display',serif;
+    font-family:Georgia,serif;
+    margin-top:12px;
     font-size:14px;
-    margin-top:13px;
 }
 
 .album-controls{
     display:flex;
-    justify-content:center;
     align-items:center;
-    gap:18px;
+    justify-content:center;
+    gap:20px;
     margin-top:25px;
 }
 
 .album-button{
-    border:1px solid #333;
-    background:#151515;
-    color:white;
+    width:43px;
+    height:43px;
     border-radius:50%;
-    width:42px;
-    height:42px;
+    background:#151515;
+    border:1px solid #333;
+    color:white;
     cursor:pointer;
 }
 
 .photo-number{
-    color:#888;
-    font-size:11px;
+    color:#777;
+    font-size:10px;
     letter-spacing:2px;
 }
 
-
-/* =========================================
+/* =====================================================
    TIMELINE
-========================================= */
+===================================================== */
 
 .timeline{
     position:relative;
     margin-top:50px;
-    padding-left:30px;
+    padding-left:28px;
 }
 
 .timeline:before{
@@ -588,35 +703,41 @@ button{
     top:0;
     bottom:0;
     width:1px;
-    background:#762032;
+    background:#762033;
 }
 
 .timeline-item{
     position:relative;
-    margin-bottom:55px;
+    margin-bottom:60px;
 }
 
 .timeline-dot{
     position:absolute;
-    left:-29px;
-    top:5px;
-    width:14px;
-    height:14px;
+    left:-28px;
+    top:3px;
+
+    width:15px;
+    height:15px;
+
     border-radius:50%;
-    background:#b51e38;
-    border:3px solid #0d0d0d;
-    box-shadow:0 0 0 1px #8d1b30;
+
+    background:var(--red2);
+
+    border:3px solid #0c0c0c;
+
+    box-shadow:
+        0 0 0 1px #9b2137;
 }
 
 .timeline-date{
-    font-size:10px;
+    color:#cf4058;
+    font-size:9px;
     letter-spacing:2px;
-    color:#c53a52;
     margin-bottom:10px;
 }
 
 .timeline-title{
-    font-family:'Playfair Display',serif;
+    font-family:Georgia,serif;
     font-size:24px;
     margin-bottom:9px;
 }
@@ -627,28 +748,32 @@ button{
     line-height:1.8;
 }
 
-
-/* =========================================
+/* =====================================================
    MUSIC
-========================================= */
+===================================================== */
 
 .music-player{
-    margin-top:45px;
-    padding:18px;
-    border-radius:20px;
-    background:#141414;
-    border:1px solid #282828;
+    margin-top:40px;
+
     display:flex;
     align-items:center;
     gap:15px;
+
+    padding:18px;
+
+    border-radius:20px;
+    background:#141414;
+    border:1px solid #292929;
 }
 
 .music-disc{
-    width:50px;
-    height:50px;
+    width:52px;
+    height:52px;
     border-radius:50%;
+
     background:
-        radial-gradient(circle,#e8e8e8 0 8%,#333 9% 12%,#9f1931 13% 100%);
+        radial-gradient(circle,#eee 0 8%,#333 9% 12%,#a71930 13% 100%);
+
     animation:spin 5s linear infinite;
     animation-play-state:paused;
 }
@@ -658,7 +783,11 @@ button{
 }
 
 @keyframes spin{
-    to{transform:rotate(360deg);}
+
+    to{
+        transform:rotate(360deg);
+    }
+
 }
 
 .music-info{
@@ -672,7 +801,7 @@ button{
 .music-artist{
     color:#777;
     font-size:11px;
-    margin-top:4px;
+    margin-top:5px;
 }
 
 .music-toggle{
@@ -680,213 +809,104 @@ button{
     height:42px;
     border-radius:50%;
     border:0;
-    background:#a71930;
+    background:var(--red);
     color:white;
     cursor:pointer;
 }
 
+/* =====================================================
+   GRATITUDE NOTES
+===================================================== */
 
-/* =========================================
-   JAR
-========================================= */
-
-.jar-section{
-    text-align:center;
+.notes-area{
+    margin-top:45px;
 }
 
-.jar{
-    width:190px;
-    height:240px;
-    margin:45px auto 25px;
-    position:relative;
-    border:3px solid rgba(220,220,220,.55);
-    border-radius:30px 30px 45px 45px;
-    background:
-        linear-gradient(90deg,
-            rgba(255,255,255,.08),
-            rgba(255,255,255,.02),
-            rgba(255,255,255,.09));
-    box-shadow:
-        inset 15px 0 20px rgba(255,255,255,.03),
-        inset -15px 0 20px rgba(0,0,0,.3),
-        0 25px 60px rgba(0,0,0,.4);
-    transition:.2s;
-}
+.note-box{
+    padding:23px;
+    margin-bottom:14px;
 
-.jar:before{
-    content:"";
-    position:absolute;
-    left:25px;
-    right:25px;
-    top:-14px;
-    height:20px;
-    border:3px solid #aaa;
-    border-radius:10px;
-    background:#202020;
-}
-
-.jar.shake{
-    animation:jarShake .7s;
-}
-
-@keyframes jarShake{
-    0%,100%{transform:rotate(0);}
-    15%{transform:rotate(-7deg);}
-    30%{transform:rotate(7deg);}
-    45%{transform:rotate(-6deg);}
-    60%{transform:rotate(6deg);}
-    75%{transform:rotate(-3deg);}
-}
-
-.jar-note{
-    position:absolute;
-    width:52px;
-    height:35px;
-    background:#eee5d5;
-    border-radius:5px;
-    transform:rotate(12deg);
-}
-
-.jar-note:nth-child(1){
-    left:30px;
-    bottom:40px;
-}
-
-.jar-note:nth-child(2){
-    left:70px;
-    bottom:55px;
-    transform:rotate(-10deg);
-}
-
-.jar-note:nth-child(3){
-    right:28px;
-    bottom:35px;
-    transform:rotate(18deg);
-}
-
-.jar-note:nth-child(4){
-    left:48px;
-    bottom:85px;
-    transform:rotate(5deg);
-}
-
-.jar-note:nth-child(5){
-    right:48px;
-    bottom:80px;
-    transform:rotate(-15deg);
-}
-
-.shake-text{
-    color:#999;
-    font-size:11px;
-    letter-spacing:2px;
-}
-
-.shake-button{
-    margin-top:22px;
-    border:1px solid #9e1a31;
-    background:#151515;
-    color:white;
-    border-radius:50px;
-    padding:14px 25px;
-    cursor:pointer;
-}
-
-.jar-message{
-    min-height:80px;
-    margin:30px auto 0;
-    max-width:350px;
-    padding:20px;
+    background:#141414;
+    border:1px solid #282828;
     border-radius:18px;
-    background:#161616;
-    border:1px solid #292929;
-    color:#ddd;
-    font-family:'Playfair Display',serif;
-    font-size:16px;
-    line-height:1.6;
+
+    font-family:Georgia,serif;
+    color:#d6d1d1;
+    line-height:1.7;
+
+    transform:translateY(15px);
     opacity:0;
-    transition:.4s;
+
+    transition:.5s;
 }
 
-.jar-message.show{
+.note-box.show{
+    transform:translateY(0);
     opacity:1;
 }
 
-
-/* =========================================
+/* =====================================================
    FINAL
-========================================= */
+===================================================== */
 
 #final{
     display:none;
-    background:
-        radial-gradient(circle at center,#3b1019,#090909 70%);
     align-items:center;
     justify-content:center;
+
+    background:
+        radial-gradient(circle at center,#41101b,#090909 72%);
 }
 
 .final-content{
     text-align:center;
-    padding-top:90px;
+    padding-top:80px;
 }
 
-.final-ball{
-    font-size:55px;
+.final-football{
+    font-size:60px;
     margin-bottom:25px;
+
+    animation:ballFloat 2s infinite;
 }
 
 .final-content h2{
-    font-family:'Playfair Display',serif;
+    font-family:Georgia,serif;
     font-weight:400;
     font-size:48px;
     line-height:1.1;
 }
 
 .final-content h2 span{
-    color:#d2324d;
+    color:var(--red2);
 }
 
 .final-content p{
-    margin-top:25px;
     color:#aaa;
     font-size:13px;
     line-height:1.9;
+    margin-top:24px;
 }
 
 .final-date{
     margin-top:40px;
-    color:#d2324d;
+    color:var(--red2);
     font-size:10px;
     letter-spacing:4px;
 }
 
-
-/* =========================================
-   HIDDEN
-========================================= */
-
-.hidden{
-    display:none!important;
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
+/* =====================================================
+   RESPONSIVE
+===================================================== */
 
 @media(max-width:420px){
-
-    .card{
-        padding-left:20px;
-        padding-right:20px;
-    }
 
     .hero h1{
         font-size:45px;
     }
 
     .section-title{
-        font-size:34px;
+        font-size:33px;
     }
 
     .photo-frame img{
@@ -894,6 +914,7 @@ button{
     }
 
 }
+
 </style>
 </head>
 
@@ -901,9 +922,9 @@ button{
 <body>
 
 
-<!-- =====================================
+<!-- =====================================================
      LOADING
-===================================== -->
+===================================================== -->
 
 <section class="page" id="loading">
 
@@ -912,7 +933,7 @@ button{
         <div class="loading-ball"></div>
 
         <div class="loading-text">
-            preparing something special for you<span class="loading-dots">...</span>
+            preparing something special for you...
         </div>
 
     </div>
@@ -920,9 +941,9 @@ button{
 </section>
 
 
-<!-- =====================================
+<!-- =====================================================
      PIN
-===================================== -->
+===================================================== -->
 
 <section class="page" id="pinScreen">
 
@@ -937,7 +958,7 @@ button{
         </div>
 
         <div class="pin-subtitle">
-            I think you know this one.
+            You probably know this one.
         </div>
 
         <div class="pin-display">
@@ -976,15 +997,15 @@ button{
 </section>
 
 
-<!-- =====================================
+<!-- =====================================================
      GIFT
-===================================== -->
+===================================================== -->
 
 <section class="page" id="giftScreen">
 
-    <div class="gift-entry" id="giftEntry">
+    <div class="gift-entry">
 
-        <div class="gift-emoji" onclick="openGift()">
+        <div class="gift" id="gift" onclick="openGift()">
             🎁
         </div>
 
@@ -997,13 +1018,16 @@ button{
 </section>
 
 
-<!-- =====================================
+<!-- =====================================================
      BIRTHDAY
-===================================== -->
+===================================================== -->
 
 <section class="page" id="birthday">
 
 <div class="card">
+
+
+    <!-- HERO -->
 
     <div class="hero">
 
@@ -1027,60 +1051,61 @@ button{
 
         SCROLL FOR A LITTLE SOMETHING
 
-        <div class="arrow">
+        <div class="scroll-arrow">
             ↓
         </div>
 
     </div>
 
 
-    <!-- BALL BUCKET -->
+    <!-- =================================================
+         BALL MESSAGE
+    ================================================= -->
 
     <div class="section">
 
+        <div class="scroll-ball"></div>
+
         <div class="section-label">
-            pick one
+            start here
         </div>
 
         <div class="section-title">
             A few things<br>
-            I want you to know.
+            I know about you.
         </div>
 
         <div class="section-intro">
-            Ada beberapa bola di sini.
-            Coba pencet satu-satu.
+            Karena ternyata setelah kenal kamu,
+            ada aja hal kecil yang aku hafal.
         </div>
 
 
-        <div class="bucket-area">
+        <div class="goal-area">
 
-            <div class="bucket">
+            <div class="goal">
 
-                <div class="bucket-balls">
+                <div class="goal-net"></div>
 
-                    <div class="small-ball"
-                         onclick="showBallNote(0)"></div>
-
-                    <div class="small-ball"
-                         onclick="showBallNote(1)"></div>
-
-                    <div class="small-ball"
-                         onclick="showBallNote(2)"></div>
-
-                    <div class="small-ball"
-                         onclick="showBallNote(3)"></div>
-
-                    <div class="small-ball"
-                         onclick="showBallNote(4)"></div>
-
-                </div>
+                <div class="goal-ball" onclick="showBallNote(0)"></div>
+                <div class="goal-ball" onclick="showBallNote(1)"></div>
+                <div class="goal-ball" onclick="showBallNote(2)"></div>
+                <div class="goal-ball" onclick="showBallNote(3)"></div>
+                <div class="goal-ball" onclick="showBallNote(4)"></div>
+                <div class="goal-ball" onclick="showBallNote(5)"></div>
+                <div class="goal-ball" onclick="showBallNote(6)"></div>
+                <div class="goal-ball" onclick="showBallNote(7)"></div>
+                <div class="goal-ball" onclick="showBallNote(8)"></div>
+                <div class="goal-ball" onclick="showBallNote(9)"></div>
 
             </div>
 
+            <div class="goal-instruction">
+                TAP THE BALLS
+            </div>
 
-            <div class="note" id="ballNote">
-                Pick a ball.
+            <div class="ball-message" id="ballMessage">
+                pilih satu bola dulu.
             </div>
 
         </div>
@@ -1088,9 +1113,13 @@ button{
     </div>
 
 
-    <!-- LETTER -->
+    <!-- =================================================
+         LETTER
+    ================================================= -->
 
     <div class="section">
+
+        <div class="scroll-ball"></div>
 
         <div class="section-label">
             from me
@@ -1108,86 +1137,106 @@ button{
             </p>
 
             <p>
-                Aku sebenarnya nggak jago bikin
-                ucapan yang terlalu panjang.
-                Jadi kali ini aku cuma mau bilang
-                hal-hal yang memang aku rasain.
+                Aku sebenarnya bingung mau mulai dari mana.
+                Soalnya kalau ngomongin kamu, yang muncul
+                malah banyak kejadian random yang kalau
+                diceritain satu-satu kayaknya nggak akan selesai.
             </p>
 
             <p>
-                Aku senang pernah ketemu kamu
-                di Stasiun Pocin waktu itu.
-                Apalagi kalau ingat ternyata
-                kita malah dipaparaziin sama
-                temen aku. 😂
+                Kalau dipikir-pikir lucu juga.
+                Kita awalnya cuma kenal di Stasiun Pocin,
+                pas aku pulang ngampus di bulan Februari.
+                Terus aku malah dipaparaziin sama temen sendiri.
+                Awal kenalnya aja sudah nggak normal. 😂
             </p>
 
             <p>
-                Dari yang awalnya cuma ketemu,
-                ngobrol, dan akhirnya jadi
-                punya banyak cerita random
-                bareng.
+                Setelah itu entah gimana ceritanya,
+                tanggal 27 Maret 2026 akhirnya jadi
+                tanggal yang kita ingat sebagai awal kita.
             </p>
 
             <p>
-                Aku suka hal-hal kecil tentang kamu.
-                Cara kamu selalu ngeladenin
-                celetukan aku, bahkan kalau
-                pertanyaannya nggak jelas.
+                Dan sejak saat itu, hampir setiap ketemu
+                selalu ada aja yang bisa dibahas.
+                Bahkan celetukan random aku juga selalu
+                kamu ladenin.
             </p>
 
             <p>
-                Termasuk saat aku bilang,
-                “kalau kita tiba-tiba bisa terbang
-                gimana?”
-                dan kamu tetap mau membahasnya.
+                Aku bisa tiba-tiba ngomong,
+                "kalau kita bisa terbang gimana ya?"
+                dan bukannya bilang aku aneh,
+                kamu malah ikut masuk ke pemisalan itu.
+                Itu salah satu hal yang aku suka dari kamu.
             </p>
 
             <p>
-                Terus ada satu hal yang sebenarnya
-                agak ngeselin tapi diam-diam
-                aku suka:
-                kamu yang selalu nyuruh aku
-                pakai jaket atau jas hujan.
+                Ada juga kebiasaan kamu yang kadang
+                bikin aku kesel tapi sebenarnya aku suka.
+                Kamu selalu bilang aku harus pakai jaket
+                atau jas hujan.
             </p>
 
             <p>
-                Menurutku kan deket.
+                Padahal menurut aku jaraknya dekat.
                 Ribet.
                 Tapi kamu tetap nggak mau jalan
-                kalau aku belum pakai.
+                sebelum aku nurutin kamu.
             </p>
 
             <p>
-                Yaudah.
-                Mungkin memang begitulah cara
-                kamu menunjukkan perhatian.
+                Sekarang aku sadar,
+                mungkin memang itu cara kamu menunjukkan
+                kalau kamu peduli.
             </p>
 
             <p>
-                Di umur 22 ini, semoga banyak
-                hal baik datang ke kamu.
-                Semoga semua yang sedang kamu
-                usahakan pelan-pelan ketemu
-                hasilnya.
+                Aku juga suka hal-hal sederhana lainnya.
+                Misalnya waktu kamu jajanin aku.
+                Ini penting untuk dicatat karena
+                setiap kamu jajanin aku,
+                rasa sayang aku kayak naik sedikit. 😂
             </p>
 
             <p>
-                Semoga kamu tetap sehat,
-                tetap jadi orang yang aku kenal,
-                dan tetap punya banyak alasan
-                buat ketawa.
+                Terus kalau kamu kasih aku barang,
+                ya... tambah sayang lagi.
+                Gimana dong.
             </p>
 
             <p>
-                Dan semoga...
-                aku masih boleh ada di banyak
-                cerita kamu berikutnya.
+                Di umur 22 ini, aku cuma berharap
+                kamu sehat, bahagia, dimudahkan
+                dalam semua yang sedang kamu usahakan,
+                dan bisa mencapai banyak hal
+                yang kamu inginkan.
+            </p>
+
+            <p>
+                Semoga kamu tetap jadi Emey yang aku kenal.
+                Yang manly, ganteng,
+                dan semoga soon bakal punya otot banget. 😂
+            </p>
+
+            <p>
+                Terima kasih sudah jadi bagian dari
+                cerita aku sampai hari ini.
+                Semoga masih banyak cerita random,
+                ketawa, jalan-jalan, makanan,
+                dan hal-hal kecil lainnya
+                yang bisa kita lakukan bareng.
+            </p>
+
+            <p>
+                Happy birthday.
+                Semoga tahun ini baik banget sama kamu.
             </p>
 
             <p class="signature">
-                — from the girl<br>
-                who somehow likes you a lot ❤️
+                — dari aku,<br>
+                yang paling suka kamu jajanin. ❤️
             </p>
 
         </div>
@@ -1195,9 +1244,13 @@ button{
     </div>
 
 
-    <!-- PHOTO MEMORIES -->
+    <!-- =================================================
+         PHOTO
+    ================================================= -->
 
     <div class="section">
+
+        <div class="scroll-ball"></div>
 
         <div class="section-label">
             our little archive
@@ -1209,15 +1262,14 @@ button{
         </div>
 
         <div class="section-intro">
-            Beberapa foto yang punya cerita
-            sendiri-sendiri.
+            Nanti bagian ini diisi foto-foto kita.
+            Tinggal ganti foto di folder assets.
         </div>
 
 
         <div class="album">
 
-            <div class="photo-frame"
-                 onclick="nextPhoto()">
+            <div class="photo-frame" onclick="nextPhoto()">
 
                 <img id="albumPhoto"
                      src="assets/foto1.jpg"
@@ -1225,7 +1277,7 @@ button{
 
                 <div class="photo-caption"
                      id="photoCaption">
-                    our first memory
+                    the beginning
                 </div>
 
             </div>
@@ -1255,9 +1307,13 @@ button{
     </div>
 
 
-    <!-- TIMELINE -->
+    <!-- =================================================
+         TIMELINE
+    ================================================= -->
 
     <div class="section">
+
+        <div class="scroll-ball"></div>
 
         <div class="section-label">
             our story
@@ -1288,7 +1344,7 @@ button{
                     Aku pulang ngampus,
                     ketemu kamu di stasiun.
                     Terus temen aku malah
-                    bertindak seperti paparazzi.
+                    jadi paparazzi dadakan.
                     Awal yang cukup random.
                 </div>
 
@@ -1308,9 +1364,8 @@ button{
                 </div>
 
                 <div class="timeline-text">
-                    Tanggal yang akhirnya
-                    bikin semuanya punya nama.
-                    ❤️
+                    Tanggal yang akhirnya bikin
+                    semuanya punya nama.
                 </div>
 
             </div>
@@ -1325,15 +1380,14 @@ button{
                 </div>
 
                 <div class="timeline-title">
-                    Too many random moments.
+                    The random era.
                 </div>
 
                 <div class="timeline-text">
-                    Hampir setiap ketemu
-                    selalu ada aja yang bisa
-                    dibahas, diketawain,
-                    atau tiba-tiba jadi bahan
-                    pemisalan yang nggak masuk akal.
+                    Mulai dari celetukan nggak jelas,
+                    pembahasan random di jalan,
+                    sampai pemisalan "kalau kita bisa terbang"
+                    yang entah kenapa selalu kamu ladenin.
                 </div>
 
             </div>
@@ -1352,12 +1406,33 @@ button{
                 </div>
 
                 <div class="timeline-text">
-                    Dari kamu yang selalu
-                    nyuruh aku pakai jaket,
-                    sampai kamu yang suka
-                    jajanin aku.
-                    Ternyata hal-hal kecil
-                    justru yang paling diingat.
+                    Kamu yang nyuruh aku pakai jaket,
+                    kamu yang nggak mau jalan kalau aku
+                    belum pakai jas hujan,
+                    kamu yang suka jajanin aku,
+                    dan hal-hal kecil lainnya.
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-date">
+                    STILL HERE
+                </div>
+
+                <div class="timeline-title">
+                    And somehow...
+                </div>
+
+                <div class="timeline-text">
+                    Aku masih senang setiap kali
+                    kita ketemu.
+                    Karena entah kenapa,
+                    selalu ada aja cerita baru.
                 </div>
 
             </div>
@@ -1368,17 +1443,26 @@ button{
     </div>
 
 
-    <!-- MUSIC -->
+    <!-- =================================================
+         MUSIC
+    ================================================= -->
 
     <div class="section">
+
+        <div class="scroll-ball"></div>
 
         <div class="section-label">
             soundtrack
         </div>
 
         <div class="section-title">
-            This one sounds<br>
-            like us.
+            One song<br>
+            for you.
+        </div>
+
+        <div class="section-intro">
+            Putar kalau mau. Biar website ini
+            punya soundtrack sendiri.
         </div>
 
 
@@ -1411,12 +1495,16 @@ button{
     </div>
 
 
-    <!-- JAR -->
+    <!-- =================================================
+         GRATITUDE
+    ================================================= -->
 
-    <div class="section jar-section">
+    <div class="section">
+
+        <div class="scroll-ball"></div>
 
         <div class="section-label">
-            one more thing
+            a few more things
         </div>
 
         <div class="section-title">
@@ -1425,34 +1513,107 @@ button{
         </div>
 
         <div class="section-intro">
-            Shake the jar and pick a note.
+            Bukan surat panjang.
+            Cuma beberapa hal kecil yang aku suka.
         </div>
 
 
-        <div class="jar"
-             id="jar">
+        <div class="notes-area">
 
-            <div class="jar-note"></div>
-            <div class="jar-note"></div>
-            <div class="jar-note"></div>
-            <div class="jar-note"></div>
-            <div class="jar-note"></div>
+            <div class="note-box">
+                Kamu selalu mau ngeladenin
+                celetukan random aku.
+            </div>
+
+            <div class="note-box">
+                Kamu bisa bikin hal random
+                jadi bahan bercandaan.
+            </div>
+
+            <div class="note-box">
+                Kamu perhatian,
+                walaupun kadang cara menyampaikannya
+                bikin aku bilang "iya iya". 😂
+            </div>
+
+            <div class="note-box">
+                Kamu selalu ingetin aku pakai jaket
+                atau jas hujan.
+            </div>
+
+            <div class="note-box">
+                Kamu suka jajanin aku.
+                Ini jelas harus masuk daftar.
+            </div>
+
+            <div class="note-box">
+                Kamu punya cara sendiri
+                buat bikin ketemu kamu
+                selalu terasa menyenangkan.
+            </div>
 
         </div>
 
-
-        <div class="shake-text">
-            SHAKE THE JAR
-        </div>
-
-        <button class="shake-button"
-                onclick="shakeJar()">
-            Shake the jar
-        </button>
+    </div>
 
 
-        <div class="jar-message"
-             id="jarMessage">
+    <!-- =================================================
+         FINAL
+    ================================================= -->
+
+    <div class="section">
+
+        <div class="scroll-ball"></div>
+
+        <div class="final-content"
+             style="padding-top:40px;">
+
+            <div class="final-football">
+                ⚽
+            </div>
+
+            <div class="section-label">
+                one last thing
+            </div>
+
+            <h2>
+                Happy Birthday,<br>
+                <span>Emey.</span>
+            </h2>
+
+            <p>
+                4 September 2004.
+                Hari lahir seseorang yang
+                akhirnya jadi salah satu orang
+                penting dalam cerita aku.
+            </p>
+
+            <p>
+                Semoga umur 22 ini
+                membawa banyak rezeki,
+                kesehatan, kesempatan,
+                dan hal-hal baik lainnya.
+            </p>
+
+            <p>
+                Tetap jadi kamu.
+                Manly.
+                Ganteng.
+                Dan soon bakal punya
+                otot banget. 😂
+            </p>
+
+            <p>
+                Jangan lupa ngopi.<br>
+                Jangan lupa pakai jaket.<br>
+                Jangan lupa bahagia.<br>
+                Dan... jangan lupa aku.
+            </p>
+
+            <div class="final-date">
+                04 · 09 · 2026
+            </div>
+
         </div>
 
     </div>
@@ -1463,61 +1624,9 @@ button{
 </section>
 
 
-<!-- =====================================
-     FINAL
-===================================== -->
-
-<section class="page" id="final">
-
-    <div class="card final-content">
-
-        <div class="final-ball">
-            ⚽
-        </div>
-
-        <div class="section-label">
-            one last thing
-        </div>
-
-        <h2>
-            Happy Birthday,<br>
-            <span>Emey.</span>
-        </h2>
-
-        <p>
-            Semoga umur 22 ini
-            membawa banyak hal baik,
-            banyak rezeki,
-            banyak kesempatan,
-            dan banyak cerita baru.
-        </p>
-
-        <p>
-            Tetap jadi kamu.
-            Yang manly,
-            ganteng,
-            dan soon bakal punya
-            otot banget. 😂
-        </p>
-
-        <p>
-            Jangan lupa ngopi.<br>
-            Jangan lupa pakai jaket.<br>
-            Dan jangan lupa aku.
-        </p>
-
-        <div class="final-date">
-            04 · 09 · 2026
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================
+<!-- =====================================================
      AUDIO
-===================================== -->
+===================================================== -->
 
 <audio id="music"
        loop
@@ -1531,9 +1640,9 @@ button{
 
 <script>
 
-/* =====================================
+/* =====================================================
    LOADING
-===================================== */
+===================================================== */
 
 setTimeout(function(){
 
@@ -1544,9 +1653,9 @@ setTimeout(function(){
 },3000);
 
 
-/* =====================================
+/* =====================================================
    PIN
-===================================== */
+===================================================== */
 
 let enteredPin="";
 
@@ -1556,7 +1665,7 @@ function pressPin(number){
         return;
     }
 
-    enteredPin+=number;
+    enteredPin += number;
 
     updatePinDots();
 
@@ -1570,11 +1679,9 @@ function pressPin(number){
 
                 document.getElementById("giftScreen").style.display="flex";
 
-                playMusic();
-
             }else{
 
-                document.getElementById("pinError").innerHTML=
+                document.getElementById("pinError").innerHTML =
                 "Hmm... coba ingat lagi. 😂";
 
                 enteredPin="";
@@ -1593,15 +1700,18 @@ function pressPin(number){
 
 function updatePinDots(){
 
-    const dots=
-    document.querySelectorAll(".pin-dot");
+    const dots=document.querySelectorAll(".pin-dot");
 
     dots.forEach(function(dot,index){
 
         if(index<enteredPin.length){
+
             dot.classList.add("active");
+
         }else{
+
             dot.classList.remove("active");
+
         }
 
     });
@@ -1620,24 +1730,22 @@ function clearPin(){
 
 function deletePin(){
 
-    enteredPin=
-    enteredPin.slice(0,-1);
+    enteredPin=enteredPin.slice(0,-1);
 
     updatePinDots();
 
 }
 
 
-/* =====================================
+/* =====================================================
    GIFT
-===================================== */
+===================================================== */
 
 function openGift(){
 
-    const entry=
-    document.getElementById("giftEntry");
+    const gift=document.getElementById("gift");
 
-    entry.classList.add("shake");
+    gift.classList.add("shake");
 
     setTimeout(function(){
 
@@ -1645,88 +1753,98 @@ function openGift(){
 
         document.getElementById("birthday").style.display="block";
 
-        createBalls(25);
+        createBalls(35);
 
         window.scrollTo({
             top:0,
             behavior:"smooth"
         });
 
-    },700);
+    },650);
 
 }
 
 
-/* =====================================
-   FALLING BALLS
-===================================== */
+/* =====================================================
+   FALLING FOOTBALLS
+===================================================== */
 
 function createBalls(amount){
 
     for(let i=0;i<amount;i++){
 
-        const ball=
-        document.createElement("div");
+        const ball=document.createElement("div");
 
-        ball.className="ball";
+        ball.className="falling-ball";
 
-        ball.style.left=
+        ball.style.left =
         Math.random()*100+"vw";
 
-        ball.style.animationDuration=
+        ball.style.animationDuration =
         (3+Math.random()*4)+"s";
 
-        ball.style.animationDelay=
+        ball.style.animationDelay =
         Math.random()*1.5+"s";
 
-        const size=
+        const size =
         8+Math.random()*12;
 
         ball.style.width=size+"px";
+
         ball.style.height=size+"px";
 
         document.body.appendChild(ball);
 
         setTimeout(function(){
+
             ball.remove();
-        },8000);
+
+        },8500);
 
     }
 
 }
 
 
-/* =====================================
-   BALL NOTES
-===================================== */
+/* =====================================================
+   BALL MESSAGES
+===================================================== */
 
-const ballNotes=[
+const ballMessages=[
 
-"Semoga di umur 22 ini kamu selalu punya alasan buat senyum. ❤️",
+"Dia suka ngopi. Katanya kalau nggak ngopi malah pusing. 😂",
 
-"Aku suka cara kamu selalu ngeladenin celetukan random aku.",
+"Entah sekarang masih sering ngerokok atau nggak, yang jelas pod tetap jadi teman. 😂",
 
-"Semoga semua yang sedang kamu usahakan pelan-pelan berhasil.",
+"Ronaldo, eFootball, dan... aku. Katanya aku paling dia suka. WKWK.",
 
-"Terima kasih sudah selalu perhatian, walaupun kadang caranya bikin aku kesel. 😂",
+"Salah satu kebiasaan paling ngeselin: setiap aku ngomong sesuatu jawabannya 'alah alah mba'.",
 
-"Dan iya... dari semua hal yang kamu suka, aku tetap berharap aku salah satunya. WKWK."
+"Tapi lucunya, hampir semua celetukan aku selalu diladenin.",
+
+"Hal random di jalan bisa berubah jadi bahan bercandaan cuma karena dibahas sama dia.",
+
+"Kalau aku bilang, 'kalau kita bisa terbang gimana ya?', dia malah ikut mikirinnya.",
+
+"Dia selalu nyuruh aku pakai jaket atau jas hujan. Ribet. Tapi sebenarnya aku suka.",
+
+"Kalau dia jajanin aku, otomatis rasa sayang naik. Ini fakta.",
+
+"Dan iya, dari semua hal yang dia suka, aku tetap berharap aku masuk daftar teratas. 😂"
 
 ];
 
 function showBallNote(index){
 
-    const note=
-    document.getElementById("ballNote");
+    const message=document.getElementById("ballMessage");
 
-    note.innerHTML=
-    ballNotes[index];
+    message.innerHTML=ballMessages[index];
 
-    note.classList.remove("show");
+    message.classList.remove("show");
 
     setTimeout(function(){
 
-        note.classList.add("show");
+        message.classList.add("show");
 
     },50);
 
@@ -1735,9 +1853,9 @@ function showBallNote(index){
 }
 
 
-/* =====================================
+/* =====================================================
    PHOTO ALBUM
-===================================== */
+===================================================== */
 
 const photos=[
 
@@ -1777,13 +1895,13 @@ let currentPhoto=0;
 
 function updatePhoto(){
 
-    document.getElementById("albumPhoto").src=
+    document.getElementById("albumPhoto").src =
     photos[currentPhoto].src;
 
-    document.getElementById("photoCaption").innerHTML=
+    document.getElementById("photoCaption").innerHTML =
     photos[currentPhoto].caption;
 
-    document.getElementById("photoNumber").innerHTML=
+    document.getElementById("photoNumber").innerHTML =
     String(currentPhoto+1).padStart(2,"0")
     +" / "
     +String(photos.length).padStart(2,"0");
@@ -1815,42 +1933,21 @@ function prevPhoto(){
 }
 
 
-/* =====================================
+/* =====================================================
    MUSIC
-===================================== */
+===================================================== */
 
-const music=
-document.getElementById("music");
+const music=document.getElementById("music");
 
-const musicButton=
-document.getElementById("musicButton");
+const musicButton=document.getElementById("musicButton");
 
-const musicDisc=
-document.getElementById("musicDisc");
-
-function playMusic(){
-
-    music.volume=.35;
-
-    music.play()
-    .then(function(){
-
-        musicButton.innerHTML="Ⅱ";
-
-        musicDisc.classList.add("playing");
-
-    })
-    .catch(function(){
-
-        console.log("Music waiting for user interaction.");
-
-    });
-
-}
+const musicDisc=document.getElementById("musicDisc");
 
 function toggleMusic(){
 
     if(music.paused){
+
+        music.volume=.35;
 
         music.play();
 
@@ -1871,96 +1968,57 @@ function toggleMusic(){
 }
 
 
-/* =====================================
-   JAR
-===================================== */
+/* =====================================================
+   GRATITUDE ANIMATION
+===================================================== */
 
-const jarMessages=[
+const noteBoxes=document.querySelectorAll(".note-box");
 
-"Karena kamu selalu mau ngeladenin hal-hal random yang aku omongin.",
-
-"Karena di balik sikap kamu yang kadang ngeselin, ternyata kamu perhatian.",
-
-"Karena kamu selalu memastikan aku pakai jaket atau jas hujan. Iya, aku tahu. 😂",
-
-"Karena setiap ketemu kamu selalu ada aja yang bisa bikin aku ketawa.",
-
-"Karena kamu suka jajanin aku. Ini alasan yang sangat valid.",
-
-"Karena kamu selalu punya cara sendiri buat bikin hari biasa jadi punya cerita.",
-
-"Karena ternyata punya seseorang buat diajak ngomong hal-hal nggak penting itu menyenangkan.",
-
-"Karena dari sekian banyak orang, aku bersyukur yang aku kenal adalah kamu.",
-
-"Dan mungkin alasan paling sederhana: aku memang sayang sama kamu."
-
-];
-
-let jarIndex=0;
-
-function shakeJar(){
-
-    const jar=
-    document.getElementById("jar");
-
-    const message=
-    document.getElementById("jarMessage");
-
-    jar.classList.remove("shake");
-
-    void jar.offsetWidth;
-
-    jar.classList.add("shake");
-
-    jarIndex++;
-
-    if(jarIndex>=jarMessages.length){
-        jarIndex=0;
-    }
-
-    setTimeout(function(){
-
-        message.innerHTML=
-        jarMessages[jarIndex];
-
-        message.classList.add("show");
-
-        createBalls(12);
-
-    },500);
-
-}
-
-
-/* =====================================
-   FINAL REVEAL
-===================================== */
-
-const finalObserver=
-new IntersectionObserver(function(entries){
+const noteObserver=new IntersectionObserver(function(entries){
 
     entries.forEach(function(entry){
 
         if(entry.isIntersecting){
 
-            document.getElementById("final").style.display="flex";
-
-            createBalls(35);
+            entry.target.classList.add("show");
 
         }
 
     });
 
 },{
-    threshold:.3
+    threshold:.25
 });
 
-finalObserver.observe(
-    document.getElementById("final")
-);
+noteBoxes.forEach(function(box){
+
+    noteObserver.observe(box);
+
+});
+
+
+/* =====================================================
+   FOOTBALLS WHEN SCROLLING
+===================================================== */
+
+let lastScroll=0;
+
+window.addEventListener("scroll",function(){
+
+    const currentScroll=window.scrollY;
+
+    if(Math.abs(currentScroll-lastScroll)>180){
+
+        createBalls(5);
+
+        lastScroll=currentScroll;
+
+    }
+
+});
 
 </script>
 
 </body>
 </html>
+```
