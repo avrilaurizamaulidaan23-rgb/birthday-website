@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="id">
 <head>
 <meta charset="UTF-8">
@@ -25,7 +26,7 @@ body {
 }
 
 /* =========================
-   GENERAL
+   GLOBAL
 ========================= */
 
 section {
@@ -34,7 +35,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 60px 20px;
+    padding: 70px 20px;
     position: relative;
 }
 
@@ -50,18 +51,18 @@ section {
     font-size: 11px;
     letter-spacing: 4px;
     text-transform: uppercase;
-    color: #b8b8b8;
+    color: #aaa;
     margin-bottom: 20px;
 }
 
 h1 {
-    font-size: clamp(42px, 10vw, 90px);
+    font-size: clamp(48px, 12vw, 95px);
     font-weight: 400;
     letter-spacing: 2px;
 }
 
 h2 {
-    font-size: clamp(32px, 7vw, 60px);
+    font-size: clamp(32px, 8vw, 60px);
     font-weight: 400;
 }
 
@@ -76,9 +77,8 @@ p {
 ========================= */
 
 #opening {
-    min-height: 100vh;
     background:
-        radial-gradient(circle at center, rgba(139,30,45,.18), transparent 45%),
+        radial-gradient(circle at center, rgba(139,30,45,.22), transparent 45%),
         #0d0d0d;
 }
 
@@ -86,23 +86,19 @@ p {
     animation: fadeIn 2s ease;
 }
 
-.opening-content h1 {
-    margin-bottom: 20px;
-}
-
 .subtitle {
-    font-style: italic;
     color: #aaa;
-    margin-bottom: 45px;
+    font-style: italic;
+    margin: 20px 0 45px;
 }
 
 .open-btn {
     background: transparent;
     border: 1px solid #8b1e2d;
     color: #fff;
-    padding: 16px 35px;
+    padding: 16px 36px;
     border-radius: 50px;
-    font-size: 13px;
+    font-size: 12px;
     letter-spacing: 2px;
     cursor: pointer;
     transition: .4s;
@@ -114,45 +110,128 @@ p {
 }
 
 /* =========================
-   MUSIC BUTTON
+   MUSIC
 ========================= */
 
 .music-control {
     position: fixed;
     top: 20px;
     right: 20px;
-    z-index: 1000;
+    z-index: 9999;
     width: 45px;
     height: 45px;
     border-radius: 50%;
     border: 1px solid #555;
-    background: rgba(13,13,13,.8);
+    background: rgba(13,13,13,.9);
     color: white;
     cursor: pointer;
     display: none;
 }
 
 /* =========================
-   HERO PHOTO
+   BIRTHDAY
 ========================= */
 
-#hero {
+#birthday {
     background: #111;
 }
 
-.hero-photo {
-    width: min(80vw, 400px);
-    height: min(100vw, 500px);
+.birthday-photo {
+    width: min(80vw, 390px);
+    height: min(105vw, 500px);
     object-fit: cover;
+    display: block;
+    margin: 35px auto;
     border-radius: 3px;
     box-shadow: 0 20px 60px rgba(0,0,0,.6);
-    margin: 35px auto;
-    display: block;
 }
 
-.hero-caption {
-    font-style: italic;
-    color: #aaa;
+.birthday-text {
+    max-width: 550px;
+    margin: auto;
+}
+
+/* =========================
+   THINGS I KNOW
+========================= */
+
+#things {
+    background: #0d0d0d;
+}
+
+.things-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 45px;
+}
+
+.thing-card {
+    background: #171717;
+    border: 1px solid #252525;
+    padding: 30px 20px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: .4s;
+}
+
+.thing-card:hover {
+    border-color: #8b1e2d;
+    transform: translateY(-5px);
+}
+
+.thing-icon {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.thing-card p {
+    font-family: Georgia, serif;
+    font-size: 15px;
+}
+
+.highlight {
+    color: #fff;
+}
+
+/* =========================
+   HOW IT STARTED
+========================= */
+
+#beginning {
+    background: #111;
+}
+
+.story-box {
+    max-width: 650px;
+    margin: 45px auto 0;
+    padding: 35px;
+    border-left: 1px solid #8b1e2d;
+    background: rgba(255,255,255,.02);
+    text-align: left;
+}
+
+.story-box p {
+    font-family: Georgia, serif;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+.date {
+    text-align: center;
+    font-size: 34px;
+    color: #fff;
+    margin: 30px 0 10px;
+}
+
+.date-caption {
+    text-align: center;
+    color: #8b1e2d;
+    font-family: Arial, sans-serif;
+    letter-spacing: 3px;
+    font-size: 11px;
 }
 
 /* =========================
@@ -198,60 +277,121 @@ p {
 }
 
 /* =========================
-   TIMELINE
+   RANDOM GENERATOR
 ========================= */
 
-#timeline {
+#random {
+    background:
+        radial-gradient(circle at center, rgba(139,30,45,.12), transparent 50%),
+        #111;
+}
+
+.random-box {
+    max-width: 600px;
+    margin: 45px auto 0;
+    background: #171717;
+    padding: 40px 25px;
+    border: 1px solid #292929;
+}
+
+.random-text {
+    min-height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.random-btn {
+    margin-top: 25px;
+    padding: 13px 25px;
+    border-radius: 50px;
+    border: 1px solid #8b1e2d;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+.random-btn:hover {
+    background: #8b1e2d;
+}
+
+/* =========================
+   QUIZ
+========================= */
+
+#quiz {
+    background: #0d0d0d;
+}
+
+.quiz-box {
+    max-width: 600px;
+    margin: 40px auto 0;
+    background: #171717;
+    padding: 35px 25px;
+}
+
+.question {
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+.answers {
+    display: grid;
+    gap: 12px;
+}
+
+.answer {
+    padding: 14px;
+    background: #222;
+    border: 1px solid #333;
+    color: white;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.answer:hover {
+    border-color: #8b1e2d;
+}
+
+.quiz-result {
+    margin-top: 25px;
+    min-height: 30px;
+    color: #ddd;
+}
+
+/* =========================
+   SECRET
+========================= */
+
+#secret {
     background: #111;
 }
 
-.timeline {
-    position: relative;
-    margin-top: 50px;
+.secret-btn {
+    margin-top: 40px;
+    padding: 15px 30px;
+    border: 1px solid #8b1e2d;
+    background: transparent;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
 }
 
-.timeline::before {
-    content: "";
-    position: absolute;
-    width: 1px;
-    height: 100%;
-    background: #8b1e2d;
-    left: 50%;
-    transform: translateX(-50%);
+.secret-message {
+    display: none;
+    max-width: 600px;
+    margin: 35px auto 0;
+    padding: 30px;
+    background: #171717;
+    border-left: 1px solid #8b1e2d;
 }
 
-.timeline-item {
-    width: 50%;
-    padding: 25px;
-    position: relative;
-}
-
-.timeline-item:nth-child(odd) {
-    text-align: right;
-    left: 0;
-}
-
-.timeline-item:nth-child(even) {
-    left: 50%;
-    text-align: left;
-}
-
-.timeline-year {
-    color: #8b1e2d;
-    font-family: Arial, sans-serif;
-    letter-spacing: 3px;
-    font-size: 12px;
-    margin-bottom: 10px;
-}
-
-.timeline-item h3 {
-    font-size: 25px;
-    font-weight: 400;
-    margin-bottom: 10px;
-}
-
-.timeline-item p {
-    font-size: 14px;
+.secret-message p {
+    font-family: Georgia, serif;
+    font-size: 17px;
 }
 
 /* =========================
@@ -260,14 +400,14 @@ p {
 
 #letter {
     background:
-        radial-gradient(circle at center, rgba(139,30,45,.12), transparent 55%),
+        radial-gradient(circle at center, rgba(139,30,45,.15), transparent 55%),
         #0d0d0d;
 }
 
 .letter-box {
     max-width: 650px;
     text-align: left;
-    margin-top: 40px;
+    margin: 40px auto 0;
     padding: 35px;
     border-left: 1px solid #8b1e2d;
     background: rgba(255,255,255,.02);
@@ -302,7 +442,7 @@ p {
 }
 
 .gift {
-    min-height: 180px;
+    min-height: 190px;
     background: #171717;
     border: 1px solid #292929;
     display: flex;
@@ -310,8 +450,7 @@ p {
     justify-content: center;
     cursor: pointer;
     transition: .4s;
-    position: relative;
-    overflow: hidden;
+    padding: 20px;
 }
 
 .gift:hover {
@@ -337,13 +476,12 @@ p {
 
 .gift-content {
     display: none;
-    padding: 25px;
-    text-align: center;
 }
 
 .gift-content h3 {
-    font-size: 25px;
+    font-size: 24px;
     margin-bottom: 15px;
+    font-weight: 400;
 }
 
 .gift-content p {
@@ -380,7 +518,6 @@ p {
 ========================= */
 
 #final {
-    min-height: 100vh;
     background:
         radial-gradient(circle at center, rgba(139,30,45,.25), transparent 50%),
         #0d0d0d;
@@ -392,12 +529,15 @@ p {
     object-fit: cover;
     margin: 35px auto;
     display: block;
-    border-radius: 3px;
 }
 
 .final-message {
     max-width: 600px;
     margin: auto;
+}
+
+.final-message p {
+    margin-bottom: 20px;
 }
 
 .love {
@@ -412,10 +552,10 @@ p {
 
 .heart {
     position: fixed;
-    bottom: -20px;
+    bottom: -30px;
     pointer-events: none;
     animation: floatUp 5s linear forwards;
-    z-index: 999;
+    z-index: 9999;
 }
 
 @keyframes floatUp {
@@ -448,6 +588,11 @@ p {
 
 @media (max-width: 600px) {
 
+    .things-grid,
+    .gift-grid {
+        grid-template-columns: 1fr;
+    }
+
     .photo-grid {
         grid-template-columns: 1fr;
     }
@@ -456,31 +601,21 @@ p {
         transform: none;
     }
 
-    .gift-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .timeline::before {
-        left: 10px;
-    }
-
-    .timeline-item,
-    .timeline-item:nth-child(even) {
-        width: 100%;
-        left: 0;
-        text-align: left;
-        padding-left: 35px;
-    }
-
+    .story-box,
     .letter-box {
         padding: 25px 20px;
     }
 
-    .letter-box p {
-        font-size: 16px;
+    .timeline-item {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 55px;
     }
 }
 </style>
+
 </head>
 
 <body>
@@ -497,369 +632,635 @@ p {
     ♫
 </button>
 
-
 <!-- =========================
-     01. OPENING
+     01 OPENING
 ========================= -->
 
 <section id="opening">
 
-    <div class="container opening-content">
+```
+<div class="container opening-content">
 
-        <div class="small-text">
-            For Someone Special
-        </div>
-
-        <h1>For You</h1>
-
-        <p class="subtitle">
-            I made something for you...
-        </p>
-
-        <button class="open-btn" onclick="openWebsite()">
-            OPEN THIS ❤️
-        </button>
-
+    <div class="small-text">
+        A little something for you
     </div>
+
+    <h1>For You</h1>
+
+    <p class="subtitle">
+        Karena hari ini kamu yang ulang tahun.
+    </p>
+
+    <button class="open-btn" onclick="openWebsite()">
+        OPEN THIS ❤️
+    </button>
+
+</div>
+```
 
 </section>
 
-
 <!-- =========================
-     02. HERO
+     02 BIRTHDAY
 ========================= -->
 
-<section id="hero">
+<section id="birthday">
 
-    <div class="container">
+```
+<div class="container">
 
-        <div class="small-text">
-            It all started with...
-        </div>
+    <div class="small-text">
+        Today is your day
+    </div>
 
-        <!-- GANTI FOTO INI -->
-        <img
-            src="assets/foto1.jpg"
-            class="hero-photo"
-            alt="Our Photo">
+    <h2>Happy Birthday ❤️</h2>
 
-        <p class="hero-caption">
-            One of my favorite memories of us.
+    <img
+        src="assets/foto1.jpg"
+        class="birthday-photo"
+        alt="Our Photo">
+
+    <div class="birthday-text">
+
+        <p>
+            Selamat ulang tahun, sayang.
+        </p>
+
+        <p style="margin-top:20px;">
+            Aku bikin website ini bukan karena
+            aku tiba-tiba jago coding,
+            tapi karena kayaknya seru aja
+            kalau ulang tahun kamu punya
+            tempat kecil sendiri.
         </p>
 
     </div>
 
+</div>
+```
+
 </section>
 
+<!-- =========================
+     03 THINGS I KNOW ABOUT YOU
+========================= -->
+
+<section id="things">
+
+```
+<div class="container">
+
+    <div class="small-text">
+        Things I Know About You
+    </div>
+
+    <h2>Apparently, I Know You</h2>
+
+    <div class="things-grid">
+
+        <div class="thing-card">
+
+            <div class="thing-icon">☕</div>
+
+            <p>
+                <span class="highlight">
+                Ngopi itu wajib.
+                </span>
+                Katanya kalau nggak ngopi
+                bisa pusing.
+            </p>
+
+        </div>
+
+
+        <div class="thing-card">
+
+            <div class="thing-icon">⚽</div>
+
+            <p>
+                Ronaldo, eFootball,
+                dan segala sesuatu yang
+                berhubungan dengan bola.
+            </p>
+
+        </div>
+
+
+        <div class="thing-card">
+
+            <div class="thing-icon">💨</div>
+
+            <p>
+                Rokok sekarang udah jarang
+                katanya.
+                Tapi pod?
+                <span class="highlight">As always.</span>
+            </p>
+
+        </div>
+
+
+        <div class="thing-card">
+
+            <div class="thing-icon">❤️</div>
+
+            <p>
+                Dan satu lagi...
+                katanya yang paling kamu suka
+                <span class="highlight">aku.</span>
+                Wkwkwk.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
 
 <!-- =========================
-     03. MEMORIES
+     04 HOW IT STARTED
+========================= -->
+
+<section id="beginning">
+
+```
+<div class="container">
+
+    <div class="small-text">
+        How It Started
+    </div>
+
+    <h2>Well... Here We Are.</h2>
+
+    <div class="story-box">
+
+        <p>
+            Februari 2026.
+        </p>
+
+        <p>
+            Aku lagi pulang ngampus,
+            terus ketemu kamu di Stasiun Pocin.
+        </p>
+
+        <p>
+            Dan yang lebih lucu,
+            momen itu malah sempat
+            dipaparaziin sama temen aku.
+            😭
+        </p>
+
+        <p>
+            Dari yang awalnya cuma
+            ketemu di stasiun...
+            ternyata sekarang aku malah
+            bikin website ulang tahun
+            buat kamu.
+        </p>
+
+    </div>
+
+    <div class="date">
+        27.03.2026
+    </div>
+
+    <div class="date-caption">
+        OFFICIALLY US
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =========================
+     05 MEMORIES
 ========================= -->
 
 <section id="memories">
 
-    <div class="container">
+```
+<div class="container">
 
-        <div class="small-text">
-            A Little Story About Us
+    <div class="small-text">
+        A Few Of My Favorites
+    </div>
+
+    <h2>Us, Basically.</h2>
+
+    <div class="photo-grid">
+
+        <div class="photo-card">
+
+            <img src="assets/foto2.jpg" alt="Memory">
+
+            <p>
+                Ketemu → ngobrol → ketawa →
+                pulang.
+            </p>
+
         </div>
 
-        <h2>Our Memories</h2>
 
-        <div class="photo-grid">
+        <div class="photo-card">
 
-            <div class="photo-card">
-                <img src="assets/foto2.jpg" alt="">
-                <p>One of my favorite days.</p>
-            </div>
+            <img src="assets/foto3.jpg" alt="Memory">
 
-            <div class="photo-card">
-                <img src="assets/foto3.jpg" alt="">
-                <p>Another memory I'll keep.</p>
-            </div>
+            <p>
+                Nggak ada yang spesial,
+                tapi tetap jadi favorit.
+            </p>
 
-            <div class="photo-card">
-                <img src="assets/foto4.jpg" alt="">
-                <p>Just us being us.</p>
-            </div>
+        </div>
 
-            <div class="photo-card">
-                <img src="assets/foto5.jpg" alt="">
-                <p>And another little moment.</p>
-            </div>
+
+        <div class="photo-card">
+
+            <img src="assets/foto4.jpg" alt="Memory">
+
+            <p>
+                Satu celetukan aku,
+                pasti diladenin.
+            </p>
+
+        </div>
+
+
+        <div class="photo-card">
+
+            <img src="assets/foto5.jpg" alt="Memory">
+
+            <p>
+                Bahkan hal random di jalan
+                bisa jadi bahan becandaan.
+            </p>
 
         </div>
 
     </div>
 
+</div>
+```
+
 </section>
 
-
 <!-- =========================
-     04. TIMELINE
+     06 RANDOM
 ========================= -->
 
-<section id="timeline">
+<section id="random">
 
-    <div class="container">
+```
+<div class="container">
 
-        <div class="small-text">
-            Our Journey
+    <div class="small-text">
+        Because This Is Very Us
+    </div>
+
+    <h2>Random Thought Generator</h2>
+
+    <p style="margin-top:20px;">
+        Coba klik. Siapa tahu kali ini
+        kamu bisa jawab serius.
+    </p>
+
+    <div class="random-box">
+
+        <div class="random-text" id="randomText">
+            "Kalau kita tiba-tiba bisa terbang,
+            kita mau terbang ke mana?"
         </div>
 
-        <h2>Little Moments</h2>
-
-        <div class="timeline">
-
-            <div class="timeline-item">
-
-                <div class="timeline-year">
-                    2024
-                </div>
-
-                <h3>The Beginning</h3>
-
-                <p>
-                    Ganti bagian ini dengan cerita
-                    tentang awal kalian.
-                </p>
-
-            </div>
-
-
-            <div class="timeline-item">
-
-                <div class="timeline-year">
-                    2025
-                </div>
-
-                <h3>More Memories</h3>
-
-                <p>
-                    Ceritakan momen yang paling
-                    berkesan di tahun ini.
-                </p>
-
-            </div>
-
-
-            <div class="timeline-item">
-
-                <div class="timeline-year">
-                    2026
-                </div>
-
-                <h3>Still Us</h3>
-
-                <p>
-                    And here we are, creating
-                    another memory together.
-                </p>
-
-            </div>
-
-        </div>
+        <button class="random-btn" onclick="randomThought()">
+            Kasih aku yang random
+        </button>
 
     </div>
 
+</div>
+```
+
 </section>
 
+<!-- =========================
+     07 QUIZ
+========================= -->
+
+<section id="quiz">
+
+```
+<div class="container">
+
+    <div class="small-text">
+        One Little Test
+    </div>
+
+    <h2>Do You Remember?</h2>
+
+    <div class="quiz-box">
+
+        <div class="question">
+            Siapa yang pertama kali
+            dipaparaziin di Stasiun Pocin?
+        </div>
+
+        <div class="answers">
+
+            <button class="answer"
+                onclick="quizAnswer(false)">
+                Kita berdua
+            </button>
+
+            <button class="answer"
+                onclick="quizAnswer(true)">
+                Aku 😂
+            </button>
+
+            <button class="answer"
+                onclick="quizAnswer(false)">
+                Temenku
+            </button>
+
+        </div>
+
+        <div class="quiz-result" id="quizResult"></div>
+
+    </div>
+
+</div>
+```
+
+</section>
 
 <!-- =========================
-     05. LETTER
+     08 SECRET
+========================= -->
+
+<section id="secret">
+
+```
+<div class="container">
+
+    <div class="small-text">
+        You Found Something
+    </div>
+
+    <h2>One Secret</h2>
+
+    <p style="margin-top:20px;">
+        Sebenarnya bagian ini nggak penting.
+    </p>
+
+    <button class="secret-btn" onclick="showSecret()">
+        Jangan klik 👀
+    </button>
+
+    <div class="secret-message" id="secretMessage">
+
+        <p>
+            Tapi kalau kamu udah sampai sini...
+        </p>
+
+        <p style="margin-top:20px;">
+            Aku cuma mau bilang,
+            aku suka semua hal random
+            yang terjadi kalau lagi sama kamu.
+        </p>
+
+        <p style="margin-top:20px;">
+            Bahkan yang awalnya cuma
+            “kita misal terbang gimana ya?”
+            bisa kamu ladenin sampai jadi
+            pembahasan serius.
+        </p>
+
+        <p style="margin-top:20px;">
+            Aneh sih.
+            Tapi aku suka.
+            ❤️
+        </p>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =========================
+     09 LETTER
 ========================= -->
 
 <section id="letter">
 
-    <div class="container">
+```
+<div class="container">
 
-        <div class="small-text">
-            A Letter For You
-        </div>
+    <div class="small-text">
+        A Little Letter
+    </div>
 
-        <h2>Dear You,</h2>
+    <h2>For You.</h2>
 
-        <div class="letter-box">
+    <div class="letter-box">
 
-            <p>
-                Happy Birthday, sayang. ❤️
-            </p>
+        <p>
+            Happy birthday, sayang.
+        </p>
 
-            <p>
-                Aku mungkin nggak selalu bisa
-                menjelaskan semuanya dengan kata-kata,
-                tapi aku harap kamu tahu betapa
-                berartinya kamu buat aku.
-            </p>
+        <p>
+            Aku nggak mau bikin ucapan yang
+            terlalu panjang atau terlalu
+            manis sampai kamu bingung bacanya.
+            Jadi aku cuma mau bilang makasih.
+        </p>
 
-            <p>
-                Terima kasih sudah menjadi bagian
-                dari begitu banyak cerita dan
-                kenangan indah yang aku punya.
-            </p>
+        <p>
+            Makasih karena selama ini
+            selalu bisa diajak ketawa,
+            bahkan dari hal-hal yang sebenarnya
+            nggak penting.
+        </p>
 
-            <p>
-                Di umur yang baru ini, aku berharap
-                semua hal baik datang ke kamu.
-                Semoga semua yang sedang kamu
-                perjuangkan bisa tercapai.
-            </p>
+        <p>
+            Makasih juga karena selalu
+            ribet soal aku harus pakai jaket
+            atau jas hujan.
+            Kadang aku masih mikir,
+            “deket doang kenapa harus ribet?”
+            tapi kamu tetap nggak mau jalan
+            kalau aku belum nurut.
+        </p>
 
-            <p>
-                And hopefully, I'll still be here
-                to celebrate many more birthdays
-                with you.
-            </p>
+        <p>
+            Nyebelin.
+            Tapi ternyata aku suka.
+        </p>
 
-            <p class="signature">
-                With love,<br>
-                Your favorite person ❤️
-            </p>
+        <p>
+            Terus kalau soal jajan...
+            ya, aku juga nggak akan bohong.
+            Setiap kamu jajanin aku,
+            aku makin sayang.
+            Wkwkwk.
+        </p>
 
-        </div>
+        <p>
+            Semoga di umur yang baru ini
+            semuanya berjalan lebih baik buat kamu.
+            Semoga yang lagi kamu usahakan
+            satu-satu bisa tercapai.
+        </p>
+
+        <p>
+            Tetap jadi kamu yang sekarang.
+            Manly, ganteng,
+            dan soon-to-be berotot banget.
+        </p>
+
+        <p class="signature">
+            Happy birthday ❤️<br>
+            — dari aku
+        </p>
 
     </div>
 
+</div>
+```
+
 </section>
 
-
 <!-- =========================
-     06. GIFTS
+     10 GIFTS
 ========================= -->
 
 <section id="gifts">
 
-    <div class="container">
+```
+<div class="container">
 
-        <div class="small-text">
-            I Got You Something
+    <div class="small-text">
+        I Got You Something
+    </div>
+
+    <h2>Open Your Gifts 🎁</h2>
+
+    <div class="gift-grid">
+
+
+        <!-- KAOS -->
+
+        <div class="gift" onclick="openGift(this)">
+
+            <div class="gift-front">
+
+                <div class="gift-icon">🎁</div>
+
+                <div class="gift-number">
+                    GIFT #01
+                </div>
+
+            </div>
+
+            <div class="gift-content">
+
+                <h3>Something To Wear</h3>
+
+                <p>
+                    Biar makin ganteng.
+                    Walaupun tanpa ini juga
+                    katanya udah ganteng.
+                </p>
+
+            </div>
+
         </div>
 
-        <h2>Open Your Gifts 🎁</h2>
 
-        <div class="gift-grid">
+        <!-- DOMPET -->
 
+        <div class="gift" onclick="openGift(this)">
 
-            <!-- GIFT 1 -->
+            <div class="gift-front">
 
-            <div class="gift" onclick="openGift(this)">
+                <div class="gift-icon">🎁</div>
 
-                <div class="gift-front">
-
-                    <div class="gift-icon">
-                        🎁
-                    </div>
-
-                    <div class="gift-number">
-                        GIFT #01
-                    </div>
-
-                </div>
-
-                <div class="gift-content">
-
-                    <h3>For Your Everyday</h3>
-
-                    <p>
-                        Something simple for you
-                        to wear and hopefully make
-                        you look even more handsome.
-                        ❤️
-                    </p>
-
+                <div class="gift-number">
+                    GIFT #02
                 </div>
 
             </div>
 
+            <div class="gift-content">
 
-            <!-- GIFT 2 -->
+                <h3>Something Useful</h3>
 
-            <div class="gift" onclick="openGift(this)">
+                <p>
+                    Biar uang, kartu,
+                    dan foto penting kamu
+                    punya rumah baru.
+                </p>
 
-                <div class="gift-front">
+            </div>
 
-                    <div class="gift-icon">
-                        🎁
-                    </div>
+        </div>
 
-                    <div class="gift-number">
-                        GIFT #02
-                    </div>
 
-                </div>
+        <!-- LIP BALM -->
 
-                <div class="gift-content">
+        <div class="gift" onclick="openGift(this)">
 
-                    <h3>A Little Something</h3>
+            <div class="gift-front">
 
-                    <p>
-                        Semoga selalu penuh dengan
-                        rezeki dan selalu menemani
-                        kamu ke mana pun.
-                    </p>
+                <div class="gift-icon">🎁</div>
 
+                <div class="gift-number">
+                    GIFT #03
                 </div>
 
             </div>
 
+            <div class="gift-content">
 
-            <!-- GIFT 3 -->
+                <h3>For Your Lips</h3>
 
-            <div class="gift" onclick="openGift(this)">
+                <p>
+                    Karena aku masih butuh
+                    kamu buat ngomong.
+                    Jangan sampai kering.
+                </p>
 
-                <div class="gift-front">
+            </div>
 
-                    <div class="gift-icon">
-                        🎁
-                    </div>
+        </div>
 
-                    <div class="gift-number">
-                        GIFT #03
-                    </div>
 
-                </div>
+        <!-- SHEET MASK -->
 
-                <div class="gift-content">
+        <div class="gift" onclick="openGift(this)">
 
-                    <h3>Self Care</h3>
+            <div class="gift-front">
 
-                    <p>
-                        Because yes...
-                        boys need self-care too. 😂❤️
-                    </p>
+                <div class="gift-icon">🎁</div>
 
+                <div class="gift-number">
+                    GIFT #04
                 </div>
 
             </div>
 
+            <div class="gift-content">
 
-            <!-- GIFT 4 -->
+                <h3>Self Care</h3>
 
-            <div class="gift" onclick="openGift(this)">
-
-                <div class="gift-front">
-
-                    <div class="gift-icon">
-                        🎁
-                    </div>
-
-                    <div class="gift-number">
-                        GIFT #04
-                    </div>
-
-                </div>
-
-                <div class="gift-content">
-
-                    <h3>One More</h3>
-
-                    <p>
-                        A little reminder that
-                        you deserve to be taken care of too.
-                        ❤️
-                    </p>
-
-                </div>
+                <p>
+                    Iya.
+                    Cowok juga boleh skincare.
+                    Jangan protes.
+                </p>
 
             </div>
 
@@ -867,91 +1268,110 @@ p {
 
     </div>
 
+</div>
+```
+
 </section>
 
-
 <!-- =========================
-     07. QRIS
+     11 QRIS
 ========================= -->
 
 <section id="qris">
 
-    <div class="container">
+```
+<div class="container">
 
-        <div class="small-text">
-            Wait...
-        </div>
+    <div class="small-text">
+        Wait...
+    </div>
 
-        <h2>There's One More Gift 👀</h2>
+    <h2>There's One More.</h2>
 
-        <div class="qris-box">
+    <div class="qris-box">
 
-            <p class="qris-text">
-                Just kidding...<br>
-                Or am I? 😂
-            </p>
+        <p class="qris-text">
+            Aku hampir lupa sesuatu.
+        </p>
 
-            <!-- GANTI QRIS -->
-            <img
-                src="assets/qris.png"
-                class="qris-image"
-                alt="QRIS">
+        <img
+            src="assets/qris.png"
+            class="qris-image"
+            alt="QRIS">
 
-            <p>
-                Scan me ❤️
-            </p>
-
-        </div>
+        <p>
+            Jangan berharap banyak.
+            😂❤️
+        </p>
 
     </div>
 
+</div>
+```
+
 </section>
 
-
 <!-- =========================
-     08. FINAL
+     12 FINAL
 ========================= -->
 
 <section id="final">
 
-    <div class="container">
+```
+<div class="container">
 
-        <div class="small-text">
-            One Last Thing
-        </div>
+    <div class="small-text">
+        One Last Thing
+    </div>
 
-        <!-- GANTI FOTO -->
-        <img
-            src="assets/foto6.jpg"
-            class="final-photo"
-            alt="Us">
+    <img
+        src="assets/foto6.jpg"
+        class="final-photo"
+        alt="Us">
 
-        <h2>
-            Happy Birthday ❤️
-        </h2>
+    <h2>
+        Happy Birthday ❤️
+    </h2>
 
-        <div class="final-message">
+    <div class="final-message">
 
-            <p>
-                Semoga di umur yang baru,
-                kamu mendapatkan semua hal
-                yang selama ini kamu perjuangkan.
-            </p>
+        <p>
+            Semoga tahun ini jadi tahun
+            yang baik buat kamu.
+        </p>
 
-            <p style="margin-top:20px;">
-                Thank you for being you.
-            </p>
+        <p>
+            Semoga kerja keras kamu,
+            semua rencana kamu,
+            dan semua hal yang lagi
+            kamu kejar bisa berjalan
+            satu-satu.
+        </p>
 
-            <div class="love">
-                I LOVE YOU
-            </div>
+        <p>
+            Dan semoga...
+            kita masih punya banyak
+            cerita random buat dibahas,
+            banyak makanan buat dimakan,
+            dan banyak momen buat ditertawakan.
+        </p>
 
+        <p>
+            Oh iya.
+            Jangan lupa pakai jaket.
+            😂
+        </p>
+
+        <div class="love">
+            I LOVE YOU
         </div>
 
     </div>
 
-</section>
+</div>
+```
 
+</section>
 
 <script>
 
@@ -969,7 +1389,7 @@ function openWebsite() {
 
     document.getElementById("musicButton").style.display = "block";
 
-    document.getElementById("hero").scrollIntoView({
+    document.getElementById("birthday").scrollIntoView({
         behavior: "smooth"
     });
 
@@ -1004,13 +1424,93 @@ function toggleMusic() {
 
 
 /* =========================
+   RANDOM THOUGHTS
+========================= */
+
+const thoughts = [
+
+    "Kalau kita tiba-tiba bisa terbang, kita mau terbang ke mana?",
+
+    "Kalau besok kita nggak punya kerjaan, mau ngapain?",
+
+    "Kalau tiba-tiba kaya, hal pertama yang kamu beli apa?",
+
+    "Kalau kita nyasar di kota yang nggak dikenal, siapa yang bakal panik duluan?",
+
+    "Kalau sehari nggak boleh pegang HP, kamu kuat nggak?",
+
+    "Kalau kita buka usaha bareng, kira-kira bakal bangkrut atau sukses?",
+
+    "Kalau aku tiba-tiba bilang ayo pergi sekarang, kamu ikut nggak?",
+
+    "Kalau bisa pilih satu tempat buat pergi sekarang, kamu pilih mana?"
+
+];
+
+function randomThought() {
+
+    const random =
+        thoughts[Math.floor(Math.random() * thoughts.length)];
+
+    document.getElementById("randomText").innerHTML =
+        '"' + random + '"';
+
+}
+
+
+/* =========================
+   QUIZ
+========================= */
+
+function quizAnswer(correct) {
+
+    const result =
+        document.getElementById("quizResult");
+
+    if (correct) {
+
+        result.innerHTML =
+            "Ternyata masih inget. Lumayan. 😂❤️";
+
+        createHearts();
+
+    } else {
+
+        result.innerHTML =
+            "Salah. Waduh, harusnya kamu inget dong. 😭";
+
+    }
+
+}
+
+
+/* =========================
+   SECRET
+========================= */
+
+function showSecret() {
+
+    const message =
+        document.getElementById("secretMessage");
+
+    message.style.display = "block";
+
+    createHearts();
+
+}
+
+
+/* =========================
    GIFTS
 ========================= */
 
 function openGift(element) {
 
-    const front = element.querySelector(".gift-front");
-    const content = element.querySelector(".gift-content");
+    const front =
+        element.querySelector(".gift-front");
+
+    const content =
+        element.querySelector(".gift-content");
 
     if (content.style.display === "block") {
 
@@ -1030,14 +1530,15 @@ function openGift(element) {
 
 
 /* =========================
-   FLOATING HEARTS
+   HEARTS
 ========================= */
 
 function createHearts() {
 
     for (let i = 0; i < 12; i++) {
 
-        const heart = document.createElement("div");
+        const heart =
+            document.createElement("div");
 
         heart.className = "heart";
 
@@ -1055,7 +1556,9 @@ function createHearts() {
         document.body.appendChild(heart);
 
         setTimeout(() => {
+
             heart.remove();
+
         }, 6000);
 
     }
