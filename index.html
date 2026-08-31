@@ -5,13 +5,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>For Emey ❤️</title>
+<title>Happy Birthday, Emey ❤️</title>
 
 <style>
-
-/* =====================================================
-   BASIC
-===================================================== */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap');
 
 *{
     margin:0;
@@ -26,27 +23,28 @@ html{
 body{
     background:#080808;
     color:#fff;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:'DM Sans',sans-serif;
     overflow-x:hidden;
 }
 
 :root{
     --black:#080808;
-    --black2:#111111;
-    --red:#a91532;
-    --red2:#d12848;
-    --red3:#ef6079;
-    --white:#f7f3ef;
-    --gray:#aaa;
+    --black2:#111;
+    --red:#a71930;
+    --red2:#d52d49;
+    --green:#17733b;
+    --green2:#229b52;
+    --white:#f7f4f1;
+    --gray:#999;
 }
 
 button{
     font-family:inherit;
 }
 
-/* =====================================================
-   MOBILE PAGE
-===================================================== */
+/* =========================
+   GENERAL
+========================= */
 
 .page{
     width:100%;
@@ -58,56 +56,24 @@ button{
 .card{
     width:100%;
     max-width:480px;
-    min-height:100vh;
     margin:auto;
-    padding:30px 22px 80px;
-    position:relative;
+    padding:35px 22px 90px;
 }
 
-/* =====================================================
-   FOOTBALL DECORATION
-===================================================== */
-
-.scroll-ball{
-    width:34px;
-    height:34px;
-    border-radius:50%;
-    margin:0 auto 25px;
-
-    background:
-        radial-gradient(circle at 35% 30%,#fff 0 5%,transparent 6%),
-        radial-gradient(circle at 50% 50%,#222 0 14%,transparent 15%),
-        radial-gradient(circle at 20% 70%,#222 0 12%,transparent 13%),
-        radial-gradient(circle at 80% 25%,#222 0 12%,transparent 13%),
-        #eee;
-
-    box-shadow:
-        0 0 25px rgba(255,255,255,.12);
-
-    animation:ballFloat 2.5s ease-in-out infinite;
+.hidden{
+    display:none!important;
 }
 
-@keyframes ballFloat{
-    0%,100%{
-        transform:translateY(0) rotate(0);
-    }
-
-    50%{
-        transform:translateY(-8px) rotate(15deg);
-    }
-}
-
-/* =====================================================
+/* =========================
    LOADING
-===================================================== */
+========================= */
 
 #loading{
     display:flex;
     align-items:center;
     justify-content:center;
-
     background:
-        radial-gradient(circle at center,#42101b,#13080b 40%,#080808 75%);
+        radial-gradient(circle at center,#42101a,#17080c 35%,#080808 75%);
 }
 
 .loading-content{
@@ -115,64 +81,33 @@ button{
 }
 
 .loading-ball{
-    width:68px;
-    height:68px;
-    margin:auto;
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(circle at 35% 30%,#fff 0 6%,transparent 7%),
-        radial-gradient(circle at 50% 50%,#151515 0 15%,transparent 16%),
-        radial-gradient(circle at 20% 70%,#222 0 12%,transparent 13%),
-        #eee;
-
-    animation:
-        footballBounce 1.1s infinite ease-in-out,
-        footballRotate 2s linear infinite;
-
-    box-shadow:
-        0 15px 40px rgba(0,0,0,.5);
+    font-size:58px;
+    animation:ballBounce 1s infinite ease-in-out;
+    filter:drop-shadow(0 10px 20px rgba(213,45,73,.35));
 }
 
-@keyframes footballBounce{
-
-    0%,100%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-22px);
-    }
-
-}
-
-@keyframes footballRotate{
-
-    to{
-        rotate:360deg;
-    }
-
+@keyframes ballBounce{
+    0%,100%{transform:translateY(0) rotate(0);}
+    50%{transform:translateY(-18px) rotate(180deg);}
 }
 
 .loading-text{
-    margin-top:30px;
-    color:#d8d2d2;
-    font-size:12px;
-    letter-spacing:1.8px;
+    margin-top:28px;
+    color:#d7d1d1;
+    font-size:11px;
+    letter-spacing:2px;
 }
 
-/* =====================================================
+/* =========================
    PIN
-===================================================== */
+========================= */
 
 #pinScreen{
     display:none;
     align-items:center;
     justify-content:center;
-
     background:
-        radial-gradient(circle at center,#351019,#080808 70%);
+        radial-gradient(circle at center,#321019,#080808 70%);
 }
 
 .pin-content{
@@ -182,49 +117,49 @@ button{
 }
 
 .pin-label{
-    color:#a59c9c;
     font-size:10px;
     letter-spacing:4px;
-    margin-bottom:18px;
+    color:#999;
+    margin-bottom:16px;
 }
 
 .pin-title{
-    font-family:Georgia,serif;
+    font-family:'Playfair Display',serif;
     font-size:38px;
     font-weight:400;
 }
 
 .pin-subtitle{
     color:#888;
-    font-size:13px;
-    margin-top:12px;
-    margin-bottom:35px;
+    font-size:12px;
+    margin-top:10px;
+    margin-bottom:32px;
 }
 
 .pin-display{
     display:flex;
     justify-content:center;
-    gap:15px;
+    gap:14px;
     margin-bottom:28px;
 }
 
 .pin-dot{
     width:11px;
     height:11px;
-    border:1px solid #666;
+    border:1px solid #777;
     border-radius:50%;
 }
 
 .pin-dot.active{
     background:var(--red2);
     border-color:var(--red2);
-    box-shadow:0 0 15px rgba(209,40,72,.5);
+    box-shadow:0 0 12px rgba(213,45,73,.5);
 }
 
 .keypad{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:12px;
+    gap:11px;
 }
 
 .key{
@@ -232,26 +167,27 @@ button{
     border-radius:18px;
     border:1px solid #292929;
     background:#141414;
-    color:#fff;
+    color:white;
     font-size:18px;
     cursor:pointer;
+    transition:.2s;
 }
 
 .key:active{
     transform:scale(.93);
-    background:#2b1017;
+    background:#261017;
 }
 
 .pin-error{
-    min-height:22px;
-    margin-top:18px;
-    color:#e85a73;
+    height:20px;
+    margin-top:17px;
+    color:#e76b7d;
     font-size:12px;
 }
 
-/* =====================================================
+/* =========================
    GIFT
-===================================================== */
+========================= */
 
 #giftScreen{
     display:none;
@@ -264,72 +200,51 @@ button{
     text-align:center;
 }
 
-.gift{
-    font-size:90px;
+.gift-emoji{
+    font-size:95px;
     cursor:pointer;
     animation:giftFloat 2s infinite ease-in-out;
 }
 
 @keyframes giftFloat{
-
-    0%,100%{
-        transform:translateY(0) rotate(-2deg);
-    }
-
-    50%{
-        transform:translateY(-12px) rotate(2deg);
-    }
-
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-12px);}
 }
 
 .gift-hint{
-    margin-top:25px;
+    margin-top:24px;
     color:#888;
     font-size:11px;
     letter-spacing:2px;
 }
 
-.gift.shake{
-    animation:giftShake .6s;
-}
-
-@keyframes giftShake{
-
-    0%,100%{transform:rotate(0);}
-    20%{transform:rotate(-12deg);}
-    40%{transform:rotate(12deg);}
-    60%{transform:rotate(-9deg);}
-    80%{transform:rotate(8deg);}
-
-}
-
-/* =====================================================
+/* =========================
    BIRTHDAY
-===================================================== */
+========================= */
 
 #birthday{
     display:none;
     background:
-        linear-gradient(#090909,#10090c);
+        linear-gradient(#080808,#11090b);
 }
 
 .hero{
     text-align:center;
-    padding-top:70px;
+    padding-top:80px;
 }
 
 .hero-small{
     font-size:10px;
-    color:#aaa;
     letter-spacing:4px;
+    color:#999;
     margin-bottom:20px;
 }
 
 .hero h1{
-    font-family:Georgia,serif;
+    font-family:'Playfair Display',serif;
+    font-size:clamp(43px,12vw,62px);
     font-weight:400;
-    font-size:50px;
-    line-height:1.08;
+    line-height:1.05;
 }
 
 .hero h1 span{
@@ -338,59 +253,44 @@ button{
 
 .hero-date{
     margin-top:20px;
-    color:#999;
     font-size:11px;
     letter-spacing:4px;
+    color:#999;
 }
 
 .scroll-hint{
+    margin-top:75px;
     text-align:center;
     color:#777;
     font-size:10px;
     letter-spacing:2px;
-    margin-top:90px;
 }
 
-.scroll-arrow{
+.arrow{
     margin-top:12px;
     font-size:22px;
-    animation:arrowMove 1.4s infinite;
+    animation:arrowDown 1.4s infinite;
 }
 
-@keyframes arrowMove{
-
-    0%,100%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(8px);
-    }
-
+@keyframes arrowDown{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(8px);}
 }
 
-/* =====================================================
-   FALLING BALLS
-===================================================== */
+/* =========================
+   FALLING FOOTBALLS
+========================= */
 
 .falling-ball{
     position:fixed;
-    top:-40px;
-    width:14px;
-    height:14px;
-    border-radius:50%;
+    top:-60px;
+    font-size:22px;
+    z-index:100;
     pointer-events:none;
-    z-index:50;
-
-    background:
-        radial-gradient(circle at 35% 30%,#fff 0 7%,transparent 8%),
-        #ddd;
-
     animation:fallBall linear forwards;
 }
 
 @keyframes fallBall{
-
     0%{
         transform:translateY(0) rotate(0);
         opacity:0;
@@ -401,31 +301,30 @@ button{
     }
 
     100%{
-        transform:translateY(110vh) rotate(720deg);
-        opacity:.1;
+        transform:translateY(115vh) rotate(720deg);
+        opacity:0;
     }
-
 }
 
-/* =====================================================
-   SECTION
-===================================================== */
+/* =========================
+   SECTIONS
+========================= */
 
 .section{
-    padding-top:110px;
-    padding-bottom:50px;
+    padding-top:105px;
+    padding-bottom:80px;
 }
 
 .section-label{
-    color:#8f8585;
+    color:#777;
     font-size:9px;
     letter-spacing:4px;
     text-transform:uppercase;
-    margin-bottom:14px;
+    margin-bottom:16px;
 }
 
 .section-title{
-    font-family:Georgia,serif;
+    font-family:'Playfair Display',serif;
     font-size:36px;
     font-weight:400;
     line-height:1.15;
@@ -435,220 +334,208 @@ button{
     color:#999;
     font-size:13px;
     line-height:1.8;
-    margin-top:16px;
+    margin-top:15px;
 }
 
-/* =====================================================
-   MINI FOOTBALL GOAL
-===================================================== */
+/* =========================
+   FOOTBALL FIELD
+========================= */
 
-.goal-area{
-    margin-top:60px;
-    text-align:center;
+.field-wrapper{
+    margin-top:45px;
 }
 
-.goal{
+.field{
+    width:100%;
+    height:310px;
     position:relative;
-    width:250px;
-    height:170px;
-    margin:0 auto;
-
-    border-left:6px solid #ddd;
-    border-right:6px solid #ddd;
-    border-top:6px solid #ddd;
-
-    background:
-        repeating-linear-gradient(
-            45deg,
-            rgba(255,255,255,.06) 0px,
-            rgba(255,255,255,.06) 2px,
-            transparent 2px,
-            transparent 13px
-        );
-
-    box-shadow:
-        0 25px 50px rgba(0,0,0,.5);
-}
-
-.goal-net{
-    position:absolute;
-    inset:0;
+    overflow:hidden;
 
     background:
         repeating-linear-gradient(
             90deg,
-            transparent 0,
-            transparent 22px,
-            rgba(255,255,255,.07) 23px
-        ),
-        repeating-linear-gradient(
-            0deg,
-            transparent 0,
-            transparent 22px,
-            rgba(255,255,255,.07) 23px
+            #176b38 0,
+            #176b38 45px,
+            #1b793f 45px,
+            #1b793f 90px
         );
-}
 
-.goal-ball{
-    position:absolute;
-    width:34px;
-    height:34px;
-    border-radius:50%;
-
-    background:
-        radial-gradient(circle at 35% 30%,#fff 0 6%,transparent 7%),
-        radial-gradient(circle at 50% 50%,#222 0 15%,transparent 16%),
-        #eee;
-
-    cursor:pointer;
-    transition:.25s;
+    border:4px solid #eee;
+    border-radius:12px;
 
     box-shadow:
-        0 5px 12px rgba(0,0,0,.5);
+        0 25px 60px rgba(0,0,0,.45),
+        0 0 35px rgba(23,115,59,.18);
 }
 
-.goal-ball:hover{
-    transform:scale(1.18);
+/* garis tengah */
+
+.field:before{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:0;
+    bottom:0;
+    width:2px;
+    background:rgba(255,255,255,.8);
+    transform:translateX(-50%);
 }
 
-.goal-ball:nth-child(1){
-    left:15px;
-    bottom:15px;
+/* lingkaran tengah */
+
+.field:after{
+    content:"";
+    position:absolute;
+    width:90px;
+    height:90px;
+    border:2px solid rgba(255,255,255,.8);
+    border-radius:50%;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
 }
 
-.goal-ball:nth-child(2){
-    left:58px;
-    bottom:5px;
+/* area kotak */
+
+.penalty{
+    position:absolute;
+    top:82px;
+    width:70px;
+    height:145px;
+    border:2px solid rgba(255,255,255,.8);
 }
 
-.goal-ball:nth-child(3){
-    left:102px;
-    bottom:25px;
+.penalty.left{
+    left:-2px;
 }
 
-.goal-ball:nth-child(4){
-    left:145px;
-    bottom:8px;
+.penalty.right{
+    right:-2px;
 }
 
-.goal-ball:nth-child(5){
-    left:190px;
-    bottom:18px;
+/* GAWANG */
+
+.goal{
+    position:absolute;
+    width:30px;
+    height:90px;
+    top:110px;
+    border:3px solid white;
 }
 
-.goal-ball:nth-child(6){
-    left:40px;
-    bottom:55px;
+.goal.left{
+    left:-3px;
 }
 
-.goal-ball:nth-child(7){
-    left:88px;
-    bottom:68px;
+.goal.right{
+    right:-3px;
 }
 
-.goal-ball:nth-child(8){
-    left:137px;
-    bottom:50px;
+/* BOLA DI LAPANGAN */
+
+.field-ball{
+    position:absolute;
+    font-size:30px;
+    cursor:pointer;
+    transition:.3s;
+    z-index:5;
+    filter:drop-shadow(0 5px 4px rgba(0,0,0,.35));
 }
 
-.goal-ball:nth-child(9){
-    left:175px;
-    bottom:65px;
+.field-ball:hover{
+    transform:scale(1.3) rotate(20deg);
 }
 
-.goal-ball:nth-child(10){
-    left:110px;
-    bottom:100px;
+.field-ball:active{
+    transform:scale(.9);
 }
 
-.goal-instruction{
-    margin-top:25px;
-    color:#777;
-    font-size:10px;
-    letter-spacing:2px;
-}
+.ball1{left:9%;top:18%;}
+.ball2{left:27%;top:68%;}
+.ball3{left:42%;top:25%;}
+.ball4{left:55%;top:65%;}
+.ball5{left:70%;top:20%;}
+.ball6{left:84%;top:52%;}
+.ball7{left:15%;top:48%;}
+.ball8{left:36%;top:46%;}
+.ball9{left:62%;top:40%;}
+.ball10{left:78%;top:73%;}
 
-.ball-message{
-    min-height:75px;
-    max-width:350px;
-    margin:28px auto 0;
+.field-note{
+    margin-top:28px;
+    min-height:72px;
+    padding:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
 
-    padding:20px;
-
-    background:#151515;
-    border:1px solid #292929;
     border-radius:18px;
+    background:#141414;
+    border:1px solid #292929;
 
     color:#ddd;
-
-    font-family:Georgia,serif;
+    font-family:'Playfair Display',serif;
     font-size:16px;
-    line-height:1.6;
+    line-height:1.5;
 
     opacity:0;
     transform:translateY(10px);
     transition:.4s;
 }
 
-.ball-message.show{
+.field-note.show{
     opacity:1;
     transform:translateY(0);
 }
 
-/* =====================================================
+/* =========================
    LETTER
-===================================================== */
+========================= */
 
 .letter-card{
     margin-top:35px;
     padding:30px 23px;
-
-    background:
-        linear-gradient(145deg,#171717,#0f0f0f);
-
-    border:1px solid #292929;
     border-radius:24px;
-
-    box-shadow:0 20px 50px rgba(0,0,0,.35);
+    background:
+        linear-gradient(145deg,#171717,#101010);
+    border:1px solid #292929;
 }
 
 .letter-card p{
-    font-family:Georgia,serif;
-    color:#d5d0d0;
+    font-family:'Playfair Display',serif;
+    color:#d2cece;
     font-size:16px;
-    line-height:1.9;
+    line-height:1.85;
     margin-bottom:22px;
 }
 
 .signature{
     text-align:right;
-    color:#d13b55!important;
+    color:#d43a53!important;
+    margin-top:35px;
 }
 
-/* =====================================================
+/* =========================
    PHOTO ALBUM
-===================================================== */
+========================= */
 
 .album{
     margin-top:40px;
 }
 
 .photo-frame{
-    background:#eee7df;
-    padding:11px 11px 24px;
-
+    background:#e9e3dd;
+    padding:12px 12px 25px;
     border-radius:5px;
-
-    box-shadow:0 25px 60px rgba(0,0,0,.55);
-
-    cursor:pointer;
-
+    box-shadow:0 25px 60px rgba(0,0,0,.5);
     transform:rotate(-1deg);
+    cursor:pointer;
 }
 
 .photo-frame img{
     width:100%;
-    height:420px;
+    height:430px;
     object-fit:cover;
     display:block;
     background:#222;
@@ -657,25 +544,25 @@ button{
 .photo-caption{
     color:#222;
     text-align:center;
-    font-family:Georgia,serif;
-    margin-top:12px;
+    font-family:'Playfair Display',serif;
     font-size:14px;
+    margin-top:13px;
 }
 
 .album-controls{
     display:flex;
-    align-items:center;
     justify-content:center;
-    gap:20px;
+    align-items:center;
+    gap:18px;
     margin-top:25px;
 }
 
 .album-button{
-    width:43px;
-    height:43px;
+    width:42px;
+    height:42px;
     border-radius:50%;
-    background:#151515;
     border:1px solid #333;
+    background:#151515;
     color:white;
     cursor:pointer;
 }
@@ -686,14 +573,14 @@ button{
     letter-spacing:2px;
 }
 
-/* =====================================================
+/* =========================
    TIMELINE
-===================================================== */
+========================= */
 
 .timeline{
     position:relative;
     margin-top:50px;
-    padding-left:28px;
+    padding-left:30px;
 }
 
 .timeline:before{
@@ -703,7 +590,7 @@ button{
     top:0;
     bottom:0;
     width:1px;
-    background:#762033;
+    background:#762032;
 }
 
 .timeline-item{
@@ -713,31 +600,25 @@ button{
 
 .timeline-dot{
     position:absolute;
-    left:-28px;
-    top:3px;
-
-    width:15px;
-    height:15px;
-
+    left:-29px;
+    top:5px;
+    width:14px;
+    height:14px;
     border-radius:50%;
-
     background:var(--red2);
-
-    border:3px solid #0c0c0c;
-
-    box-shadow:
-        0 0 0 1px #9b2137;
+    border:3px solid #0b0b0b;
+    box-shadow:0 0 0 1px #8d1b30;
 }
 
 .timeline-date{
-    color:#cf4058;
-    font-size:9px;
+    color:#cf3a52;
+    font-size:10px;
     letter-spacing:2px;
     margin-bottom:10px;
 }
 
 .timeline-title{
-    font-family:Georgia,serif;
+    font-family:'Playfair Display',serif;
     font-size:24px;
     margin-bottom:9px;
 }
@@ -748,31 +629,34 @@ button{
     line-height:1.8;
 }
 
-/* =====================================================
+/* =========================
    MUSIC
-===================================================== */
+========================= */
 
 .music-player{
     margin-top:40px;
+    padding:18px;
+    border-radius:20px;
+    background:#141414;
+    border:1px solid #282828;
 
     display:flex;
     align-items:center;
     gap:15px;
-
-    padding:18px;
-
-    border-radius:20px;
-    background:#141414;
-    border:1px solid #292929;
 }
 
 .music-disc{
-    width:52px;
-    height:52px;
+    width:50px;
+    height:50px;
     border-radius:50%;
 
     background:
-        radial-gradient(circle,#eee 0 8%,#333 9% 12%,#a71930 13% 100%);
+        radial-gradient(
+            circle,
+            #eee 0 8%,
+            #333 9% 12%,
+            #a71930 13% 100%
+        );
 
     animation:spin 5s linear infinite;
     animation-play-state:paused;
@@ -783,11 +667,7 @@ button{
 }
 
 @keyframes spin{
-
-    to{
-        transform:rotate(360deg);
-    }
-
+    to{transform:rotate(360deg);}
 }
 
 .music-info{
@@ -801,7 +681,7 @@ button{
 .music-artist{
     color:#777;
     font-size:11px;
-    margin-top:5px;
+    margin-top:4px;
 }
 
 .music-toggle{
@@ -814,66 +694,149 @@ button{
     cursor:pointer;
 }
 
-/* =====================================================
-   GRATITUDE NOTES
-===================================================== */
+/* =========================
+   MINI GOAL
+========================= */
 
-.notes-area{
+.goal-section{
+    text-align:center;
+}
+
+.goal-area{
     margin-top:45px;
+    position:relative;
+    display:flex;
+    justify-content:center;
 }
 
-.note-box{
-    padding:23px;
-    margin-bottom:14px;
+.mini-goal{
+    width:280px;
+    height:190px;
+    position:relative;
 
-    background:#141414;
-    border:1px solid #282828;
+    border:5px solid white;
+    border-bottom:8px solid white;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0,
+            transparent 27px,
+            rgba(255,255,255,.18) 28px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent 0,
+            transparent 27px,
+            rgba(255,255,255,.18) 28px
+        );
+}
+
+.goal-ball{
+    position:absolute;
+    font-size:31px;
+    transition:.3s;
+    filter:drop-shadow(0 4px 5px rgba(0,0,0,.4));
+}
+
+.goal-ball:nth-child(1){left:20px;bottom:18px;}
+.goal-ball:nth-child(2){left:65px;bottom:34px;}
+.goal-ball:nth-child(3){left:110px;bottom:18px;}
+.goal-ball:nth-child(4){left:155px;bottom:40px;}
+.goal-ball:nth-child(5){left:200px;bottom:20px;}
+.goal-ball:nth-child(6){left:42px;bottom:70px;}
+.goal-ball:nth-child(7){left:90px;bottom:65px;}
+.goal-ball:nth-child(8){left:140px;bottom:75px;}
+.goal-ball:nth-child(9){left:185px;bottom:65px;}
+
+.goal-area:after{
+    content:"";
+    position:absolute;
+    width:320px;
+    height:15px;
+    background:#111;
+    bottom:-12px;
+    border-radius:50%;
+    z-index:-1;
+}
+
+.shake-button{
+    margin-top:32px;
+    padding:14px 25px;
+    border-radius:50px;
+    border:1px solid #8f1a30;
+    background:#151515;
+    color:white;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.shake-button:active{
+    transform:scale(.95);
+}
+
+.mini-goal.shake{
+    animation:goalShake .7s;
+}
+
+@keyframes goalShake{
+    0%,100%{transform:rotate(0);}
+    20%{transform:rotate(-4deg);}
+    40%{transform:rotate(4deg);}
+    60%{transform:rotate(-3deg);}
+    80%{transform:rotate(3deg);}
+}
+
+.goal-message{
+    margin:30px auto 0;
+    max-width:350px;
+    min-height:75px;
+
+    padding:20px;
     border-radius:18px;
+    background:#151515;
+    border:1px solid #292929;
 
-    font-family:Georgia,serif;
-    color:#d6d1d1;
-    line-height:1.7;
+    color:#ddd;
+    font-family:'Playfair Display',serif;
+    font-size:16px;
+    line-height:1.6;
 
-    transform:translateY(15px);
     opacity:0;
-
-    transition:.5s;
+    transition:.4s;
 }
 
-.note-box.show{
-    transform:translateY(0);
+.goal-message.show{
     opacity:1;
 }
 
-/* =====================================================
+/* =========================
    FINAL
-===================================================== */
+========================= */
 
-#final{
-    display:none;
+.final{
+    min-height:100vh;
+    display:flex;
     align-items:center;
     justify-content:center;
 
     background:
-        radial-gradient(circle at center,#41101b,#090909 72%);
+        radial-gradient(circle at center,#3a1018,#080808 70%);
 }
 
 .final-content{
     text-align:center;
-    padding-top:80px;
 }
 
-.final-football{
-    font-size:60px;
+.final-ball{
+    font-size:58px;
     margin-bottom:25px;
-
-    animation:ballFloat 2s infinite;
 }
 
 .final-content h2{
-    font-family:Georgia,serif;
-    font-weight:400;
+    font-family:'Playfair Display',serif;
     font-size:48px;
+    font-weight:400;
     line-height:1.1;
 }
 
@@ -885,21 +848,26 @@ button{
     color:#aaa;
     font-size:13px;
     line-height:1.9;
-    margin-top:24px;
+    margin-top:25px;
 }
 
 .final-date{
-    margin-top:40px;
     color:var(--red2);
     font-size:10px;
     letter-spacing:4px;
+    margin-top:40px;
 }
 
-/* =====================================================
-   RESPONSIVE
-===================================================== */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:420px){
+
+    .card{
+        padding-left:18px;
+        padding-right:18px;
+    }
 
     .hero h1{
         font-size:45px;
@@ -909,28 +877,28 @@ button{
         font-size:33px;
     }
 
+    .field{
+        height:290px;
+    }
+
     .photo-frame img{
         height:390px;
     }
-
 }
-
 </style>
 </head>
 
-
 <body>
 
-
-<!-- =====================================================
+<!-- =========================
      LOADING
-===================================================== -->
+========================= -->
 
 <section class="page" id="loading">
 
     <div class="loading-content">
 
-        <div class="loading-ball"></div>
+        <div class="loading-ball">⚽</div>
 
         <div class="loading-text">
             preparing something special for you...
@@ -941,9 +909,9 @@ button{
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
      PIN
-===================================================== -->
+========================= -->
 
 <section class="page" id="pinScreen">
 
@@ -958,16 +926,14 @@ button{
         </div>
 
         <div class="pin-subtitle">
-            You probably know this one.
+            You should know this one.
         </div>
 
         <div class="pin-display">
-
             <div class="pin-dot"></div>
             <div class="pin-dot"></div>
             <div class="pin-dot"></div>
             <div class="pin-dot"></div>
-
         </div>
 
         <div class="keypad">
@@ -997,15 +963,15 @@ button{
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
      GIFT
-===================================================== -->
+========================= -->
 
 <section class="page" id="giftScreen">
 
-    <div class="gift-entry">
+    <div class="gift-entry" id="giftEntry">
 
-        <div class="gift" id="gift" onclick="openGift()">
+        <div class="gift-emoji" onclick="openGift()">
             🎁
         </div>
 
@@ -1018,14 +984,13 @@ button{
 </section>
 
 
-<!-- =====================================================
-     BIRTHDAY
-===================================================== -->
+<!-- =========================
+     MAIN BIRTHDAY
+========================= -->
 
 <section class="page" id="birthday">
 
 <div class="card">
-
 
     <!-- HERO -->
 
@@ -1051,23 +1016,21 @@ button{
 
         SCROLL FOR A LITTLE SOMETHING
 
-        <div class="scroll-arrow">
+        <div class="arrow">
             ↓
         </div>
 
     </div>
 
 
-    <!-- =================================================
-         BALL MESSAGE
-    ================================================= -->
+    <!-- =========================
+         THINGS I KNOW ABOUT YOU
+    ========================= -->
 
     <div class="section">
 
-        <div class="scroll-ball"></div>
-
         <div class="section-label">
-            start here
+            things i know about you
         </div>
 
         <div class="section-title">
@@ -1076,36 +1039,77 @@ button{
         </div>
 
         <div class="section-intro">
-            Karena ternyata setelah kenal kamu,
-            ada aja hal kecil yang aku hafal.
+            Ada 10 bola di lapangan.
+            Coba pencet satu-satu.
         </div>
 
 
-        <div class="goal-area">
+        <div class="field-wrapper">
 
-            <div class="goal">
+            <div class="field">
 
-                <div class="goal-net"></div>
+                <div class="penalty left"></div>
+                <div class="penalty right"></div>
 
-                <div class="goal-ball" onclick="showBallNote(0)"></div>
-                <div class="goal-ball" onclick="showBallNote(1)"></div>
-                <div class="goal-ball" onclick="showBallNote(2)"></div>
-                <div class="goal-ball" onclick="showBallNote(3)"></div>
-                <div class="goal-ball" onclick="showBallNote(4)"></div>
-                <div class="goal-ball" onclick="showBallNote(5)"></div>
-                <div class="goal-ball" onclick="showBallNote(6)"></div>
-                <div class="goal-ball" onclick="showBallNote(7)"></div>
-                <div class="goal-ball" onclick="showBallNote(8)"></div>
-                <div class="goal-ball" onclick="showBallNote(9)"></div>
+                <div class="goal left"></div>
+                <div class="goal right"></div>
+
+
+                <div class="field-ball ball1"
+                     onclick="showFieldNote(0)">
+                    ⚽
+                </div>
+
+                <div class="field-ball ball2"
+                     onclick="showFieldNote(1)">
+                    ⚽
+                </div>
+
+                <div class="field-ball ball3"
+                     onclick="showFieldNote(2)">
+                    ⚽
+                </div>
+
+                <div class="field-ball ball4"
+                     onclick="showFieldNote(3)">
+                    ⚽
+                </div>
+
+                <div class="field-ball ball5"
+                     onclick="showFieldNote(4)">
+                    ⚽
+                </div>
+
+                <div class="field-ball ball6"
+                     onclick="showFieldNote(5)">
+                    ⚽
+                </div>
+
+                <div class="field-ball ball7"
+                     onclick="showFieldNote(6)">
+                    ⚽
+                </div>
+
+                <div class="field-ball ball8"
+                     onclick="showFieldNote(7)">
+                    ⚽
+                </div>
+
+                <div class="field-ball ball9"
+                     onclick="showFieldNote(8)">
+                    ⚽
+                </div>
+
+                <div class="field-ball ball10"
+                     onclick="showFieldNote(9)">
+                    ⚽
+                </div>
 
             </div>
 
-            <div class="goal-instruction">
-                TAP THE BALLS
-            </div>
 
-            <div class="ball-message" id="ballMessage">
-                pilih satu bola dulu.
+            <div class="field-note" id="fieldNote">
+                Pick a ball.
             </div>
 
         </div>
@@ -1113,13 +1117,11 @@ button{
     </div>
 
 
-    <!-- =================================================
+    <!-- =========================
          LETTER
-    ================================================= -->
+    ========================= -->
 
     <div class="section">
-
-        <div class="scroll-ball"></div>
 
         <div class="section-label">
             from me
@@ -1137,106 +1139,83 @@ button{
             </p>
 
             <p>
-                Aku sebenarnya bingung mau mulai dari mana.
-                Soalnya kalau ngomongin kamu, yang muncul
-                malah banyak kejadian random yang kalau
-                diceritain satu-satu kayaknya nggak akan selesai.
+                Aku nggak mau bikin ucapan yang terlalu
+                formal atau terlalu manis sampai kayak
+                tulisan di Pinterest. Jadi aku bikin yang
+                memang tentang kamu aja.
             </p>
 
             <p>
-                Kalau dipikir-pikir lucu juga.
-                Kita awalnya cuma kenal di Stasiun Pocin,
-                pas aku pulang ngampus di bulan Februari.
-                Terus aku malah dipaparaziin sama temen sendiri.
-                Awal kenalnya aja sudah nggak normal. 😂
+                Kalau dipikir-pikir, awal kita juga cukup
+                random. Ketemu di Stasiun Pocin waktu
+                aku pulang ngampus, terus malah
+                dipaparaziin sama temen aku.
             </p>
 
             <p>
-                Setelah itu entah gimana ceritanya,
-                tanggal 27 Maret 2026 akhirnya jadi
-                tanggal yang kita ingat sebagai awal kita.
+                Dari situ entah gimana ceritanya,
+                akhirnya tanggal 27 Maret 2026
+                jadi tanggal kita.
             </p>
 
             <p>
-                Dan sejak saat itu, hampir setiap ketemu
-                selalu ada aja yang bisa dibahas.
-                Bahkan celetukan random aku juga selalu
-                kamu ladenin.
+                Aku suka karena sama kamu aku bisa
+                ngomong hal random yang kadang
+                sebenarnya nggak penting.
+                Terus kamu tetap ladenin.
             </p>
 
             <p>
-                Aku bisa tiba-tiba ngomong,
-                "kalau kita bisa terbang gimana ya?"
+                Aku bisa tiba-tiba bilang,
+                “kalau kita bisa terbang gimana?”
                 dan bukannya bilang aku aneh,
-                kamu malah ikut masuk ke pemisalan itu.
-                Itu salah satu hal yang aku suka dari kamu.
+                kamu malah ikut bikin pemisalannya.
             </p>
 
             <p>
-                Ada juga kebiasaan kamu yang kadang
-                bikin aku kesel tapi sebenarnya aku suka.
-                Kamu selalu bilang aku harus pakai jaket
-                atau jas hujan.
+                Walaupun kadang kamu juga ngeselin.
+                Apalagi kalau aku lagi ngomong panjang
+                terus kamu jawab,
+                “alah alah mba.”
             </p>
 
             <p>
-                Padahal menurut aku jaraknya dekat.
-                Ribet.
+                Tapi ya... ternyata hal-hal kecil begitu
+                yang malah bikin aku nyaman.
+            </p>
+
+            <p>
+                Termasuk kebiasaan kamu nyuruh aku
+                pakai jaket atau jas hujan.
+                Menurutku kan dekat, jadi ribet.
                 Tapi kamu tetap nggak mau jalan
-                sebelum aku nurutin kamu.
+                kalau aku belum nurut.
             </p>
 
             <p>
-                Sekarang aku sadar,
-                mungkin memang itu cara kamu menunjukkan
-                kalau kamu peduli.
+                Nyebelin.
+                Tapi aku suka.
             </p>
 
             <p>
-                Aku juga suka hal-hal sederhana lainnya.
-                Misalnya waktu kamu jajanin aku.
-                Ini penting untuk dicatat karena
-                setiap kamu jajanin aku,
-                rasa sayang aku kayak naik sedikit. 😂
+                Di umur 22 ini aku cuma berharap
+                kamu sehat, urusan kamu dimudahkan,
+                apa yang kamu usahakan bisa tercapai,
+                dan kamu punya banyak alasan
+                buat bahagia.
             </p>
 
             <p>
-                Terus kalau kamu kasih aku barang,
-                ya... tambah sayang lagi.
-                Gimana dong.
-            </p>
-
-            <p>
-                Di umur 22 ini, aku cuma berharap
-                kamu sehat, bahagia, dimudahkan
-                dalam semua yang sedang kamu usahakan,
-                dan bisa mencapai banyak hal
-                yang kamu inginkan.
-            </p>
-
-            <p>
-                Semoga kamu tetap jadi Emey yang aku kenal.
-                Yang manly, ganteng,
-                dan semoga soon bakal punya otot banget. 😂
-            </p>
-
-            <p>
-                Terima kasih sudah jadi bagian dari
-                cerita aku sampai hari ini.
-                Semoga masih banyak cerita random,
-                ketawa, jalan-jalan, makanan,
-                dan hal-hal kecil lainnya
-                yang bisa kita lakukan bareng.
-            </p>
-
-            <p>
-                Happy birthday.
-                Semoga tahun ini baik banget sama kamu.
+                Semoga tahun ini jadi tahun yang baik
+                buat kamu.
+                Dan kalau boleh, semoga aku masih
+                jadi salah satu bagian kecil yang
+                bikin tahun kamu lebih menyenangkan.
             </p>
 
             <p class="signature">
-                — dari aku,<br>
-                yang paling suka kamu jajanin. ❤️
+                — from me,<br>
+                yang paling suka kalau kamu jajanin aku. 😂❤️
             </p>
 
         </div>
@@ -1244,13 +1223,11 @@ button{
     </div>
 
 
-    <!-- =================================================
-         PHOTO
-    ================================================= -->
+    <!-- =========================
+         PHOTO MEMORIES
+    ========================= -->
 
     <div class="section">
-
-        <div class="scroll-ball"></div>
 
         <div class="section-label">
             our little archive
@@ -1262,14 +1239,15 @@ button{
         </div>
 
         <div class="section-intro">
-            Nanti bagian ini diisi foto-foto kita.
-            Tinggal ganti foto di folder assets.
+            Foto-foto yang nanti bakal jadi
+            bagian dari album kecil kita.
         </div>
 
 
         <div class="album">
 
-            <div class="photo-frame" onclick="nextPhoto()">
+            <div class="photo-frame"
+                 onclick="nextPhoto()">
 
                 <img id="albumPhoto"
                      src="assets/foto1.jpg"
@@ -1277,7 +1255,7 @@ button{
 
                 <div class="photo-caption"
                      id="photoCaption">
-                    the beginning
+                    our beginning
                 </div>
 
             </div>
@@ -1307,13 +1285,11 @@ button{
     </div>
 
 
-    <!-- =================================================
+    <!-- =========================
          TIMELINE
-    ================================================= -->
+    ========================= -->
 
     <div class="section">
-
-        <div class="scroll-ball"></div>
 
         <div class="section-label">
             our story
@@ -1341,11 +1317,10 @@ button{
                 </div>
 
                 <div class="timeline-text">
-                    Aku pulang ngampus,
-                    ketemu kamu di stasiun.
-                    Terus temen aku malah
-                    jadi paparazzi dadakan.
-                    Awal yang cukup random.
+                    Aku pulang ngampus dan ketemu kamu
+                    di stasiun. Belum apa-apa sudah
+                    dipaparaziin sama temen aku.
+                    Awal yang lumayan random.
                 </div>
 
             </div>
@@ -1380,14 +1355,14 @@ button{
                 </div>
 
                 <div class="timeline-title">
-                    The random era.
+                    The random conversations.
                 </div>
 
                 <div class="timeline-text">
-                    Mulai dari celetukan nggak jelas,
-                    pembahasan random di jalan,
-                    sampai pemisalan "kalau kita bisa terbang"
-                    yang entah kenapa selalu kamu ladenin.
+                    Dari ngomongin hal biasa sampai
+                    tiba-tiba bikin pemisalan kalau
+                    kita bisa terbang.
+                    Dan anehnya, kamu selalu ladenin.
                 </div>
 
             </div>
@@ -1402,37 +1377,13 @@ button{
                 </div>
 
                 <div class="timeline-title">
-                    The little things.
+                    Little things.
                 </div>
 
                 <div class="timeline-text">
-                    Kamu yang nyuruh aku pakai jaket,
-                    kamu yang nggak mau jalan kalau aku
-                    belum pakai jas hujan,
-                    kamu yang suka jajanin aku,
-                    dan hal-hal kecil lainnya.
-                </div>
-
-            </div>
-
-
-            <div class="timeline-item">
-
-                <div class="timeline-dot"></div>
-
-                <div class="timeline-date">
-                    STILL HERE
-                </div>
-
-                <div class="timeline-title">
-                    And somehow...
-                </div>
-
-                <div class="timeline-text">
-                    Aku masih senang setiap kali
-                    kita ketemu.
-                    Karena entah kenapa,
-                    selalu ada aja cerita baru.
+                    Jaket, jas hujan, jajan, barang-barang
+                    kecil, dan semua perhatian yang
+                    kadang baru terasa setelah dipikir-pikir.
                 </div>
 
             </div>
@@ -1443,26 +1394,19 @@ button{
     </div>
 
 
-    <!-- =================================================
+    <!-- =========================
          MUSIC
-    ================================================= -->
+    ========================= -->
 
     <div class="section">
-
-        <div class="scroll-ball"></div>
 
         <div class="section-label">
             soundtrack
         </div>
 
         <div class="section-title">
-            One song<br>
-            for you.
-        </div>
-
-        <div class="section-intro">
-            Putar kalau mau. Biar website ini
-            punya soundtrack sendiri.
+            One song for<br>
+            this little story.
         </div>
 
 
@@ -1485,8 +1429,8 @@ button{
             </div>
 
             <button class="music-toggle"
-                    onclick="toggleMusic()"
-                    id="musicButton">
+                    id="musicButton"
+                    onclick="toggleMusic()">
                 ▶
             </button>
 
@@ -1495,16 +1439,14 @@ button{
     </div>
 
 
-    <!-- =================================================
-         GRATITUDE
-    ================================================= -->
+    <!-- =========================
+         MINI GOAL
+    ========================= -->
 
-    <div class="section">
-
-        <div class="scroll-ball"></div>
+    <div class="section goal-section">
 
         <div class="section-label">
-            a few more things
+            one more thing
         </div>
 
         <div class="section-title">
@@ -1513,107 +1455,38 @@ button{
         </div>
 
         <div class="section-intro">
-            Bukan surat panjang.
-            Cuma beberapa hal kecil yang aku suka.
+            Shake the goal and pick a ball.
         </div>
 
 
-        <div class="notes-area">
+        <div class="goal-area">
 
-            <div class="note-box">
-                Kamu selalu mau ngeladenin
-                celetukan random aku.
-            </div>
+            <div class="mini-goal"
+                 id="miniGoal">
 
-            <div class="note-box">
-                Kamu bisa bikin hal random
-                jadi bahan bercandaan.
-            </div>
+                <div class="goal-ball">⚽</div>
+                <div class="goal-ball">⚽</div>
+                <div class="goal-ball">⚽</div>
+                <div class="goal-ball">⚽</div>
+                <div class="goal-ball">⚽</div>
+                <div class="goal-ball">⚽</div>
+                <div class="goal-ball">⚽</div>
+                <div class="goal-ball">⚽</div>
+                <div class="goal-ball">⚽</div>
 
-            <div class="note-box">
-                Kamu perhatian,
-                walaupun kadang cara menyampaikannya
-                bikin aku bilang "iya iya". 😂
-            </div>
-
-            <div class="note-box">
-                Kamu selalu ingetin aku pakai jaket
-                atau jas hujan.
-            </div>
-
-            <div class="note-box">
-                Kamu suka jajanin aku.
-                Ini jelas harus masuk daftar.
-            </div>
-
-            <div class="note-box">
-                Kamu punya cara sendiri
-                buat bikin ketemu kamu
-                selalu terasa menyenangkan.
             </div>
 
         </div>
 
-    </div>
+
+        <button class="shake-button"
+                onclick="shakeGoal()">
+            ⚽ Shake the goal
+        </button>
 
 
-    <!-- =================================================
-         FINAL
-    ================================================= -->
-
-    <div class="section">
-
-        <div class="scroll-ball"></div>
-
-        <div class="final-content"
-             style="padding-top:40px;">
-
-            <div class="final-football">
-                ⚽
-            </div>
-
-            <div class="section-label">
-                one last thing
-            </div>
-
-            <h2>
-                Happy Birthday,<br>
-                <span>Emey.</span>
-            </h2>
-
-            <p>
-                4 September 2004.
-                Hari lahir seseorang yang
-                akhirnya jadi salah satu orang
-                penting dalam cerita aku.
-            </p>
-
-            <p>
-                Semoga umur 22 ini
-                membawa banyak rezeki,
-                kesehatan, kesempatan,
-                dan hal-hal baik lainnya.
-            </p>
-
-            <p>
-                Tetap jadi kamu.
-                Manly.
-                Ganteng.
-                Dan soon bakal punya
-                otot banget. 😂
-            </p>
-
-            <p>
-                Jangan lupa ngopi.<br>
-                Jangan lupa pakai jaket.<br>
-                Jangan lupa bahagia.<br>
-                Dan... jangan lupa aku.
-            </p>
-
-            <div class="final-date">
-                04 · 09 · 2026
-            </div>
-
+        <div class="goal-message"
+             id="goalMessage">
         </div>
 
     </div>
@@ -1624,9 +1497,59 @@ button{
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
+     FINAL
+========================= -->
+
+<section class="final">
+
+    <div class="card final-content">
+
+        <div class="final-ball">
+            ⚽
+        </div>
+
+        <div class="section-label">
+            one last thing
+        </div>
+
+        <h2>
+            Happy Birthday,<br>
+            <span>Emey.</span>
+        </h2>
+
+        <p>
+            Semoga umur 22 ini membawa
+            banyak hal baik, rezeki,
+            kesehatan, dan cerita baru.
+        </p>
+
+        <p>
+            Tetap jadi kamu.
+            Yang manly,
+            ganteng,
+            dan soon bakal punya
+            otot banget. 😂
+        </p>
+
+        <p>
+            Jangan lupa ngopi.<br>
+            Jangan lupa pakai jaket.<br>
+            Jangan lupa aku.
+        </p>
+
+        <div class="final-date">
+            04 · 09 · 2026
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
      AUDIO
-===================================================== -->
+========================= -->
 
 <audio id="music"
        loop
@@ -1640,9 +1563,9 @@ button{
 
 <script>
 
-/* =====================================================
+/* =========================
    LOADING
-===================================================== */
+========================= */
 
 setTimeout(function(){
 
@@ -1653,9 +1576,9 @@ setTimeout(function(){
 },3000);
 
 
-/* =====================================================
+/* =========================
    PIN
-===================================================== */
+========================= */
 
 let enteredPin="";
 
@@ -1665,7 +1588,7 @@ function pressPin(number){
         return;
     }
 
-    enteredPin += number;
+    enteredPin+=number;
 
     updatePinDots();
 
@@ -1679,10 +1602,12 @@ function pressPin(number){
 
                 document.getElementById("giftScreen").style.display="flex";
 
+                playMusic();
+
             }else{
 
-                document.getElementById("pinError").innerHTML =
-                "Hmm... coba ingat lagi. 😂";
+                document.getElementById("pinError").innerHTML=
+                "Hmm... coba lagi. 😂";
 
                 enteredPin="";
 
@@ -1693,9 +1618,7 @@ function pressPin(number){
             }
 
         },250);
-
     }
-
 }
 
 function updatePinDots(){
@@ -1705,17 +1628,12 @@ function updatePinDots(){
     dots.forEach(function(dot,index){
 
         if(index<enteredPin.length){
-
             dot.classList.add("active");
-
         }else{
-
             dot.classList.remove("active");
-
         }
 
     });
-
 }
 
 function clearPin(){
@@ -1725,7 +1643,6 @@ function clearPin(){
     document.getElementById("pinError").innerHTML="";
 
     updatePinDots();
-
 }
 
 function deletePin(){
@@ -1733,19 +1650,18 @@ function deletePin(){
     enteredPin=enteredPin.slice(0,-1);
 
     updatePinDots();
-
 }
 
 
-/* =====================================================
+/* =========================
    GIFT
-===================================================== */
+========================= */
 
 function openGift(){
 
-    const gift=document.getElementById("gift");
+    const entry=document.getElementById("giftEntry");
 
-    gift.classList.add("shake");
+    entry.style.transform="scale(1.15)";
 
     setTimeout(function(){
 
@@ -1753,23 +1669,19 @@ function openGift(){
 
         document.getElementById("birthday").style.display="block";
 
-        createBalls(35);
+        window.scrollTo(0,0);
 
-        window.scrollTo({
-            top:0,
-            behavior:"smooth"
-        });
+        fallingBalls(25);
 
-    },650);
-
+    },600);
 }
 
 
-/* =====================================================
+/* =========================
    FALLING FOOTBALLS
-===================================================== */
+========================= */
 
-function createBalls(amount){
+function fallingBalls(amount){
 
     for(let i=0;i<amount;i++){
 
@@ -1777,85 +1689,96 @@ function createBalls(amount){
 
         ball.className="falling-ball";
 
-        ball.style.left =
-        Math.random()*100+"vw";
+        ball.innerHTML="⚽";
 
-        ball.style.animationDuration =
-        (3+Math.random()*4)+"s";
+        ball.style.left=Math.random()*100+"vw";
 
-        ball.style.animationDelay =
-        Math.random()*1.5+"s";
+        ball.style.fontSize=
+            (14+Math.random()*16)+"px";
 
-        const size =
-        8+Math.random()*12;
+        ball.style.animationDuration=
+            (3+Math.random()*4)+"s";
 
-        ball.style.width=size+"px";
-
-        ball.style.height=size+"px";
+        ball.style.animationDelay=
+            Math.random()*1.5+"s";
 
         document.body.appendChild(ball);
 
         setTimeout(function(){
-
             ball.remove();
-
-        },8500);
-
+        },8000);
     }
-
 }
 
 
-/* =====================================================
-   BALL MESSAGES
-===================================================== */
+/* =========================
+   SCROLL FOOTBALL EFFECT
+========================= */
 
-const ballMessages=[
+let lastScroll=0;
 
-"Dia suka ngopi. Katanya kalau nggak ngopi malah pusing. 😂",
+window.addEventListener("scroll",function(){
 
-"Entah sekarang masih sering ngerokok atau nggak, yang jelas pod tetap jadi teman. 😂",
+    const current=window.scrollY;
 
-"Ronaldo, eFootball, dan... aku. Katanya aku paling dia suka. WKWK.",
+    if(Math.abs(current-lastScroll)>120){
 
-"Salah satu kebiasaan paling ngeselin: setiap aku ngomong sesuatu jawabannya 'alah alah mba'.",
+        fallingBalls(6);
 
-"Tapi lucunya, hampir semua celetukan aku selalu diladenin.",
+        lastScroll=current;
+    }
 
-"Hal random di jalan bisa berubah jadi bahan bercandaan cuma karena dibahas sama dia.",
+});
 
-"Kalau aku bilang, 'kalau kita bisa terbang gimana ya?', dia malah ikut mikirinnya.",
 
-"Dia selalu nyuruh aku pakai jaket atau jas hujan. Ribet. Tapi sebenarnya aku suka.",
+/* =========================
+   FIELD BALL NOTES
+========================= */
 
-"Kalau dia jajanin aku, otomatis rasa sayang naik. Ini fakta.",
+const fieldNotes=[
 
-"Dan iya, dari semua hal yang dia suka, aku tetap berharap aku masuk daftar teratas. 😂"
+"Katanya kalau nggak ngopi bisa pusing. Jadi ya... kopi dulu baru aktivitas. 😂",
 
+"Sekarang katanya udah jarang ngerokok. KENYATAANNYA? Pod tetap jalan. 😂",
+
+"Ronaldo. Efootball. Dua hal yang kalau dibahas kayaknya nggak akan pernah selesai.",
+
+"Kalau aku lagi celetukan random, kamu selalu aja diladenin. Makanya ngobrol sama kamu nggak pernah benar-benar normal.",
+
+"Kalau aku bilang, 'kalau kita bisa terbang gimana?' kamu malah ikut mikirin. Ini yang bikin aku betah.",
+
+"Jawaban andalan kalau aku kebanyakan ngomong: 'alah alah mba.' Nyebelin, tapi sekarang malah jadi kebiasaan.",
+
+"Hal random di jalan bisa tiba-tiba jadi bahan pembicaraan. Entah kenapa selalu bisa dibuat lucu.",
+
+"Manly. Ganteng. Dan soon bakal ada otot banget. Aku sudah memprediksi dari sekarang. 😂",
+
+"Di antara semua hal yang kamu suka, aku tetap berharap aku masuk daftar favorit.",
+
+"Yang paling penting: kamu itu orang yang bikin ketemu biasa jadi selalu punya cerita."
 ];
 
-function showBallNote(index){
+function showFieldNote(index){
 
-    const message=document.getElementById("ballMessage");
+    const note=document.getElementById("fieldNote");
 
-    message.innerHTML=ballMessages[index];
-
-    message.classList.remove("show");
+    note.classList.remove("show");
 
     setTimeout(function(){
 
-        message.classList.add("show");
+        note.innerHTML=fieldNotes[index];
 
-    },50);
+        note.classList.add("show");
 
-    createBalls(8);
+    },100);
 
+    fallingBalls(5);
 }
 
 
-/* =====================================================
+/* =========================
    PHOTO ALBUM
-===================================================== */
+========================= */
 
 const photos=[
 
@@ -1895,17 +1818,16 @@ let currentPhoto=0;
 
 function updatePhoto(){
 
-    document.getElementById("albumPhoto").src =
-    photos[currentPhoto].src;
+    document.getElementById("albumPhoto").src=
+        photos[currentPhoto].src;
 
-    document.getElementById("photoCaption").innerHTML =
-    photos[currentPhoto].caption;
+    document.getElementById("photoCaption").innerHTML=
+        photos[currentPhoto].caption;
 
-    document.getElementById("photoNumber").innerHTML =
-    String(currentPhoto+1).padStart(2,"0")
-    +" / "
-    +String(photos.length).padStart(2,"0");
-
+    document.getElementById("photoNumber").innerHTML=
+        String(currentPhoto+1).padStart(2,"0")
+        +" / "
+        +String(photos.length).padStart(2,"0");
 }
 
 function nextPhoto(){
@@ -1918,6 +1840,7 @@ function nextPhoto(){
 
     updatePhoto();
 
+    fallingBalls(4);
 }
 
 function prevPhoto(){
@@ -1929,13 +1852,12 @@ function prevPhoto(){
     }
 
     updatePhoto();
-
 }
 
 
-/* =====================================================
+/* =========================
    MUSIC
-===================================================== */
+========================= */
 
 const music=document.getElementById("music");
 
@@ -1943,11 +1865,28 @@ const musicButton=document.getElementById("musicButton");
 
 const musicDisc=document.getElementById("musicDisc");
 
+function playMusic(){
+
+    music.volume=.35;
+
+    music.play()
+    .then(function(){
+
+        musicButton.innerHTML="Ⅱ";
+
+        musicDisc.classList.add("playing");
+
+    })
+    .catch(function(){
+
+        console.log("Music waiting for interaction.");
+
+    });
+}
+
 function toggleMusic(){
 
     if(music.paused){
-
-        music.volume=.35;
 
         music.play();
 
@@ -1964,56 +1903,94 @@ function toggleMusic(){
         musicDisc.classList.remove("playing");
 
     }
-
 }
 
 
-/* =====================================================
-   GRATITUDE ANIMATION
-===================================================== */
+/* =========================
+   MINI GOAL
+========================= */
 
-const noteBoxes=document.querySelectorAll(".note-box");
+const goalMessages=[
 
-const noteObserver=new IntersectionObserver(function(entries){
+"Karena kamu selalu mau ngeladenin celetukan random aku.",
+
+"Karena setiap ketemu kamu hampir selalu ada aja yang bikin aku ketawa.",
+
+"Karena kamu perhatian. Walaupun kadang bentuknya berupa ceramah jaket. 😂",
+
+"Karena kamu selalu memastikan aku pakai jaket atau jas hujan sebelum jalan.",
+
+"Karena kamu suka jajanin aku. Ini alasan yang sangat valid.",
+
+"Karena kamu suka kasih aku barang. Dan entah kenapa setiap dikasih sesuatu aku makin sayang. 😂",
+
+"Karena ngobrol sama kamu bisa dari hal penting sampai hal yang sama sekali nggak penting.",
+
+"Karena kamu bisa bikin pemisalan random jadi terasa masuk akal.",
+
+"Karena dari sekian banyak orang, aku bersyukur bisa kenal dan punya cerita sama kamu.",
+
+"Dan alasan paling sederhananya: aku sayang sama kamu."
+];
+
+let goalIndex=0;
+
+function shakeGoal(){
+
+    const goal=document.getElementById("miniGoal");
+
+    const message=document.getElementById("goalMessage");
+
+    goal.classList.remove("shake");
+
+    void goal.offsetWidth;
+
+    goal.classList.add("shake");
+
+    goalIndex++;
+
+    if(goalIndex>=goalMessages.length){
+        goalIndex=0;
+    }
+
+    setTimeout(function(){
+
+        message.innerHTML=
+            goalMessages[goalIndex];
+
+        message.classList.add("show");
+
+        fallingBalls(10);
+
+    },450);
+}
+
+
+/* =========================
+   EXTRA SCROLL OBSERVER
+========================= */
+
+const sections=document.querySelectorAll(".section");
+
+const observer=new IntersectionObserver(function(entries){
 
     entries.forEach(function(entry){
 
         if(entry.isIntersecting){
 
-            entry.target.classList.add("show");
+            fallingBalls(3);
 
         }
 
     });
 
 },{
-    threshold:.25
+    threshold:.35
 });
 
-noteBoxes.forEach(function(box){
+sections.forEach(function(section){
 
-    noteObserver.observe(box);
-
-});
-
-
-/* =====================================================
-   FOOTBALLS WHEN SCROLLING
-===================================================== */
-
-let lastScroll=0;
-
-window.addEventListener("scroll",function(){
-
-    const currentScroll=window.scrollY;
-
-    if(Math.abs(currentScroll-lastScroll)>180){
-
-        createBalls(5);
-
-        lastScroll=currentScroll;
-
-    }
+    observer.observe(section);
 
 });
 
