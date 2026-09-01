@@ -773,7 +773,7 @@ button{
 
 
 /* =========================================================
-   PHOTO ALBUM
+   VIDEO ALBUM
 ========================================================= */
 
 .album{
@@ -796,8 +796,6 @@ button{
     transform:
         rotate(-1deg);
 
-    cursor:pointer;
-
     transition:
         transform .3s ease;
 }
@@ -808,7 +806,7 @@ button{
         scale(1.01);
 }
 
-.photo-frame img{
+.photo-frame video{
     width:100%;
 
     height:430px;
@@ -817,7 +815,7 @@ button{
 
     display:block;
 
-    background:#222;
+    background:#111;
 
     border-radius:2px;
 }
@@ -1156,6 +1154,7 @@ button{
 .goal-ball:nth-child(7){left:90px;bottom:65px;}
 .goal-ball:nth-child(8){left:140px;bottom:75px;}
 .goal-ball:nth-child(9){left:185px;bottom:65px;}
+.goal-ball:nth-child(10){left:115px;bottom:105px;}
 
 .goal-area:after{
     content:"";
@@ -1406,7 +1405,7 @@ button{
         font-size:27px;
     }
 
-    .photo-frame img{
+    .photo-frame video{
         height:390px;
     }
 
@@ -1573,37 +1572,40 @@ button{
 
 <div class="card">
 
-```
-<!-- HERO -->
+<!-- ===================================================
+     HERO
+=================================================== -->
 
 <div class="hero">
 
-    <div class="hero-small">
-        SEPTEMBER 4
-    </div>
-
-    <h1>
-        Happy Birthday<br>
-        <span>Emery.</span>
-    </h1>
-
-    <div class="hero-date">
-        THE MOST SPECIAL DAY
-    </div>
-
+```
+<div class="hero-small">
+    SEPTEMBER 4
 </div>
 
+<h1>
+    Happy Birthday<br>
+    <span>Emery.</span>
+</h1>
+
+<div class="hero-date">
+    THE MOST SPECIAL DAY
+</div>
+```
+
+</div>
 
 <div class="scroll-hint">
 
-    SCROLL FOR A LITTLE SOMETHING
+```
+SCROLL FOR A LITTLE SOMETHING
 
-    <div class="arrow">
-        ↓
-    </div>
+<div class="arrow">
+    ↓
+</div>
+```
 
 </div>
-
 
 <!-- ===================================================
      THINGS I KNOW ABOUT YOU
@@ -1611,116 +1613,117 @@ button{
 
 <div class="section">
 
-    <div class="section-label">
-        things i know about you
-    </div>
+```
+<div class="section-label">
+    things i know about you
+</div>
 
-    <div class="section-title">
-        A few things<br>
-        I know about you.
-    </div>
+<div class="section-title">
+    A few things<br>
+    I know about you.
+</div>
 
-    <div class="section-intro">
-        Ada 10 bola di lapangan.
-        Coba pencet satu-satu.
-    </div>
-
-
-    <div class="field-wrapper">
-
-        <div class="field">
-
-            <div class="penalty left"></div>
-            <div class="penalty right"></div>
-
-            <div class="goal left"></div>
-            <div class="goal right"></div>
+<div class="section-intro">
+    Ada 10 bola di lapangan.
+    Coba pencet satu-satu.
+</div>
 
 
-            <div
-                class="field-ball ball1"
-                onclick="showFieldNote(0)"
-            >
-                ⚽
-            </div>
+<div class="field-wrapper">
 
-            <div
-                class="field-ball ball2"
-                onclick="showFieldNote(1)"
-            >
-                ⚽
-            </div>
+    <div class="field">
 
-            <div
-                class="field-ball ball3"
-                onclick="showFieldNote(2)"
-            >
-                ⚽
-            </div>
+        <div class="penalty left"></div>
+        <div class="penalty right"></div>
 
-            <div
-                class="field-ball ball4"
-                onclick="showFieldNote(3)"
-            >
-                ⚽
-            </div>
-
-            <div
-                class="field-ball ball5"
-                onclick="showFieldNote(4)"
-            >
-                ⚽
-            </div>
-
-            <div
-                class="field-ball ball6"
-                onclick="showFieldNote(5)"
-            >
-                ⚽
-            </div>
-
-            <div
-                class="field-ball ball7"
-                onclick="showFieldNote(6)"
-            >
-                ⚽
-            </div>
-
-            <div
-                class="field-ball ball8"
-                onclick="showFieldNote(7)"
-            >
-                ⚽
-            </div>
-
-            <div
-                class="field-ball ball9"
-                onclick="showFieldNote(8)"
-            >
-                ⚽
-            </div>
-
-            <div
-                class="field-ball ball10"
-                onclick="showFieldNote(9)"
-            >
-                ⚽
-            </div>
-
-        </div>
+        <div class="goal left"></div>
+        <div class="goal right"></div>
 
 
         <div
-            class="field-note"
-            id="fieldNote"
+            class="field-ball ball1"
+            onclick="showFieldNote(0)"
         >
-            Pick a ball.
+            ⚽
+        </div>
+
+        <div
+            class="field-ball ball2"
+            onclick="showFieldNote(1)"
+        >
+            ⚽
+        </div>
+
+        <div
+            class="field-ball ball3"
+            onclick="showFieldNote(2)"
+        >
+            ⚽
+        </div>
+
+        <div
+            class="field-ball ball4"
+            onclick="showFieldNote(3)"
+        >
+            ⚽
+        </div>
+
+        <div
+            class="field-ball ball5"
+            onclick="showFieldNote(4)"
+        >
+            ⚽
+        </div>
+
+        <div
+            class="field-ball ball6"
+            onclick="showFieldNote(5)"
+        >
+            ⚽
+        </div>
+
+        <div
+            class="field-ball ball7"
+            onclick="showFieldNote(6)"
+        >
+            ⚽
+        </div>
+
+        <div
+            class="field-ball ball8"
+            onclick="showFieldNote(7)"
+        >
+            ⚽
+        </div>
+
+        <div
+            class="field-ball ball9"
+            onclick="showFieldNote(8)"
+        >
+            ⚽
+        </div>
+
+        <div
+            class="field-ball ball10"
+            onclick="showFieldNote(9)"
+        >
+            ⚽
         </div>
 
     </div>
 
-</div>
 
+    <div
+        class="field-note"
+        id="fieldNote"
+    >
+        Pick a ball.
+    </div>
+
+</div>
+```
+
+</div>
 
 <!-- ===================================================
      LETTER
@@ -1728,158 +1731,162 @@ button{
 
 <div class="section">
 
-    <div class="section-label">
-        from me
-    </div>
+```
+<div class="section-label">
+    from me
+</div>
 
-    <div class="section-title">
-        A letter for you.
-    </div>
-
-
-    <div class="letter-card">
-
-        <p>
-            Happy birthday, Muhammad Emery Prasetyo ❤️
-        </p>
-
-        <p>
-            Semoga di umur 22 ini kamu selalu sehat,
-            dimudahkan dalam segala urusan,
-            dan semua yang lagi kamu usahakan bisa
-            pelan-pelan tercapai.
-        </p>
-
-        <p>
-            Semoga tahun ini lebih banyak hal baik
-            yang datang ke kamu, lebih banyak hal
-            yang bisa bikin kamu bangga sama diri sendiri,
-            dan pastinya lebih banyak alasan buat ketawa.
-        </p>
-
-        <p>
-            Aku juga berharap kamu tetap jadi Emery
-            yang aku kenal sekarang.
-            Yang suka tiba-tiba ceramah,
-            yang kalau ngobrol sama aku selalu ada
-            istigfar sama takbirnya,
-            yang selalu sempatin waktu buat call,
-            dan yang tetap mau ngeladenin semua
-            omongan random aku.
-        </p>
-
-        <p>
-            Di umur 22 tahun ini,
-            aku cuma berharap semoga sayangnya aku ini
-            dipermudah untuk dapat kerjaan,
-            makin sukses,
-            diberikan lingkungan yang sehat
-            dimanapun kamu berada,
-            makin kuat dan selalu sehat biar bisa
-            nemenin aku terus,
-            dan otot-ototmu tambah kekar. Aw. 😂
-        </p>
-
-        <p>
-            Pokoknya,
-            selamat ulang tahun ya, sayang.
-            Semoga semua doa baik yang kamu punya
-            satu-satu bisa terwujud.
-            Aamiin.
-        </p>
-
-        <p>
-            Semoga tahun ini jadi tahun yang baik buat kamu.
-            Dan kalau boleh,
-            semoga aku masih jadi salah satu bagian kecil
-            yang bikin tahun kamu lebih menyenangkan.
-        </p>
-
-        <p class="signature">
-            — from me,<br>
-            Avril Auriza AN23. ❤️
-        </p>
-
-    </div>
-
+<div class="section-title">
+    A letter for you.
 </div>
 
 
+<div class="letter-card">
+
+    <p>
+        Happy birthday, Muhammad Emery Prasetyo ❤️
+    </p>
+
+    <p>
+        Semoga di umur 22 ini kamu selalu sehat,
+        dimudahkan dalam segala urusan,
+        dan semua yang lagi kamu usahakan bisa
+        pelan-pelan tercapai.
+    </p>
+
+    <p>
+        Semoga tahun ini lebih banyak hal baik
+        yang datang ke kamu, lebih banyak hal
+        yang bisa bikin kamu bangga sama diri sendiri,
+        dan pastinya lebih banyak alasan buat ketawa.
+    </p>
+
+    <p>
+        Aku juga berharap kamu tetap jadi Emery
+        yang aku kenal sekarang.
+        Yang suka tiba-tiba ceramah,
+        yang kalau ngobrol sama aku selalu ada
+        istigfar sama takbirnya,
+        yang selalu sempatin waktu buat call,
+        dan yang tetap mau ngeladenin semua
+        omongan random aku.
+    </p>
+
+    <p>
+        Di umur 22 tahun ini,
+        aku cuma berharap semoga sayangnya aku ini
+        dipermudah untuk dapat kerjaan,
+        makin sukses,
+        diberikan lingkungan yang sehat
+        dimanapun kamu berada,
+        makin kuat dan selalu sehat biar bisa
+        nemenin aku terus,
+        dan otot-ototmu tambah kekar. Aw. 😂
+    </p>
+
+    <p>
+        Pokoknya,
+        selamat ulang tahun ya, sayang.
+        Semoga semua doa baik yang kamu punya
+        satu-satu bisa terwujud.
+        Aamiin.
+    </p>
+
+    <p>
+        Semoga tahun ini jadi tahun yang baik buat kamu.
+        Dan kalau boleh,
+        semoga aku masih jadi salah satu bagian kecil
+        yang bikin tahun kamu lebih menyenangkan.
+    </p>
+
+    <p class="signature">
+        — from me,<br>
+        Avril Auriza AN23. ❤️
+    </p>
+
+</div>
+```
+
+</div>
+
 <!-- ===================================================
-     PHOTO MEMORIES
+     VIDEO MEMORIES
 =================================================== -->
 
 <div class="section">
 
-    <div class="section-label">
-        our little archive
-    </div>
+```
+<div class="section-label">
+    our little archive
+</div>
 
-    <div class="section-title">
-        Our photo<br>
-        memories.
-    </div>
+<div class="section-title">
+    Our little<br>
+    memories.
+</div>
 
-    <div class="section-intro">
-        Foto-foto yang nanti bakal jadi
-        bagian dari album kecil kita.
-    </div>
+<div class="section-intro">
+    Beberapa potongan kecil dari cerita kita.
+</div>
 
 
-    <div class="album">
+<div class="album">
+
+    <div class="photo-frame">
+
+        <video
+            id="albumVideo"
+            controls
+            playsinline
+            preload="metadata"
+        >
+            <source
+                src="videos/jogging.mp4"
+                type="video/mp4"
+            >
+        </video>
 
         <div
-            class="photo-frame"
-            onclick="nextPhoto()"
+            class="photo-caption"
+            id="photoCaption"
         >
-
-            <img
-                id="albumPhoto"
-                src="assets/foto1.jpg"
-                alt="Our memory"
-            >
-
-            <div
-                class="photo-caption"
-                id="photoCaption"
-            >
-                the beginning
-            </div>
-
+            one of our little moments
         </div>
 
+    </div>
 
-        <div class="album-controls">
 
-            <button
-                class="album-button"
-                onclick="prevPhoto()"
-                aria-label="Previous photo"
-            >
-                ←
-            </button>
+    <div class="album-controls">
 
-            <div
-                class="photo-number"
-                id="photoNumber"
-            >
-                01 / 06
-            </div>
+        <button
+            class="album-button"
+            onclick="prevVideo()"
+            aria-label="Previous video"
+        >
+            ←
+        </button>
 
-            <button
-                class="album-button"
-                onclick="nextPhoto()"
-                aria-label="Next photo"
-            >
-                →
-            </button>
-
+        <div
+            class="photo-number"
+            id="photoNumber"
+        >
+            01 / 03
         </div>
+
+        <button
+            class="album-button"
+            onclick="nextVideo()"
+            aria-label="Next video"
+        >
+            →
+        </button>
 
     </div>
 
 </div>
+```
 
+</div>
 
 <!-- ===================================================
      TIMELINE
@@ -1887,128 +1894,129 @@ button{
 
 <div class="section">
 
-    <div class="section-label">
-        our story
-    </div>
-
-    <div class="section-title">
-        Our Story So Far.
-    </div>
-
-
-    <div class="timeline">
-
-
-        <div class="timeline-item">
-
-            <div class="timeline-dot"></div>
-
-            <div class="timeline-date">
-                FEBRUARY 2026
-            </div>
-
-            <div class="timeline-title">
-                Stasiun Pocin.
-            </div>
-
-            <div class="timeline-text">
-                Waktu itu kita pertama kali ketemu di
-                Stasiun Pocin pas aku pulang kuliah.
-                Awalnya aku masih canggung banget ngobrol
-                sama kamu, tapi kamu terus nyari topik
-                sampai akhirnya aku jadi banyak ngomong.
-                Saking asiknya ngobrol, kita nggak sadar
-                ternyata lagi dipaparaziin sama temen aku.
-                Gara-gara foto itu, besoknya aku malah
-                dicengin satu kelas pas selesai presentasi.
-            </div>
-
-        </div>
-
-
-        <div class="timeline-item">
-
-            <div class="timeline-dot"></div>
-
-            <div class="timeline-date">
-                27 MARCH 2026
-            </div>
-
-            <div class="timeline-title">
-                Officially us.
-            </div>
-
-            <div class="timeline-text">
-                Hari di mana kamu tiba-tiba nembak aku...
-                di atas motor?!
-                Jujur aku sama sekali nggak nyangka bakal
-                ditembak langsung.
-                Masih suka ketawa kalau inget momen itu.
-                Aku jadi punya orang yang selalu bisa aku
-                ceritain apa aja, dari hal penting sampai
-                hal yang nggak penting sama sekali.
-            </div>
-
-        </div>
-
-
-        <div class="timeline-item">
-
-            <div class="timeline-dot"></div>
-
-            <div class="timeline-date">
-                AFTER THAT
-            </div>
-
-            <div class="timeline-title">
-                The random conversations.
-            </div>
-
-            <div class="timeline-text">
-                Salah satu hal yang paling aku suka dari kamu
-                adalah kamu selalu ngeladenin semua celotehan aku.
-                Mau pertanyaannya random, aneh, atau nggak
-                masuk akal, kamu tetap jawab.
-                Tiap lagi di jalan juga pasti ada aja
-                yang kita bahas.
-                Kadang cuma gara-gara lihat sesuatu lewat,
-                ujung-ujungnya malah jadi obrolan panjang.
-                Hal-hal receh kayak gitu justru yang bikin
-                setiap ketemu sama kamu nggak pernah ngebosenin.
-            </div>
-
-        </div>
-
-
-        <div class="timeline-item">
-
-            <div class="timeline-dot"></div>
-
-            <div class="timeline-date">
-                SOMEWHERE ALONG THE WAY
-            </div>
-
-            <div class="timeline-title">
-                Little things.
-            </div>
-
-            <div class="timeline-text">
-                Aku selalu bilang,
-                "Kan deket doang."
-                Tapi kamu tetap nggak mau jalan
-                kalau aku belum pakai jaket atau jas hujan.
-                Dulu aku ngerasa itu ribet dan ngeselin,
-                tapi sekarang aku tahu itu cara kamu
-                nunjukin rasa peduli. ❤️
-            </div>
-
-        </div>
-
-
-    </div>
-
+```
+<div class="section-label">
+    our story
 </div>
 
+<div class="section-title">
+    Our Story So Far.
+</div>
+
+
+<div class="timeline">
+
+
+    <div class="timeline-item">
+
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-date">
+            FEBRUARY 2026
+        </div>
+
+        <div class="timeline-title">
+            Stasiun Pocin.
+        </div>
+
+        <div class="timeline-text">
+            Waktu itu kita pertama kali ketemu di
+            Stasiun Pocin pas aku pulang kuliah.
+            Awalnya aku masih canggung banget ngobrol
+            sama kamu, tapi kamu terus nyari topik
+            sampai akhirnya aku jadi banyak ngomong.
+            Saking asiknya ngobrol, kita nggak sadar
+            ternyata lagi dipaparaziin sama temen aku.
+            Gara-gara foto itu, besoknya aku malah
+            dicengin satu kelas pas selesai presentasi.
+        </div>
+
+    </div>
+
+
+    <div class="timeline-item">
+
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-date">
+            27 MARCH 2026
+        </div>
+
+        <div class="timeline-title">
+            Officially us.
+        </div>
+
+        <div class="timeline-text">
+            Hari di mana kamu tiba-tiba nembak aku...
+            di atas motor?!
+            Jujur aku sama sekali nggak nyangka bakal
+            ditembak langsung.
+            Masih suka ketawa kalau inget momen itu.
+            Aku jadi punya orang yang selalu bisa aku
+            ceritain apa aja, dari hal penting sampai
+            hal yang nggak penting sama sekali.
+        </div>
+
+    </div>
+
+
+    <div class="timeline-item">
+
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-date">
+            AFTER THAT
+        </div>
+
+        <div class="timeline-title">
+            The random conversations.
+        </div>
+
+        <div class="timeline-text">
+            Salah satu hal yang paling aku suka dari kamu
+            adalah kamu selalu ngeladenin semua celotehan aku.
+            Mau pertanyaannya random, aneh, atau nggak
+            masuk akal, kamu tetap jawab.
+            Tiap lagi di jalan juga pasti ada aja
+            yang kita bahas.
+            Kadang cuma gara-gara lihat sesuatu lewat,
+            ujung-ujungnya malah jadi obrolan panjang.
+            Hal-hal receh kayak gitu justru yang bikin
+            setiap ketemu sama kamu nggak pernah ngebosenin.
+        </div>
+
+    </div>
+
+
+    <div class="timeline-item">
+
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-date">
+            SOMEWHERE ALONG THE WAY
+        </div>
+
+        <div class="timeline-title">
+            Little things.
+        </div>
+
+        <div class="timeline-text">
+            Aku selalu bilang,
+            "Kan deket doang."
+            Tapi kamu tetap nggak mau jalan
+            kalau aku belum pakai jaket atau jas hujan.
+            Dulu aku ngerasa itu ribet dan ngeselin,
+            tapi sekarang aku tahu itu cara kamu
+            nunjukin rasa peduli. ❤️
+        </div>
+
+    </div>
+
+
+</div>
+```
+
+</div>
 
 <!-- ===================================================
      MUSIC
@@ -2016,55 +2024,56 @@ button{
 
 <div class="section">
 
-    <div class="section-label">
-        soundtrack
-    </div>
+```
+<div class="section-label">
+    soundtrack
+</div>
 
-    <div class="section-title">
-        One song for<br>
-        this little story.
-    </div>
+<div class="section-title">
+    One song for<br>
+    this little story.
+</div>
 
 
-    <div class="music-player">
-
-        <div
-            class="music-disc"
-            id="musicDisc"
-        ></div>
-
-        <div class="music-info">
-
-            <div class="music-title">
-                Heaven
-            </div>
-
-            <div class="music-artist">
-                Bryan Adams
-            </div>
-
-        </div>
-
-        <button
-            class="music-toggle"
-            id="musicButton"
-            onclick="toggleMusic()"
-            aria-label="Play or pause music"
-        >
-            ▶
-        </button>
-
-    </div>
+<div class="music-player">
 
     <div
-        class="music-warning"
-        id="musicWarning"
-    >
-        Tap tombol ▶ untuk memulai musik.
+        class="music-disc"
+        id="musicDisc"
+    ></div>
+
+    <div class="music-info">
+
+        <div class="music-title">
+            Heaven
+        </div>
+
+        <div class="music-artist">
+            Bryan Adams
+        </div>
+
     </div>
+
+    <button
+        class="music-toggle"
+        id="musicButton"
+        onclick="toggleMusic()"
+        aria-label="Play or pause music"
+    >
+        ▶
+    </button>
 
 </div>
 
+<div
+    class="music-warning"
+    id="musicWarning"
+>
+    Tap tombol ▶ untuk memulai musik.
+</div>
+```
+
+</div>
 
 <!-- ===================================================
      MINI GOAL
@@ -2072,97 +2081,98 @@ button{
 
 <div class="section goal-section">
 
-    <div class="section-label">
-        one more thing
-    </div>
+```
+<div class="section-label">
+    one more thing
+</div>
 
-    <div class="section-title">
-        Reasons I'm<br>
-        grateful to know you.
-    </div>
+<div class="section-title">
+    Reasons I'm<br>
+    grateful to know you.
+</div>
 
-    <div class="section-intro">
-        Shake the goal and pick a ball.
-    </div>
-
-
-    <div class="goal-area">
-
-        <div
-            class="mini-goal"
-            id="miniGoal"
-        >
-
-            <div
-                class="goal-ball"
-                onclick="pickGoalBall(0)"
-            >⚽</div>
-
-            <div
-                class="goal-ball"
-                onclick="pickGoalBall(1)"
-            >⚽</div>
-
-            <div
-                class="goal-ball"
-                onclick="pickGoalBall(2)"
-            >⚽</div>
-
-            <div
-                class="goal-ball"
-                onclick="pickGoalBall(3)"
-            >⚽</div>
-
-            <div
-                class="goal-ball"
-                onclick="pickGoalBall(4)"
-            >⚽</div>
-
-            <div
-                class="goal-ball"
-                onclick="pickGoalBall(5)"
-            >⚽</div>
-
-            <div
-                class="goal-ball"
-                onclick="pickGoalBall(6)"
-            >⚽</div>
-
-            <div
-                class="goal-ball"
-                onclick="pickGoalBall(7)"
-            >⚽</div>
-
-            <div
-                class="goal-ball"
-                onclick="pickGoalBall(8)"
-            >⚽</div>
-
-            <div
-                class="goal-ball"
-                onclick="pickGoalBall(9)"
-            >⚽</div>
-
-        </div>
-
-    </div>
+<div class="section-intro">
+    Shake the goal and pick a ball.
+</div>
 
 
-    <button
-        class="shake-button"
-        onclick="shakeGoal()"
-    >
-        ⚽ Shake the goal
-    </button>
-
+<div class="goal-area">
 
     <div
-        class="goal-message"
-        id="goalMessage"
-    ></div>
+        class="mini-goal"
+        id="miniGoal"
+    >
+
+        <div
+            class="goal-ball"
+            onclick="pickGoalBall(0)"
+        >⚽</div>
+
+        <div
+            class="goal-ball"
+            onclick="pickGoalBall(1)"
+        >⚽</div>
+
+        <div
+            class="goal-ball"
+            onclick="pickGoalBall(2)"
+        >⚽</div>
+
+        <div
+            class="goal-ball"
+            onclick="pickGoalBall(3)"
+        >⚽</div>
+
+        <div
+            class="goal-ball"
+            onclick="pickGoalBall(4)"
+        >⚽</div>
+
+        <div
+            class="goal-ball"
+            onclick="pickGoalBall(5)"
+        >⚽</div>
+
+        <div
+            class="goal-ball"
+            onclick="pickGoalBall(6)"
+        >⚽</div>
+
+        <div
+            class="goal-ball"
+            onclick="pickGoalBall(7)"
+        >⚽</div>
+
+        <div
+            class="goal-ball"
+            onclick="pickGoalBall(8)"
+        >⚽</div>
+
+        <div
+            class="goal-ball"
+            onclick="pickGoalBall(9)"
+        >⚽</div>
+
+    </div>
 
 </div>
+
+
+<button
+    class="shake-button"
+    onclick="shakeGoal()"
+>
+    ⚽ Shake the goal
+</button>
+
+
+<div
+    class="goal-message"
+    id="goalMessage"
+></div>
 ```
+
+</div>
 
 </div>
 
@@ -2174,48 +2184,48 @@ button{
 
 <section class="final">
 
-```
 <div class="card final-content">
 
-    <div class="final-ball">
-        ⚽
-    </div>
+```
+<div class="final-ball">
+    ⚽
+</div>
 
-    <div class="section-label">
-        one last thing
-    </div>
+<div class="section-label">
+    one last thing
+</div>
 
-    <h2>
-        Happy Birthday,<br>
-        <span>Emery.</span>
-    </h2>
+<h2>
+    Happy Birthday,<br>
+    <span>Emery.</span>
+</h2>
 
-    <p>
-        Semoga umur 22 ini membawa
-        banyak hal baik, rezeki,
-        kesehatan, dan cerita baru.
-    </p>
+<p>
+    Semoga umur 22 ini membawa
+    banyak hal baik, rezeki,
+    kesehatan, dan cerita baru.
+</p>
 
-    <p>
-        Tetap jadi kamu.
-        Yang manly,
-        ganteng,
-        dan soon bakal punya
-        otot banget. 😂
-    </p>
+<p>
+    Tetap jadi kamu.
+    Yang manly,
+    ganteng,
+    dan soon bakal punya
+    otot banget. 😂
+</p>
 
-    <p>
-        Jangan terlalu keras sama diri sendiri.<br>
-        Jangan takut kalau semuanya belum sesuai rencana.<br>
-        Dan jangan lupa, ada aku di sini.
-    </p>
+<p>
+    Jangan terlalu keras sama diri sendiri.<br>
+    Jangan takut kalau semuanya belum sesuai rencana.<br>
+    Dan jangan lupa, ada aku di sini.
+</p>
 
-    <div class="final-date">
-        04 · 09 · 2026
-    </div>
-
+<div class="final-date">
+    04 · 09 · 2026
 </div>
 ```
+
+</div>
 
 </section>
 
@@ -2235,7 +2245,7 @@ preload="auto"
 ```
 
 ```
-    src="./audio/heaven.mp3""
+    src="./audio/heaven.mp3"
     type="audio/mpeg"
 >
 ```
@@ -2248,29 +2258,7 @@ preload="auto"
    SETTINGS
 ========================================================= */
 
-/*
-   PIN WEBSITE
-   =========================
-   PIN sekarang: 2703
-
-   Kalau mau diganti,
-   ubah bagian ini saja.
-*/
-
 const CORRECT_PIN = "2703";
-
-
-/*
-   VOLUME MUSIK
-   =========================
-
-   1.0 = 100%
-   0.9 = 90%
-   0.8 = 80%
-
-   Kita gunakan 1.0 agar musik
-   terdengar lebih jelas.
-*/
 
 const MUSIC_VOLUME = 1.0;
 
@@ -2407,15 +2395,6 @@ function openGift(){
 
     const entry =
         document.getElementById("giftEntry");
-
-    /*
-       Musik dimulai tepat ketika
-       user menekan hadiah.
-
-       Ini penting karena browser
-       biasanya mengizinkan audio
-       yang berasal dari user interaction.
-    */
 
     playMusic();
 
@@ -2567,51 +2546,36 @@ function showFieldNote(index){
 
 
 /* =========================================================
-   PHOTO ALBUM
+   VIDEO ALBUM
 ========================================================= */
 
-const photos = [
+const videos = [
 
     {
-        src:"assets/foto1.jpg",
-        caption:"the beginning"
+        src:"videos/jogging.mp4",
+        caption:"one of our little moments"
     },
 
     {
-        src:"assets/foto2.jpg",
-        caption:"one of my favorite days"
-    },
-
-    {
-        src:"assets/foto3.jpg",
-        caption:"us being us"
-    },
-
-    {
-        src:"assets/foto4.jpg",
+        src:"videos/kopken.mp4",
         caption:"another random memory"
     },
 
     {
-        src:"assets/foto5.jpg",
-        caption:"still one of my favorites"
-    },
-
-    {
-        src:"assets/foto6.jpg",
-        caption:"and here we are"
+        src:"videos/makanan.mp4",
+        caption:"one of my favorite memories"
     }
 
 ];
 
 
-let currentPhoto = 0;
+let currentVideo = 0;
 
 
-function updatePhoto(){
+function updateVideo(){
 
-    const photo =
-        document.getElementById("albumPhoto");
+    const video =
+        document.getElementById("albumVideo");
 
     const caption =
         document.getElementById("photoCaption");
@@ -2620,65 +2584,62 @@ function updatePhoto(){
         document.getElementById("photoNumber");
 
 
-    photo.style.opacity = "0";
+    video.pause();
 
+    video.src =
+        videos[currentVideo].src;
 
-    setTimeout(function(){
+    caption.innerHTML =
+        videos[currentVideo].caption;
 
-        photo.src =
-            photos[currentPhoto].src;
+    number.innerHTML =
 
-        caption.innerHTML =
-            photos[currentPhoto].caption;
+        String(currentVideo + 1)
+            .padStart(2,"0")
 
-        number.innerHTML =
+        + " / " +
 
-            String(currentPhoto + 1)
-                .padStart(2,"0")
+        String(videos.length)
+            .padStart(2,"0");
 
-            + " / " +
-
-            String(photos.length)
-                .padStart(2,"0");
-
-        photo.style.opacity = "1";
-
-    },150);
+    video.load();
 
 }
 
 
-function nextPhoto(){
+function nextVideo(){
 
-    currentPhoto++;
+    currentVideo++;
 
     if(
-        currentPhoto >= photos.length
+        currentVideo >= videos.length
     ){
 
-        currentPhoto = 0;
+        currentVideo = 0;
 
     }
 
-    updatePhoto();
+    updateVideo();
 
     fallingBalls(3);
 
 }
 
 
-function prevPhoto(){
+function prevVideo(){
 
-    currentPhoto--;
+    currentVideo--;
 
-    if(currentPhoto < 0){
+    if(
+        currentVideo < 0
+    ){
 
-        currentPhoto =
-            photos.length - 1;
+        currentVideo =
+            videos.length - 1;
 
     }
 
-    updatePhoto();
+    updateVideo();
 
 }
 
@@ -2699,20 +2660,6 @@ const musicDisc =
 const musicWarning =
     document.getElementById("musicWarning");
 
-
-/*
-   Volume dibuat 100%.
-
-   Catatan:
-   volume browser hanya mengatur
-   level audio dari file.
-
-   Kalau file MP3-nya sendiri
-   memang mastered pelan,
-   volume 100% tidak bisa membuat
-   lebih keras dari level maksimum
-   tanpa melakukan audio processing.
-*/
 
 music.volume =
     MUSIC_VOLUME;
@@ -2758,11 +2705,6 @@ function playMusic(){
 
     music.volume =
         MUSIC_VOLUME;
-
-    /*
-       Pastikan browser membaca
-       audio dari awal jika diperlukan.
-    */
 
     const playPromise =
         music.play();
@@ -2887,7 +2829,7 @@ music.addEventListener(
             "⚠";
 
         musicWarning.innerHTML =
-            "File heaven.mp3 belum ditemukan. Pastikan file ada di folder utama.";
+            "File heaven.mp3 belum ditemukan. Pastikan file ada di folder audio.";
 
         musicWarning.classList.add(
             "show"
@@ -2949,11 +2891,6 @@ function shakeGoal(){
     goal.classList.add("shake");
 
 
-    /*
-       Pilih alasan secara random
-       supaya tidak selalu berurutan.
-    */
-
     goalIndex =
         Math.floor(
             Math.random() *
@@ -3007,16 +2944,6 @@ function pickGoalBall(index){
 
 
 /* =========================================================
-   PHOTO IMAGE FADE
-========================================================= */
-
-document
-    .getElementById("albumPhoto")
-    .style.transition =
-    "opacity .25s ease";
-
-
-/* =========================================================
    SECTION OBSERVER
 ========================================================= */
 
@@ -3035,11 +2962,6 @@ const observer =
                     if(
                         entry.isIntersecting
                     ){
-
-                        /*
-                           Hanya sedikit bola agar
-                           tidak terlalu ramai.
-                        */
 
                         fallingBalls(2);
 
@@ -3074,12 +2996,6 @@ document.addEventListener(
     "keydown",
     function(event){
 
-        /*
-           Kalau user mengetik angka
-           dari keyboard, PIN tetap
-           bisa digunakan.
-        */
-
         if(/^[0-9]$/.test(event.key)){
 
             pressPin(event.key);
@@ -3107,10 +3023,10 @@ document.addEventListener(
 
 
 /* =========================================================
-   INITIAL PHOTO
+   INITIAL VIDEO
 ========================================================= */
 
-updatePhoto();
+updateVideo();
 
 
 </script>
